@@ -1,0 +1,11 @@
+{
+    "health" : 6000,
+    "name" : "Beholder",
+    "image" : "beholder",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 0,
+    "description" : "A floating eyeball of terror.",
+    "unlockKey" : "encyclopedia_beholder"
+}

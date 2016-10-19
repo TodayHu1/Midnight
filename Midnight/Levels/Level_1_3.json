@@ -1,0 +1,21 @@
+{
+    "monsters" : [
+                  {"monster" : "Bugbear"}
+                  ],
+    "background" : "Game Bamboo",
+    "title" : "Goblin Town 3",
+    "music" : "Mining by Moonlight",
+    "goals" : {
+        "totalMoves" : 10,
+        "totalDamageTaken" : 1000,
+        "elapsedTime" : 100
+    },
+    "rewards" : {
+        "totalMoves" : 200,
+        "totalDamageTaken" : 100,
+        "elapsedTime" : 100
+    },
+    "questdata" : [
+                   {"key" : "unlock_level_1_4", "value" : 1}
+                   ]
+}

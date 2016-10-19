@@ -1,0 +1,11 @@
+{
+    "health" : 7500,
+    "name" : "Red Dragon",
+    "image" : "red-dragon",
+    "minStrength" : 120,
+    "varStrength" : 30,
+    "critChance" : 1,
+    "regeneration" : 0,
+    "description" : "The tyrant of all tyrants. Breathes fire.",
+    "unlockKey" : "encyclopedia_reddragon"
+}

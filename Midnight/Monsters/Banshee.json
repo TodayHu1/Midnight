@@ -1,0 +1,11 @@
+{
+    "health" : 2500,
+    "name" : "Banshee",
+    "image" : "banshee",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 10,
+    "regeneration" : 0,
+    "description" : "A female spirit who heralds the death of a family member, usually by shrieking or keening.",
+    "unlockKey" : "encyclopedia_banshee"
+}

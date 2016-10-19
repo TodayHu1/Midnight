@@ -1,0 +1,11 @@
+{
+    "health" : 5000,
+    "name" : "Frost Giant",
+    "image" : "frost-giant",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 0,
+    "description" : "A giant. Who likes snow.",
+    "unlockKey" : "encyclopedia_frostgiant"
+}

@@ -1,0 +1,22 @@
+{
+    "monsters" : [
+                  {"monster" : "Banshee"}
+                  ],
+    "background" : "Game Bamboo",
+    "title" : "Fairy Circle 1",
+    "music" : "Mining by Moonlight",
+    "goals" : {
+        "totalMoves" : 10,
+        "totalDamageTaken" : 1000,
+        "elapsedTime" : 100
+    },
+    "rewards" : {
+        "totalMoves" : 100,
+        "totalDamageTaken" : 100,
+        "elapsedTime" : 100
+    },
+    "questdata" : [
+                   {"key" : "unlock_level_1_5", "value" : 1}
+                   ]
+
+}

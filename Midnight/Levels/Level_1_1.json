@@ -1,0 +1,24 @@
+{
+    "monsters" : [
+                  {"monster" : "Kobold"},
+                  {"monster" : "Goblin"}
+                  ],
+    "background" : "Background",
+    "title" : "Goblin Town 1",
+    "music" : "Starlight",
+    "goals" : {
+        "totalMoves" : 15,
+        "totalDamageTaken" : 1000,
+        "elapsedTime" : 90
+    },
+    "rewards" : {
+        "totalMoves" : 100,
+        "totalDamageTaken" : 100,
+        "elapsedTime" : 100
+    },
+    "questdata" : [
+                   {"key" : "encyclopedia_unlocked", "value" : 1},
+                   {"key" : "unlock_level_1_2", "value" : 1}
+                   ],
+    "scene" : "Scene_1_1"
+}

@@ -1,0 +1,22 @@
+{
+    "monsters" : [
+                  {"monster" : "Goblin"}
+                  ],
+    "background" : "Background",
+    "title" : "Goblin Town 2",
+    "music" : "Mining by Moonlight",
+    "goals" : {
+        "totalMoves" : 10,
+        "totalDamageTaken" : 1000,
+        "elapsedTime" : 90
+    },
+    "rewards" : {
+        "totalMoves" : 200,
+        "totalDamageTaken" : 100,
+        "elapsedTime" : 100
+    },
+    "questdata" : [
+                   {"key" : "map_unlocked", "value" : 1},
+                   {"key" : "unlock_level_1_3", "value" : 1}
+                   ]
+}

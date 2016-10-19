@@ -1,0 +1,12 @@
+{
+    "health" : 1500,
+    "name" : "Goblin",
+    "image" : "goblin",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 0,
+    "resistance" : "BlueSkull",
+    "description" : "A race of twisted creatures that thrive in dirt and filth.",
+    "unlockKey" : "encyclopedia_goblin"
+}

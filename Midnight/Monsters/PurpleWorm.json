@@ -1,0 +1,11 @@
+{
+    "health" : 7000,
+    "name" : "Purple Worm",
+    "image" : "purple-worm",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 0,
+    "description" : "A humongous, ravenous worm capable of swollowing a man and his horse whole.",
+    "unlockKey" : "encyclopedia_purpleworm"
+}

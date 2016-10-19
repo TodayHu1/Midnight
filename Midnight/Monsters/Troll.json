@@ -1,0 +1,11 @@
+{
+    "health" : 3000,
+    "name" : "Troll",
+    "image" : "troll",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 100,
+    "description" : "A long and lanky creature that regenerates.",
+    "unlockKey" : "encyclopedia_troll"
+}

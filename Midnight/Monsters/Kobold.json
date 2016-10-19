@@ -1,0 +1,12 @@
+{
+    "health" : 1000,
+    "name" : "Kobold",
+    "image" : "kobold",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 0,
+    "vulnerability": "RedSkull",
+    "description" : "A kobold is a stinky, nasty, goblinoid.",
+    "unlockKey" : "encyclopedia_kobold"
+}

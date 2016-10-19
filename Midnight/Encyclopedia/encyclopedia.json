@@ -1,0 +1,83 @@
+{
+    "people" : [
+                {
+                "name" : "Spider Queen",
+                "detailFile" : "spiderqueen",
+                "unlockKey" : "encyclopedia_spiderqueen"
+                },
+                {
+                "name" : "Raven Queen",
+                "detailFile" : "ravenqueen",
+                "unlockKey" : "encyclopedia_ravenqueen"
+                },
+                {
+                "name" : "Goblin Queen",
+                "detailFile" : "goblinqueen",
+                "unlockKey" : "encyclopedia_goblinqueen"
+                },
+                {
+                "name" : "Mayor Addams",
+                "detailFile" : "mayoraddams",
+                "unlockKey" : "encyclopedia_mayoraddams"
+                }
+                ],
+    "places" : [
+                {
+                "name" : "Midnight",
+                "detailFile" : "midnight",
+                "unlockKey" : "encyclopedia_midnight"
+                },
+                {
+                "name" : "Nighthold",
+                "detailFile" : "nighthold",
+                "unlockKey" : "encyclopedia_nighthold"
+                },
+                {
+                "name" : "Wintervale",
+                "detailFile" : "wintervale",
+                "unlockKey" : "encyclopedia_wintervale"
+                },
+                {
+                "name" : "Blackfield",
+                "detailFile" : "blackfield",
+                "unlockKey" : "encyclopedia_blackfield"
+                },
+                {
+                "name" : "Darkwell",
+                "detailFile" : "darkwell",
+                "unlockKey" : "encyclopedia_darkwell"
+                },
+                {
+                "name" : "Starhaven",
+                "detailFile" : "starhaven",
+                "unlockKey" : "encyclopedia_starhaven"
+                }
+                ],
+    "monsters" : [
+                  {
+                  "name" : "Kobold",
+                  "detailFile" : "kobold",
+                  "unlockKey" : "encyclopedia_kobold"
+                  },
+                  {
+                  "name" : "Goblin",
+                  "detailFile" : "goblin",
+                  "unlockKey" : "encyclopedia_goblin"
+                  },
+                  {
+                  "name" : "Bugbear",
+                  "detailFile" : "bugbear",
+                  "unlockKey" : "encyclopedia_bugbear"
+                  },
+                  {
+                  "name" : "Banshee",
+                  "detailFile" : "banshee",
+                  "unlockKey" : "encyclopedia_banshee"
+                  },
+                  {
+                  "name" : "Troll",
+                  "detailFile" : "troll",
+                  "unlockKey" : "encyclopedia_troll"
+                  }
+                  ]
+}

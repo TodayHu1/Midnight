@@ -1,0 +1,21 @@
+{
+    "monsters" : [
+                  {"monster" : "RedDragon"}
+                  ],
+    "background" : "Game Sakura 2",
+    "title" : "Astrolabe",
+    "music" : "Mining by Moonlight",
+    "goals" : {
+        "totalMoves" : 10,
+        "totalDamageTaken" : 1000,
+        "elapsedTime" : 100
+    },
+    "rewards" : {
+        "totalMoves" : 100,
+        "totalDamageTaken" : 100,
+        "elapsedTime" : 100
+    },
+    "questdata" : [
+                   {"key" : "unlock_level_2_3", "value" : 1}
+                   ]
+}

@@ -19,7 +19,7 @@ class QuestHierarchyNode {
 class Quest {
     var nodes: [QuestHierarchyNode] = [QuestHierarchyNode]()
     
-    init () {
+    init (savedGame: GameSave) {
         let filename = "Levels/Progress"
         guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {return}
         
@@ -30,19 +30,33 @@ class Quest {
             chapter.title = chapterItem["title"] as! String
             chapter.unlockKey = chapterItem["unlockKey"] as! String
             
-            let levelArray = chapterItem["levels"] as! [[String: AnyObject]]
-            
-            for levelItem in levelArray {
-                let level = QuestHierarchyNode()
-                level.id = levelItem["level"] as! String
-                level.title = levelItem["title"] as! String
-                level.unlockKey = levelItem["unlockKey"] as! String
+            if unlockNode(savedGame: savedGame, unlockKey: chapter.unlockKey) {
                 
-                chapter.nodes.append(level)
+                let levelArray = chapterItem["levels"] as! [[String: AnyObject]]
+                
+                for levelItem in levelArray {
+                    let level = QuestHierarchyNode()
+                    level.id = levelItem["level"] as! String
+                    level.title = levelItem["title"] as! String
+                    level.unlockKey = levelItem["unlockKey"] as! String
+                    
+                    if unlockNode(savedGame: savedGame, unlockKey: level.unlockKey) {
+                        chapter.nodes.append(level)
+                    }
+                }
+                
+                self.nodes.append(chapter)
             }
-            
-            self.nodes.append(chapter)
         }
     }
     
+    func unlockNode(savedGame: GameSave, unlockKey: String) -> Bool {
+        var unlocked = false
+        if let key = savedGame.questData[unlockKey] {
+            if key as! Bool == true {
+                unlocked = true
+            }
+        }
+        return unlocked
+    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UBS-Ia-c9j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2553a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UBS-Ia-c9j">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -127,14 +127,14 @@
                                 <exclude reference="G6h-2L-1vr"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Nlr-QX-L2i"/>
+                                <exclude reference="fkY-Fd-tvo"/>
+                                <exclude reference="4bk-yX-aJv"/>
+                                <exclude reference="siG-xS-CLQ"/>
                                 <exclude reference="LFt-gk-AwQ"/>
                                 <exclude reference="N79-8b-6ty"/>
                                 <exclude reference="06O-3X-b1w"/>
                                 <exclude reference="Ddc-Ws-0ac"/>
-                                <exclude reference="4bk-yX-aJv"/>
-                                <exclude reference="siG-xS-CLQ"/>
-                                <exclude reference="Nlr-QX-L2i"/>
-                                <exclude reference="fkY-Fd-tvo"/>
                                 <exclude reference="17c-Wm-FPc"/>
                                 <exclude reference="8cm-CV-1hv"/>
                                 <exclude reference="HDh-IF-Ufj"/>
@@ -151,14 +151,14 @@
                                 <include reference="G6h-2L-1vr"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Nlr-QX-L2i"/>
+                                <include reference="fkY-Fd-tvo"/>
+                                <include reference="4bk-yX-aJv"/>
+                                <include reference="siG-xS-CLQ"/>
                                 <include reference="LFt-gk-AwQ"/>
                                 <include reference="N79-8b-6ty"/>
                                 <include reference="06O-3X-b1w"/>
                                 <include reference="Ddc-Ws-0ac"/>
-                                <include reference="4bk-yX-aJv"/>
-                                <include reference="siG-xS-CLQ"/>
-                                <include reference="Nlr-QX-L2i"/>
-                                <include reference="fkY-Fd-tvo"/>
                                 <include reference="17c-Wm-FPc"/>
                                 <include reference="8cm-CV-1hv"/>
                                 <exclude reference="HDh-IF-Ufj"/>
@@ -193,7 +193,7 @@
         <!--StoryModeViewController-->
         <scene sceneID="DyP-Ob-952">
             <objects>
-                <viewControllerPlaceholder storyboardName="StoryMode" referencedIdentifier="StoryModeViewController" id="uDv-nz-V4T" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="storyViewController" storyboardName="StoryMode" referencedIdentifier="StoryModeViewController" id="uDv-nz-V4T" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BKb-3w-DuV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-487.5" y="-253"/>

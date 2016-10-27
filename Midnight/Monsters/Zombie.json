@@ -1,0 +1,11 @@
+{
+    "health" : 1000,
+    "name" : "Zombie",
+    "image" : "zombie",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 10,
+    "description" : "A zombie is a reanimated corpse.",
+    "unlockKey" : "encyclopedia_zombie"
+}

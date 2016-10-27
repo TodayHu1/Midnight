@@ -11,6 +11,7 @@ import SpriteKit
 
 class SaveMenuViewcontroller: UIViewController {
     var saveSlot: Int = 0
+    var savedGame: GameSave = GameSave()
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var savedGame1: UITapGestureRecognizer!
@@ -50,7 +51,16 @@ class SaveMenuViewcontroller: UIViewController {
         }
         
         if newGame {
-            performSegue(withIdentifier: "showCharacterProfile", sender: self)
+            savedGame = GameSave()
+            savedGame.saveSlot = saveSlot
+
+            savedGame.selectedLevel = "Level_1_1"
+            savedGame.setQuestData(key: "unlock_chapter_1", value: true as AnyObject!)
+            savedGame.setQuestData(key: "unlock_level_1_1", value: true as AnyObject!)
+            
+            performSegue(withIdentifier: "showDialogue", sender: self)
+                
+//            performSegue(withIdentifier: "showCharacterProfile", sender: self)
         } else {
             performSegue(withIdentifier: "showSavedGame", sender: self)
         }
@@ -72,12 +82,12 @@ class SaveMenuViewcontroller: UIViewController {
     }
     
     func deleteSave() {
-        let savedGame: GameSave = GameSave()
         
         if self.saveSlot > 0 {
             savedGame.saveSlot = self.saveSlot
             savedGame.deleteSave()
         }
+        
         loadAvailableSaves()
         
     }
@@ -127,29 +137,27 @@ class SaveMenuViewcontroller: UIViewController {
 
     }
     
-    func passGameInfo(_ vc: inout StoryModeViewController, saveSlot: Int) {
-        let savedGame: GameSave = GameSave()
-        savedGame.saveSlot = saveSlot
-        savedGame.load()
-        
-        if savedGame.selectedLevel != "" {
-            vc.savedGame = savedGame
-        } else {
-            savedGame.selectedLevel = "Level_1_1"
-            vc.savedGame = savedGame
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSavedGame" {
-            var vc = segue.destination as! StoryModeViewController
-            passGameInfo(&vc, saveSlot: self.saveSlot)
+            let vc = segue.destination as! StoryModeViewController
+            savedGame.saveSlot = self.saveSlot
+            savedGame.load()
+            
+            if savedGame.selectedLevel != "" {
+                vc.savedGame = savedGame
+            } else {
+                savedGame.selectedLevel = "Level_1_1"
+                vc.savedGame = savedGame
+            }
         } else if segue.identifier == "presentConfirmation" {
             let vc = segue.destination as! ConfirmDeleteViewController
             vc.saveSlot = self.saveSlot
         } else if segue.identifier == "showCharacterProfile" {
             let vc = segue.destination as! CharacterCreationViewController
             vc.saveSlot = self.saveSlot
+        } else if segue.identifier == "showDialogue" {
+            let vc = segue.destination as! DialogueViewController
+            vc.savedGame = self.savedGame
         }
     }
 }

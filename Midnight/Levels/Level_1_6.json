@@ -1,7 +1,5 @@
 {
-    "monsters" : [
-                  {"monster" : "Djinni"}
-                  ],
+    "monsters" : ["Djinni"],
     "background" : "Game Sakura 1",
     "title" : "Burning Sands",
     "music" : "Mining by Moonlight",

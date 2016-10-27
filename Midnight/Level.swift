@@ -35,6 +35,7 @@ class Level {
     var rewards: LevelRewards = LevelRewards()
     var questData: [String: AnyObject] = [String: AnyObject]()
     var scene: String?
+    var availableCharacters: [String]?
     
     init(filename: String) {
         guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {return}
@@ -57,10 +58,9 @@ class Level {
         background = dictionary["background"] as! String
         music = dictionary["music"] as! String
         title = dictionary["title"] as! String
-        let monsterArray = dictionary["monsters"] as! [[String: String]]
+        let monsterArray = dictionary["monsters"] as! [String]
         for item in monsterArray {
-            let monsterName = item["monster"]!
-            let monster = Monster(filename: "Monsters/\(monsterName)")
+            let monster = Monster(filename: "Monsters/\(item)")
             monsters.append(monster)
         }
         
@@ -84,6 +84,10 @@ class Level {
         }
         
         scene = dictionary["scene"] as? String
+        
+        if let availableCharacterArray : [String] = dictionary["characters"] as? [String] {
+            availableCharacters = availableCharacterArray
+        }
     }
     
     func tokenAtColumn(_ column: Int, row: Int) -> Token? {

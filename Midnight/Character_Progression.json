@@ -1,0 +1,100 @@
+{
+    "levels" : [
+                {"level" : 1,
+                "previousLevel" : 0,
+                "nextLevel" : 1000,
+                "rewards" : {
+                "defense" : 10,
+                "strength" : 0.2,
+                "health" : 100
+                }},
+                {"level" : 2,
+                "previousLevel" : 1000,
+                "nextLevel" : 2000,
+                "rewards" : {
+                "defense" : 10,
+                "strength" : 0.2,
+                "health" : 100
+                }},
+                {"level" : 3,
+                "previousLevel" : 2000,
+                "nextLevel" : 3000,
+                "rewards" : {
+                "defense" : 10,
+                "strength" : 0.5,
+                "health" : 100
+                }},
+                {"level" : 4,
+                "previousLevel" : 3000,
+                "nextLevel" : 4000,
+                "rewards" : {
+                "defense" : 10,
+                "strength" : 0.5,
+                "health" : 100
+                }},
+                {"level" : 5,
+                "previousLevel" : 4000,
+                "nextLevel" : 5000,
+                "rewards" : {
+                "defense" : 10,
+                "strength" : 0.5,
+                "health" : 100
+                }},
+                {"level" : 6,
+                "previousLevel" : 5000,
+                "nextLevel" : 6000,
+                "rewards" : {
+                "defense" : 10,
+                "strength" : 0.5,
+                "health" : 100
+                }},
+                {"level" : 7,
+                "previousLevel" : 6000,
+                "nextLevel" : 8000,
+                "rewards" : {
+                "defense" : 20,
+                "strength" : 0.75,
+                "health" : 150
+                }},
+                {"level" : 8,
+                "previousLevel" : 8000,
+                "nextLevel" : 10000,
+                "rewards" : {
+                "defense" : 20,
+                "strength" : 0.75,
+                "health" : 150
+                }},
+                {"level" : 9,
+                "previousLevel" : 10000,
+                "nextLevel" : 12000,
+                "rewards" : {
+                "defense" : 20,
+                "strength" : 0.75,
+                "health" : 150
+                }},
+                {"level" : 10,
+                "previousLevel" : 12000,
+                "nextLevel" : 15000,
+                "rewards" : {
+                "defense" : 25,
+                "strength" : 1.0,
+                "health" : 200
+                }},
+                {"level" : 11,
+                "previousLevel" : 15000,
+                "nextLevel" : 18000,
+                "rewards" : {
+                "defense" : 25,
+                "strength" : 1.0,
+                "health" : 200
+                }},
+                {"level" : 12,
+                "previousLevel" : 18000,
+                "nextLevel" : 21000,
+                "rewards" : {
+                "defense" : 25,
+                "strength" : 1.0,
+                "health" : 200
+                }}
+                ]
+}

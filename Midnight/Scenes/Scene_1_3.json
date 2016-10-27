@@ -1,0 +1,33 @@
+{
+    "background" : "",
+    "items" :
+    [
+     {"sceneType" : "line",
+     "actor" : "Anaya",
+     "image" : "Anaya",
+     "text" : "Finally, this will be my greatest triumph!",
+     "questdata" : [
+                    {"key" : "character_Anaya", "value" : 1}
+                    ]},
+     {"sceneType" : "line",
+     "actor" : "Anaya",
+     "text" : "I have discovered how to turn lead into..."},
+     {"sceneType" : "line",
+     "actor" : "Anaya",
+     "text" : "lead."},
+     {"sceneType" : "line",
+     "actor" : "Anaya",
+     "text" : "Shit."},
+     {"sceneType" : "line",
+     "actor" : "Anaya",
+     "text" : "Wait, what's that?"},
+     {"sceneType" : "line",
+     "actor" : "Golem",
+     "image" : "golem",
+     "direction" : "right",
+     "text" : "Me smash!"},
+     {"sceneType" : "line",
+     "actor" : "Anaya",
+     "text" : "Uh oh."}
+     ]
+}

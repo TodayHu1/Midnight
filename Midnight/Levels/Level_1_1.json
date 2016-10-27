@@ -1,10 +1,7 @@
 {
-    "monsters" : [
-                  {"monster" : "Kobold"},
-                  {"monster" : "Goblin"}
-                  ],
+    "monsters" : ["Zombie"],
     "background" : "Background",
-    "title" : "Goblin Town 1",
+    "title" : "The Graveyard",
     "music" : "Starlight",
     "goals" : {
         "totalMoves" : 15,
@@ -20,5 +17,6 @@
                    {"key" : "encyclopedia_unlocked", "value" : 1},
                    {"key" : "unlock_level_1_2", "value" : 1}
                    ],
-    "scene" : "Scene_1_1"
+    "scene" : "Scene_1_1",
+    "characters" : ["Lilly"]
 }

@@ -1,7 +1,5 @@
 {
-    "monsters" : [
-                  {"monster" : "RedDragon"}
-                  ],
+    "monsters" : ["RedDragon"],
     "background" : "Game Sakura 2",
     "title" : "Mt. Doom",
     "music" : "Mining by Moonlight",

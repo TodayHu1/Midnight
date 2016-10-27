@@ -1,7 +1,5 @@
 {
-    "monsters" : [
-                  {"monster" : "Banshee"}
-                  ],
+    "monsters" : ["Banshee"],
     "background" : "Game Bamboo",
     "title" : "Fairy Circle 1",
     "music" : "Mining by Moonlight",

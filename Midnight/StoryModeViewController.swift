@@ -9,15 +9,17 @@
 import Foundation
 import UIKit
 
-class StoryModeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class StoryModeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     @IBOutlet weak var characterButton: UIButton!
     @IBOutlet weak var encyclopediaButton: UIButton!
     @IBOutlet weak var mapButton: UIButton!
-    @IBOutlet weak var chapterTable: UITableView!
+    @IBOutlet weak var levelCollection: UICollectionView!
+
+    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    private let itemsPerRow: CGFloat = 3
     
-    var level: Int = 1
-    var indexList : [QuestHierarchyNode] = [QuestHierarchyNode]()
-    var selectedRow : QuestHierarchyNode?
+    var selectedLevel: String = ""
+    var questHierarchy : Quest!
     var savedGame : GameSave!
     
     override var prefersStatusBarHidden : Bool {
@@ -27,10 +29,10 @@ class StoryModeViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chapterTable.dataSource = self
-        chapterTable.delegate = self
+        questHierarchy = Quest(savedGame: savedGame)
         
-        fillData()
+        levelCollection.dataSource = self
+        levelCollection.delegate = self
         
         if savedGame.getQuestData(key: "encyclopedia_unlocked") as? Bool == true {
             encyclopediaButton.isHidden = false
@@ -46,53 +48,66 @@ class StoryModeViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     
-    func numberOfSelectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return questHierarchy.nodes.count
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return indexList.count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return questHierarchy.nodes[section].nodes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
-        let item = indexList[indexPath.row]
-        cell.textLabel?.text = item.title
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        var returnView : UICollectionReusableView!
+        
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "levelSelectHeader", for: indexPath) as! LevelSelectHeader
+            headerView.chapterLabel.text = questHierarchy.nodes[indexPath.section].title
+            returnView = headerView
+        default:
+            assert(false, "Unexpected element kind")
+        }
+        
+        return returnView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "levelCell", for: indexPath) as! LevelSelectCell
+        
+//        cell.cellImage.image = characterImage
+        cell.cellLabel.text = questHierarchy.nodes[indexPath.section].nodes[indexPath.row].title
+        
         return cell
     }
-
-    func fillData() {
-        var tempList : [QuestHierarchyNode]!
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if level == 1 {
-            tempList = Quest().nodes
-        } else {
-            tempList = selectedRow!.nodes
-        }
+        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+        let availableWidth = view.frame.width - paddingSpace
+        let widthPerItem = availableWidth / itemsPerRow
         
-        for item in tempList {
-            if let value = savedGame.questData[item.unlockKey] {
-                if value as! Bool == true {
-                    item.unlocked = true
-                    indexList.append(item)
-                }
-            }
-        }
+        return CGSize(width: widthPerItem, height: widthPerItem)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return sectionInsets.left
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedLevel = questHierarchy.nodes[indexPath.section].nodes[indexPath.row].id
+        self.performSegue(withIdentifier: "showDialogue", sender: self)
+    }
+
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "presentChildIndex" {
-            let vc = segue.destination as! StoryModeViewController
-            let indexPath = self.chapterTable.indexPathForSelectedRow
-            vc.level += 1
-            vc.selectedRow = self.indexList[indexPath!.row]
-            vc.savedGame = self.savedGame
-        }
         if segue.identifier == "showDialogue" {
             let vc = segue.destination as! DialogueViewController
-            let indexPath = self.chapterTable.indexPathForSelectedRow
-            let data = self.indexList[indexPath!.row]
-            self.savedGame.selectedLevel = data.id
+            self.savedGame.selectedLevel = selectedLevel
             vc.savedGame = savedGame
         }
         if segue.identifier == "presentCharacter" {

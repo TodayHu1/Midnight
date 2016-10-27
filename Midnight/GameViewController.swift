@@ -15,6 +15,7 @@ class GameViewController: UIViewController {
     var scene: GameScene!
     var level: Level!
     var savedGame: GameSave!
+    var character: Character!
     var options: GameOptions = GameOptions()
     var gameOver: Bool = false
     lazy var backgroundMusic: AVAudioPlayer? = self.loadBackgroundMusic()
@@ -59,6 +60,7 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        character = savedGame.characters[savedGame.selectedCharacter]
         options.load()
         setupLevel(selectedLevel: savedGame.selectedLevel)
         configureAudio()
@@ -143,15 +145,12 @@ class GameViewController: UIViewController {
     }
     
     func beginGame() {
-        savedGame.character.currentHealth = savedGame.character.maxHealth
+        
+        character.currentHealth = character.maxHealth
+        
         updateLabels()
-//        monsterNameLabel.text = String(level.monster.name)
         monsterImagePanel.image = UIImage(named: level.monsters[wave].image)
-        if savedGame.character.gender == 1 {
-            characterImagePanel.image = UIImage(named: "character_male")
-        } else {
-            characterImagePanel.image = UIImage(named: "character_female")
-        }
+        characterImagePanel.image = UIImage(named: character.image)
         addMonsterData(unlockKey: level.monsters[wave].unlockKey)
         level.resetComboMultiplier()
         scene.animateBeginGame() {}
@@ -193,7 +192,7 @@ class GameViewController: UIViewController {
     }
     
     func handleMatches() {
-        let chains = level.removeMatches(savedGame.character.strength, wave: wave)
+        let chains = level.removeMatches(character.strength, wave: wave)
         if chains.count == 0 {
             beginNextTurn()
             return
@@ -231,11 +230,11 @@ class GameViewController: UIViewController {
             scoreLabel.text = String("0")
         }
         
-        if savedGame.character.invincible == true {
+        if character.invincible == true {
             movesLabel.text = String("∞")
-        } else if savedGame.character.currentHealth >= 0 && savedGame.character.invincible == false {
-            movesLabel.text = String(format: "%ld", savedGame.character.currentHealth)
-            if Double(savedGame.character.currentHealth) <= (Double(savedGame.character.maxHealth) * 0.2) {movesLabel.textColor = UIColor(red:1.00, green:0.00, blue:0.00, alpha:1.0)}
+        } else if character.currentHealth >= 0 && character.invincible == false {
+            movesLabel.text = String(format: "%ld", character.currentHealth)
+            if Double(character.currentHealth) <= (Double(character.maxHealth) * 0.2) {movesLabel.textColor = UIColor(red:1.00, green:0.00, blue:0.00, alpha:1.0)}
         } else {
             movesLabel.text = String("0")
         }
@@ -265,13 +264,13 @@ class GameViewController: UIViewController {
             monsterDamage *= savedGame.difficulty.rawValue
             
             // Subtract character defense - convert to INT for easy UX
-            let totalDamage = Int(round(monsterDamage)) - savedGame.character.defense
+            let totalDamage = (Int(round(monsterDamage)) - character.defense) > 0 ? (Int(round(monsterDamage)) - character.defense) : 0
             
             // Apply total damage to character and level totals
-            if savedGame.character.invincible == false {
+            if character.invincible == false {
 //                let centerPosition = characterImagePanel.center
 //                self.scene.animateCharacterDamage(criticalHit, monsterDamage: monsterDamage, centerPosition: centerPosition)
-                savedGame.character.currentHealth -= totalDamage
+                character.currentHealth -= totalDamage
             }
             
             level.result.totalDamageTaken += totalDamage
@@ -308,7 +307,7 @@ class GameViewController: UIViewController {
                 savedGame.save()
                 showGameOver()
             }
-        } else if savedGame.character.currentHealth <= 0 {
+        } else if character.currentHealth <= 0 {
             level.result.elapsedTime = scene.elapsedTime
             gameOver = true
             saveLevelResults()
@@ -358,9 +357,9 @@ class GameViewController: UIViewController {
                 awardedExperience += level.rewards.elapsedTime
             }
             
-            savedGame.character.experience += awardedExperience
-            if savedGame.character.experience >= savedGame.character.nextLevelGoal {
-                savedGame.character.levelUp()
+            character.experience += awardedExperience
+            if character.experience >= character.nextLevelGoal {
+                character.levelUp()
             }
         }
         
@@ -411,12 +410,12 @@ class GameViewController: UIViewController {
     }
     
     func setInvincibility(_ isInvincible: Bool) {
-        savedGame.character.invincible = isInvincible
+        character.invincible = isInvincible
         
         if isInvincible {
             movesLabel.text = String("∞")
         } else {
-            movesLabel.text = String(format: "%ld", savedGame.character.currentHealth)
+            movesLabel.text = String(format: "%ld", character.currentHealth)
         }
     }
     
@@ -426,7 +425,7 @@ class GameViewController: UIViewController {
             let vc = segue.destination as! DebugMenuViewcontroller
             vc.totalMoves = self.level.result.totalMoves
             vc.totalDamageTaken = self.level.result.totalDamageTaken
-            vc.invincible = savedGame.character.invincible
+            vc.invincible = character.invincible
         }
         if segue.identifier == "presentPauseMenu" {
             scene.timer.pause()

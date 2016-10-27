@@ -1,0 +1,11 @@
+{
+    "health" : 2000,
+    "name" : "Golem",
+    "image" : "golem",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 10,
+    "regeneration" : 0,
+    "description" : "A creature made of lead. And lead. And more lead.",
+    "unlockKey" : "encyclopedia_golem"
+}

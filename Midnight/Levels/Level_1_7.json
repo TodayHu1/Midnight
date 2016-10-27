@@ -1,7 +1,5 @@
 {
-    "monsters" : [
-                  {"monster" : "FrostGiant"}
-                  ],
+    "monsters" : ["FrostGiant"],
     "background" : "Game Bamboo 2",
     "title" : "Frozen Hills",
     "music" : "Mining by Moonlight",

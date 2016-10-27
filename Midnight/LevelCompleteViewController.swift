@@ -38,6 +38,7 @@ class LevelCompleteViewController: UIViewController {
     }
     
     var savedGame: GameSave!
+    var character: Character!
     var level: Level!
     var gameOver: Bool = false
     var awardedExperience: Int = 0
@@ -48,6 +49,7 @@ class LevelCompleteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        character = savedGame.characters[savedGame.selectedCharacter]
         
         if gameOver {
             gameOverPanel.image = UIImage(named: "Game Over")
@@ -79,10 +81,10 @@ class LevelCompleteViewController: UIViewController {
             if level.result.elapsedTime <= level.goals.elapsedTime {goal3.image = UIImage(named: "goal complete")}
             
             if awardedExperience > 0 {
-                let progressPercentage = Float(savedGame.character.experience - savedGame.character.previousLevelGoal) / Float(savedGame.character.nextLevelGoal - savedGame.character.previousLevelGoal)
+                let progressPercentage = Float(character.experience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
                 experienceProgress.setProgress(progressPercentage, animated: true)
-                currentLevel.text = String(format: "Level %ld", savedGame.character.level)
-                nextLevel.text = String(format: "Level %ld", savedGame.character.level + 1)
+                currentLevel.text = String(format: "Level %ld", character.level)
+                nextLevel.text = String(format: "Level %ld", character.level + 1)
             } else {
                 experienceProgress.isHidden = true
                 currentLevel.isHidden = true

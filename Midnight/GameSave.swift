@@ -22,10 +22,11 @@ class GameSave: NSObject, NSCoding {
     lazy var totalMoves: Int = self.getTotalMoves()
     lazy var totalDamageTaken: Int = self.getTotalDamageTaken()
     lazy var elapsedtime: TimeInterval = self.getElapsedTime()
-    var character: Character = Character()
+    var selectedCharacter: String = ""
     var levelResults: [String: LevelResult] = [String: LevelResult]()
     var difficulty: Difficulty = Difficulty.normal
     var questData: [String: AnyObject] = [String: AnyObject]()
+    var characters: [String: Character] = [String: Character]()
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("GameSave")
@@ -34,22 +35,24 @@ class GameSave: NSObject, NSCoding {
         super.init()
     }
 
-    init?(selectedLevel: String, character: Character, levelResults: [String: LevelResult], difficulty: Double, questData: [String: AnyObject]) {
+    init?(selectedLevel: String, selectedCharacter: String, levelResults: [String: LevelResult], difficulty: Double, questData: [String: AnyObject], characters: [String: Character]) {
         self.selectedLevel = selectedLevel
-        self.character = character
+        self.selectedCharacter = selectedCharacter
         self.levelResults = levelResults
         self.difficulty = Difficulty(rawValue: difficulty)!
         self.questData = questData
+        self.characters = characters
         
         super.init()
     }
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(selectedLevel, forKey: "selectedLevel")
-        aCoder.encode(character, forKey: "character")
+        aCoder.encode(selectedCharacter, forKey: "selectedCharacter")
         aCoder.encode(levelResults, forKey: "levelResults")
         aCoder.encode(difficulty.rawValue, forKey: "difficulty")
         aCoder.encode(questData, forKey: "questData")
+        aCoder.encode(characters, forKey: "characters")
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -57,7 +60,12 @@ class GameSave: NSObject, NSCoding {
         if aDecoder.containsValue(forKey: "selectedLevel") {
             selectedLevel = aDecoder.decodeObject(forKey: "selectedLevel") as! String
         }
-        let character = aDecoder.decodeObject(forKey: "character") as! Character
+        
+        var selectedCharacter = ""
+        if aDecoder.containsValue(forKey: "selectedCharacter") {
+            selectedCharacter = aDecoder.decodeObject(forKey: "selectedCharacter") as! String
+        }
+        
         var levelResults: [String: LevelResult] = [String: LevelResult]()
         if aDecoder.containsValue(forKey: "levelResults") {
             let object = aDecoder.decodeObject(forKey: "levelResults")
@@ -66,15 +74,23 @@ class GameSave: NSObject, NSCoding {
             }
         }
         let difficulty = aDecoder.decodeDouble(forKey: "difficulty")
+        
         var questData: [String: AnyObject] = [String: AnyObject]()
         if let q = aDecoder.decodeObject(forKey: "questData") as? [String: AnyObject] {
             questData = q
         }
         
-        self.init(selectedLevel: selectedLevel, character: character, levelResults: levelResults, difficulty: difficulty, questData: questData)
+        var characters: [String: Character] = [String: Character]()
+        if let c = aDecoder.decodeObject(forKey: "characters") as? [String: Character] {
+            characters = c
+        }
+        
+        self.init(selectedLevel: selectedLevel, selectedCharacter: selectedCharacter, levelResults: levelResults, difficulty: difficulty, questData: questData, characters: characters)
     }
     
     func save() {
+        //stash the current character in the characters dictionary
+        
         let savePath = GameSave.ArchiveURL.path +  String(saveSlot)
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(self, toFile: savePath)
         if !isSuccessfulSave {
@@ -86,10 +102,11 @@ class GameSave: NSObject, NSCoding {
         let savePath = GameSave.ArchiveURL.path +  String(saveSlot)
         if let savedGame = NSKeyedUnarchiver.unarchiveObject(withFile: savePath) as? GameSave {
             self.selectedLevel = savedGame.selectedLevel
-            self.character = savedGame.character
+            self.selectedCharacter = savedGame.selectedCharacter
             self.levelResults = savedGame.levelResults
             self.difficulty = savedGame.difficulty
             self.questData = savedGame.questData
+            self.characters = savedGame.characters
         }
     }
     
@@ -144,6 +161,18 @@ class GameSave: NSObject, NSCoding {
     
     func setQuestData(key: String, value: AnyObject) {
         questData[key] = value
+        if key.hasPrefix("character_") {
+            let characterName = key.substring(from: key.index(key.startIndex, offsetBy: 10))
+            if self.characters[characterName] == nil {
+                addCharacter(characterName: characterName)
+            }
+        }
+    }
+    
+    func addCharacter(characterName: String) {
+        let character = Character()
+        character.create(filename: "Character_\(characterName)")
+        self.characters[character.name] = character
     }
     
 }

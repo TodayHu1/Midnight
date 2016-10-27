@@ -1,0 +1,30 @@
+{
+    "background" : "",
+    "items" :
+    [
+     {"sceneType" : "line",
+     "actor" : "Olivia",
+     "image" : "Olivia",
+     "text" : "Agh! By the Crone, what went wrong this time?",
+     "questdata" : [
+                    {"key" : "character_Olivia", "value" : 1}
+                    ]},
+     {"sceneType" : "line",
+     "actor" : "Olivia",
+     "text" : "This isn't what I summoned at all...what kind of beast are you?"},
+     {"sceneType" : "line",
+     "actor" : "Demon",
+     "direction" : "right",
+     "image" : "demon",
+     "text" : "I will eat your eyeballs for breakfast!"},
+     {"sceneType" : "line",
+     "actor" : "Olivia",
+     "text" : "Oh, that kind."},
+     {"sceneType" : "line",
+     "actor" : "Demon",
+     "text" : "*SCREECH*"},
+     {"sceneType" : "line",
+     "actor" : "Olivia",
+     "text" : "Curses! Now I'm going to get demon blood all over my dress!"}
+     ]
+}

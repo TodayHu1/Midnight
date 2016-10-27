@@ -1,7 +1,5 @@
 {
-    "monsters" : [
-                  {"monster" : "Troll"}
-                  ],
+    "monsters" : ["Troll"],
     "background" : "Game Sakura 1",
     "title" : "Fairy Circle 2",
     "music" : "Mining by Moonlight",

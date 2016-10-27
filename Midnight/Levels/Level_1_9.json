@@ -1,7 +1,5 @@
 {
-    "monsters" : [
-                  {"monster" : "PurpleWorm"}
-                  ],
+    "monsters" : ["PurpleWorm"],
     "background" : "Game Sakura 2",
     "title" : "Dark Dungeon 2",
     "music" : "Mining by Moonlight",

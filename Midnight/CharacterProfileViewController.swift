@@ -20,6 +20,7 @@ class CharacterProfileViewController: UIViewController {
     
     var callingView: String = ""
     var savedGame: GameSave!
+    var character: Character!
     
     
     @IBAction func backButtonPressed(_ sender: AnyObject) {
@@ -39,15 +40,13 @@ class CharacterProfileViewController: UIViewController {
             self.callingView = tc.callingView
         }
         
-        characterNameLabel.text = savedGame.character.name
-        if savedGame.character.gender == 1 {
-            characterImagePanel.image = UIImage(named: "character_male")
-        } else {
-            characterImagePanel.image = UIImage(named: "character_female")
-        }
-        characterHealthLabel.text = String(format: "%ld", savedGame.character.maxHealth)
-        characterStrengthLabel.text = String(format: "%ld", Int(savedGame.character.strength * 100))
-        characterDefenseLabel.text = String(format: "%ld", savedGame.character.defense)
+        character = savedGame.characters[savedGame.selectedCharacter]!
+        
+        characterNameLabel.text = character.name
+        characterImagePanel.image = UIImage(named: character.image)
+        characterHealthLabel.text = String(format: "%ld", character.maxHealth)
+        characterStrengthLabel.text = String(format: "%ld", Int(character.strength * 100))
+        characterDefenseLabel.text = String(format: "%ld", character.defense)
 
     }
 }

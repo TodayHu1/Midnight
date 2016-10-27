@@ -1,7 +1,5 @@
 {
-    "monsters" : [
-                  {"monster" : "Beholder"}
-                  ],
+    "monsters" : ["Beholder"],
     "background" : "Game Bamboo 2",
     "title" : "Dark Dungeon 1",
     "music" : "Mining by Moonlight",

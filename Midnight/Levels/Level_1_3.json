@@ -1,9 +1,7 @@
 {
-    "monsters" : [
-                  {"monster" : "Bugbear"}
-                  ],
+    "monsters" : ["Golem"],
     "background" : "Game Bamboo",
-    "title" : "Goblin Town 3",
+    "title" : "The Laboratory",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -17,5 +15,7 @@
     },
     "questdata" : [
                    {"key" : "unlock_level_1_4", "value" : 1}
-                   ]
+                   ],
+    "scene" : "Scene_1_3",
+    "characters" : ["Anaya"]
 }

@@ -34,6 +34,7 @@ extension Dictionary {
         }
         else {
             print("Something went wrong")
+            return nil
         }
         return dictionaryOK as? [String: AnyObject]
     }

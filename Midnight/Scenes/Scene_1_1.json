@@ -3,13 +3,39 @@
     "items" :
     [
      {"sceneType" : "line",
-     "text" : "In the land of Midnight,"},
+     "text" : "In the Shadowlands,"},
      {"sceneType" : "line",
      "text" : "Five young women will change the course of history."},
      {"sceneType" : "line",
      "text" : "Their realm will never be the same again."},
      {"sceneType" : "line",
      "actor" : "Lilly",
-     "text" : "Well now, what do we have here?"}
+     "image" : "Lilly",
+     "text" : "Well now, what do we have here?",
+     "questdata" : [
+                    {"key" : "character_Lilly", "value" : 1}
+                    ]},
+     {"sceneType" : "line",
+     "actor" : "Zombie",
+     "image" : "zombie",
+     "direction" : "right",
+     "text" : "BRAAAAAAAAINS!"},
+     {"sceneType" : "line",
+     "actor" : "Lilly",
+     "text" : "Oh! A Zombie! How..."},
+     {"sceneType" : "line",
+     "actor" : "Zombie",
+     "direction" : "right",
+     "text" : "BRAAAAINS!"},
+     {"sceneType" : "line",
+     "actor" : "Lilly",
+     "text" : "...delightful! You're a fresh one, too."},
+     {"sceneType" : "line",
+     "actor" : "Zombie",
+     "direction" : "right",
+     "text" : "BRAINS?"},
+     {"sceneType" : "line",
+     "actor" : "Lilly",
+     "text" : "Now, be a dear, and stand still while I pound you into submission..."}
      ]
 }

@@ -1,9 +1,7 @@
 {
-    "monsters" : [
-                  {"monster" : "Goblin"}
-                  ],
+    "monsters" : ["Demon"],
     "background" : "Background",
-    "title" : "Goblin Town 2",
+    "title" : "The Temple",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -18,5 +16,7 @@
     "questdata" : [
                    {"key" : "map_unlocked", "value" : 1},
                    {"key" : "unlock_level_1_3", "value" : 1}
-                   ]
+                   ],
+    "scene" : "Scene_1_2",
+    "characters" : ["Olivia"]
 }

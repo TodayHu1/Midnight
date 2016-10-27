@@ -12,6 +12,7 @@ import AVFoundation
 
 class PreGameViewController: UIViewController {
     var savedGame: GameSave!
+    var character: Character!
     var level: Level!
     
     @IBOutlet weak var monsterImagePanel: UIImageView!
@@ -29,12 +30,9 @@ class PreGameViewController: UIViewController {
     
     override func viewDidLoad() {
         level = Level(filename: "Levels/\(savedGame.selectedLevel)")
+        character = savedGame.characters[savedGame.selectedCharacter]
         
-        if savedGame.character.gender == 1 {
-            characterImagePanel.image = UIImage(named: "character_male")
-        } else {
-            characterImagePanel.image = UIImage(named: "character_female")
-        }
+        characterImagePanel.image = UIImage(named: character.image)
         monsterImagePanel.image = UIImage(named: level.monsters[0].image)
         levelTitleLabel.text = level.title
         totalMovesLabel.text = String(format: "%ld", level.goals.totalMoves)

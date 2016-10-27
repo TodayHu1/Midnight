@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2333a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7JO-0A-GQH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7JO-0A-GQH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -909,10 +909,18 @@
             </objects>
             <point key="canvasLocation" x="816" y="-527"/>
         </scene>
+        <!--DialogueViewController-->
+        <scene sceneID="S7v-7d-4tq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StoryMode" referencedIdentifier="DialogueViewController" id="QSE-hJ-MBi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nih-rv-OaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="692" y="-1047"/>
+        </scene>
         <!--StoryModeViewController-->
         <scene sceneID="ohZ-o4-oqi">
             <objects>
-                <viewControllerPlaceholder storyboardName="StoryMode" referencedIdentifier="StoryModeViewController" id="hDS-9s-ifB" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="storyViewController" storyboardName="StoryMode" referencedIdentifier="StoryModeViewController" id="hDS-9s-ifB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tp4-GZ-Vgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1278" y="-1056"/>
@@ -1325,6 +1333,7 @@
                         <segue destination="7TW-O3-hrm" kind="show" identifier="showCharacterProfile" id="xTy-qB-u9n"/>
                         <segue destination="QhA-Qh-ubs" kind="presentation" identifier="presentConfirmation" id="RRW-7j-duk"/>
                         <segue destination="hDS-9s-ifB" kind="show" identifier="showSavedGame" id="WN1-Jj-fV3"/>
+                        <segue destination="QSE-hJ-MBi" kind="show" identifier="showDialogue" id="aAG-qg-epy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C82-JL-hMf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1565,8 +1574,8 @@
         <image name="vs" width="56" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="WN1-Jj-fV3"/>
         <segue reference="5UN-oS-wFB"/>
-        <segue reference="Yce-TW-P3p"/>
         <segue reference="snQ-CE-0Hb"/>
         <segue reference="uLz-91-fux"/>
         <segue reference="g8D-u4-9xV"/>

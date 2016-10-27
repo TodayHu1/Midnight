@@ -1,8 +1,0 @@
-{
-    "nextLevel" : 2000,
-    "rewards" : {
-        "defense" : 10,
-        "strength" : 0.2,
-        "health" : 100
-    }
-}

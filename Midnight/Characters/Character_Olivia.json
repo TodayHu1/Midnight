@@ -1,0 +1,9 @@
+{
+    "name" : "Olivia",
+    "image" : "Olivia",
+    "startingLevel" : 1,
+    "startingExperience" : 0,
+    "startingHealth" : 1500,
+    "startingStrength" : 0.8,
+    "startingDefense" : 0
+}

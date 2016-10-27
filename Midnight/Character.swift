@@ -15,6 +15,7 @@ class Character: NSObject, NSCoding {
     var strength: Double = 0.8
     var defense: Int = 0
     var name: String = ""
+    var image: String = ""
     var gender: Int = 1
     var level: Int = 1
     var experience: Int = 0
@@ -26,11 +27,12 @@ class Character: NSObject, NSCoding {
         super.init()
     }
     
-    init?(maxHealth: Int, currentHealth: Int, missChance: Int, name: String, gender: Int, strength: Double, defense: Int, level: Int, experience: Int, previousLevelGoal: Int, nextLevelGoal: Int) {
+    init?(maxHealth: Int, currentHealth: Int, missChance: Int, name: String, image: String, gender: Int, strength: Double, defense: Int, level: Int, experience: Int, previousLevelGoal: Int, nextLevelGoal: Int) {
         self.maxHealth = maxHealth
         self.currentHealth = currentHealth
         self.missChance = missChance
         self.name = name
+        self.image = image
         self.gender = gender
         self.strength = strength
         self.defense = defense
@@ -47,6 +49,7 @@ class Character: NSObject, NSCoding {
         aCoder.encode(currentHealth, forKey: "currentHealth")
         aCoder.encode(missChance, forKey: "missChance")
         aCoder.encode(name, forKey: "name")
+        aCoder.encode(image, forKey: "image")
         aCoder.encode(gender, forKey: "gender")
         aCoder.encode(strength, forKey: "strength")
         aCoder.encode(defense, forKey: "defense")
@@ -61,6 +64,10 @@ class Character: NSObject, NSCoding {
         let currentHealth = aDecoder.decodeInteger(forKey: "currentHealth")
         let missChance = aDecoder.decodeInteger(forKey: "missChance")
         let name = aDecoder.decodeObject(forKey: "name") as! String
+        var image = ""
+        if let i = aDecoder.decodeObject(forKey: "image") as? String {
+            image = i
+        }
         let gender = aDecoder.decodeInteger(forKey: "gender")
         let strength = aDecoder.decodeDouble(forKey: "strength")
         let defense = aDecoder.decodeInteger(forKey: "defense")
@@ -69,21 +76,41 @@ class Character: NSObject, NSCoding {
         let previousLevelGoal = aDecoder.decodeInteger(forKey: "previousLevelGoal")
         let nextLevelGoal = aDecoder.decodeInteger(forKey: "nextLevelGoal")
         
-        self.init(maxHealth: maxHealth, currentHealth: currentHealth, missChance: missChance, name: name, gender: gender, strength: strength, defense: defense, level: level, experience: experience, previousLevelGoal: previousLevelGoal, nextLevelGoal: nextLevelGoal)
+        self.init(maxHealth: maxHealth, currentHealth: currentHealth, missChance: missChance, name: name, image: image, gender: gender, strength: strength, defense: defense, level: level, experience: experience, previousLevelGoal: previousLevelGoal, nextLevelGoal: nextLevelGoal)
     }
     
     func levelUp() {
         self.level += 1
         self.previousLevelGoal = self.nextLevelGoal
         
-        let filename = "CharacterLevels/Character_Level_\(self.level)"
+        let filename = "Character_Progression"
         guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {return}
         
-        self.nextLevelGoal = dictionary["nextLevel"] as! Int
-        let rewards = dictionary["rewards"] as! [String: AnyObject]
+        let levels = dictionary["levels"] as! [[String: AnyObject]]
+        
+        self.nextLevelGoal = levels[level-1]["nextLevel"] as! Int
+        let rewards = levels[level-1]["rewards"] as! [String: AnyObject]
         self.defense += rewards["defense"] as! Int
         self.strength += rewards["strength"] as! Double
         self.maxHealth += rewards["health"] as! Int
+    }
+    
+    func create(filename: String) {
+        guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {return}
+
+        self.name = dictionary["name"] as! String
+        self.image = dictionary["image"] as! String
+        self.experience = dictionary["startingExperience"] as! Int
+        self.maxHealth = dictionary["startingHealth"] as! Int
+        self.defense = dictionary["startingDefense"] as! Int
+        self.strength = dictionary["startingStrength"] as! Double
+
+        let targetLevel = dictionary["startingLevel"] as! Int
+        
+        while self.level < targetLevel {
+            levelUp()
+        }
+        
     }
 
 }

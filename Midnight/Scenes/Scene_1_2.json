@@ -11,7 +11,11 @@
                     ]},
      {"sceneType" : "line",
      "actor" : "Olivia",
-     "text" : "This isn't what I summoned at all...what kind of beast are you?"},
+     "text" : "This isn't what I summoned at all...what kind of beast are you?",
+     "questdata" : [
+                    {"key" : "encyclopedia_entomology", "value" : 1},
+                    {"key" : "encyclopedia_magic", "value" : 1}
+                    ]},
      {"sceneType" : "line",
      "actor" : "Demon",
      "direction" : "right",
@@ -22,6 +26,7 @@
      "text" : "Oh, that kind."},
      {"sceneType" : "line",
      "actor" : "Demon",
+     "direction" : "right",
      "text" : "*SCREECH*"},
      {"sceneType" : "line",
      "actor" : "Olivia",

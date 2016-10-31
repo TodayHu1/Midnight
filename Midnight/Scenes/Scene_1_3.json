@@ -11,7 +11,10 @@
                     ]},
      {"sceneType" : "line",
      "actor" : "Anaya",
-     "text" : "I have discovered how to turn lead into..."},
+     "text" : "I have discovered how to turn lead into...",
+     "questdata" : [
+                    {"key" : "encyclopedia_alchemy", "value" : 1}
+                    ]},
      {"sceneType" : "line",
      "actor" : "Anaya",
      "text" : "lead."},
@@ -20,7 +23,10 @@
      "text" : "Shit."},
      {"sceneType" : "line",
      "actor" : "Anaya",
-     "text" : "Wait, what's that?"},
+     "text" : "Wait, there's someting moving at the bottom of the vat."},
+     {"sceneType" : "line",
+     "actor" : "Anaya",
+     "text" : "What the fuck is that?"},
      {"sceneType" : "line",
      "actor" : "Golem",
      "image" : "golem",

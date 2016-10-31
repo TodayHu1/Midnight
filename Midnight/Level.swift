@@ -34,7 +34,7 @@ class Level {
     var result: LevelResult = LevelResult()
     var rewards: LevelRewards = LevelRewards()
     var questData: [String: AnyObject] = [String: AnyObject]()
-    var scene: String?
+    var scene: [String]?
     var availableCharacters: [String]?
     
     init(filename: String) {
@@ -83,7 +83,7 @@ class Level {
             }
         }
         
-        scene = dictionary["scene"] as? String
+        scene = dictionary["scene"] as? [String]
         
         if let availableCharacterArray : [String] = dictionary["characters"] as? [String] {
             availableCharacters = availableCharacterArray

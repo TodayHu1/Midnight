@@ -12,7 +12,6 @@ import UIKit
 class StoryModeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     @IBOutlet weak var characterButton: UIButton!
     @IBOutlet weak var encyclopediaButton: UIButton!
-    @IBOutlet weak var mapButton: UIButton!
     @IBOutlet weak var levelCollection: UICollectionView!
 
     private let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
@@ -38,12 +37,6 @@ class StoryModeViewController: UIViewController, UICollectionViewDataSource, UIC
             encyclopediaButton.isHidden = false
         } else {
             encyclopediaButton.isHidden = true
-        }
-        
-        if savedGame.getQuestData(key: "map_unlocked") as? Bool == true {
-            mapButton.isHidden = false
-        } else {
-            mapButton.isHidden = true
         }
     }
     
@@ -75,7 +68,6 @@ class StoryModeViewController: UIViewController, UICollectionViewDataSource, UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "levelCell", for: indexPath) as! LevelSelectCell
         
-//        cell.cellImage.image = characterImage
         cell.cellLabel.text = questHierarchy.nodes[indexPath.section].nodes[indexPath.row].title
         
         return cell
@@ -111,12 +103,16 @@ class StoryModeViewController: UIViewController, UICollectionViewDataSource, UIC
             vc.savedGame = savedGame
         }
         if segue.identifier == "presentCharacter" {
-            let vc = segue.destination as! CharacterManagementTabController
+            let vc = segue.destination as! CharacterProfileViewController
             vc.savedGame = savedGame
             vc.callingView = "storyMode"
         }
         if segue.identifier == "presentEncyclopedia" {
             let vc = segue.destination as! IndexViewController
+            vc.savedGame = savedGame
+        }
+        if segue.identifier == "presentStatistics" {
+            let vc = segue.destination as! StatisticsViewController
             vc.savedGame = savedGame
         }
     }

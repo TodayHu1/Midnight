@@ -10,14 +10,13 @@ import Foundation
 import UIKit
 
 class DetailViewController: UIViewController {
-    var selectedRow: IndexPath!
     var data: EncyclopediaEntry!
 
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var backButton: UIButton!
 
     @IBAction func backButtonPressed(_ sender: AnyObject) {
-        dismiss(animated: true, completion: {})
+        dismiss(animated: false, completion: {})
     }
     
     override var prefersStatusBarHidden : Bool {

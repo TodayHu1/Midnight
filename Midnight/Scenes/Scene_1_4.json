@@ -1,0 +1,48 @@
+{
+    "background" : "",
+    "items" :
+    [
+     {"sceneType" : "line",
+     "actor" : "Camila",
+     "image" : "Camila",
+     "text" : "What a nice night for watching the stars.",
+     "questdata" : [
+                    {"key" : "character_Camila", "value" : 1},
+                    {"key" : "encyclopedia_astrology", "value" : 1}
+                    ]},
+     {"sceneType" : "line",
+     "actor" : "Camila",
+     "image" : "Camila",
+     "text" : "The great thing about the graveyard at midnight is that I have it all to myself!"},
+     {"sceneType" : "line",
+     "text" : "*Crash*, *Screech*, *Aaaaaaaaaaaaaaarrrrgh!*"
+     },
+     {"sceneType" : "line",
+     "actor" : "Camila",
+     "image" : "Camila",
+     "text" : "Or not..."},
+     {"sceneType" : "line",
+     "actor" : "Camila",
+     "image" : "Camila",
+     "text" : "Hey, do you need help over there?"},
+     {"sceneType" : "line",
+     "actor" : "Lilly",
+     "image" : "Lilly",
+     "direction" : "right",
+     "text" : "Dear me, yes! I seem to have gotten myself into a bit of a pickle..."},
+     {"sceneType" : "line",
+     "actor" : "Zombie",
+     "image" : "zombie",
+     "direction" : "right",
+     "text" : "Braaaaains!"},
+     {"sceneType" : "line",
+     "actor" : "Camila",
+     "image" : "Camila",
+     "text" : "Woah! Zombies! Here, I'll take this guy, you get the other one."}
+     ]
+}
+
+     
+    
+
+    

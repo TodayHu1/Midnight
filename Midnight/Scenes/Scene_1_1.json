@@ -3,7 +3,11 @@
     "items" :
     [
      {"sceneType" : "line",
-     "text" : "In the Shadowlands,"},
+     "text" : "In the Land of Midnight,",
+     "questdata" : [
+                    {"key" : "encyclopedia_midnight", "value" : 1},
+                    {"key" : "encyclopedia_places", "value" : 1}
+                    ]},
      {"sceneType" : "line",
      "text" : "Five young women will change the course of history."},
      {"sceneType" : "line",

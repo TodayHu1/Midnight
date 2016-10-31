@@ -17,6 +17,6 @@
                    {"key" : "map_unlocked", "value" : 1},
                    {"key" : "unlock_level_1_3", "value" : 1}
                    ],
-    "scene" : "Scene_1_2",
+    "scene" : ["Scene_1_2"],
     "characters" : ["Olivia"]
 }

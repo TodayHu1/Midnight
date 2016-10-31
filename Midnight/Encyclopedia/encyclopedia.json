@@ -1,83 +1,146 @@
 {
-    "people" : [
-                {
-                "name" : "Spider Queen",
-                "detailFile" : "spiderqueen",
-                "unlockKey" : "encyclopedia_spiderqueen"
-                },
-                {
-                "name" : "Raven Queen",
-                "detailFile" : "ravenqueen",
-                "unlockKey" : "encyclopedia_ravenqueen"
-                },
-                {
-                "name" : "Goblin Queen",
-                "detailFile" : "goblinqueen",
-                "unlockKey" : "encyclopedia_goblinqueen"
-                },
-                {
-                "name" : "Mayor Addams",
-                "detailFile" : "mayoraddams",
-                "unlockKey" : "encyclopedia_mayoraddams"
-                }
-                ],
-    "places" : [
-                {
-                "name" : "Midnight",
-                "detailFile" : "midnight",
-                "unlockKey" : "encyclopedia_midnight"
-                },
-                {
-                "name" : "Nighthold",
-                "detailFile" : "nighthold",
-                "unlockKey" : "encyclopedia_nighthold"
-                },
-                {
-                "name" : "Wintervale",
-                "detailFile" : "wintervale",
-                "unlockKey" : "encyclopedia_wintervale"
-                },
-                {
-                "name" : "Blackfield",
-                "detailFile" : "blackfield",
-                "unlockKey" : "encyclopedia_blackfield"
-                },
-                {
-                "name" : "Darkwell",
-                "detailFile" : "darkwell",
-                "unlockKey" : "encyclopedia_darkwell"
-                },
-                {
-                "name" : "Starhaven",
-                "detailFile" : "starhaven",
-                "unlockKey" : "encyclopedia_starhaven"
-                }
-                ],
-    "monsters" : [
-                  {
-                  "name" : "Kobold",
-                  "detailFile" : "kobold",
-                  "unlockKey" : "encyclopedia_kobold"
-                  },
-                  {
-                  "name" : "Goblin",
-                  "detailFile" : "goblin",
-                  "unlockKey" : "encyclopedia_goblin"
-                  },
-                  {
-                  "name" : "Bugbear",
-                  "detailFile" : "bugbear",
-                  "unlockKey" : "encyclopedia_bugbear"
-                  },
-                  {
-                  "name" : "Banshee",
-                  "detailFile" : "banshee",
-                  "unlockKey" : "encyclopedia_banshee"
-                  },
-                  {
-                  "name" : "Troll",
-                  "detailFile" : "troll",
-                  "unlockKey" : "encyclopedia_troll"
-                  }
+    "sections" : [
+                  {"section" : "People",
+                  "unlockKey" : "encyclopedia_people",
+                  "entries" : [
+                               {
+                               "name" : "Spider Queen",
+                               "detailFile" : "spiderqueen",
+                               "unlockKey" : "encyclopedia_spiderqueen"
+                               },
+                               {
+                               "name" : "Raven Queen",
+                               "detailFile" : "ravenqueen",
+                               "unlockKey" : "encyclopedia_ravenqueen"
+                               },
+                               {
+                               "name" : "Mayor Addams",
+                               "detailFile" : "mayoraddams",
+                               "unlockKey" : "encyclopedia_mayoraddams"
+                               },
+                               {
+                               "name" : "Queen of Midnight",
+                               "detailFile" : "queenofmidnight",
+                               "unlockKey" : "encyclopedia_queenofmidnight"
+                               },
+                               {
+                               "name" : "Bramble King",
+                               "detailFile" : "brambleking",
+                               "unlockKey" : "encyclopedia_brambleking"
+                               }
+                               ]},
+                  {"section" : "Places",
+                  "unlockKey" : "encyclopedia_places",
+                  "entries" : [
+                               {
+                               "name" : "Land of Midnight",
+                               "detailFile" : "midnight",
+                               "unlockKey" : "encyclopedia_midnight"
+                               },
+                               {
+                               "name" : "Nighthold",
+                               "detailFile" : "nighthold",
+                               "unlockKey" : "encyclopedia_nighthold"
+                               },
+                               {
+                               "name" : "Wintervale",
+                               "detailFile" : "wintervale",
+                               "unlockKey" : "encyclopedia_wintervale"
+                               },
+                               {
+                               "name" : "Blackfield",
+                               "detailFile" : "blackfield",
+                               "unlockKey" : "encyclopedia_blackfield"
+                               },
+                               {
+                               "name" : "Darkwell",
+                               "detailFile" : "darkwell",
+                               "unlockKey" : "encyclopedia_darkwell"
+                               },
+                               {
+                               "name" : "Starhaven",
+                               "detailFile" : "starhaven",
+                               "unlockKey" : "encyclopedia_starhaven"
+                               },
+                               {
+                               "name" : "The Wilds",
+                               "detailFile" : "wilds",
+                               "unlockKey" : "encyclopedia_wilds"
+                               }
+                               ]},
+                  {"section" : "Monsters",
+                  "unlockKey" : "encyclopedia_monsters",
+                  "entries" : [
+                               {
+                               "name" : "Zombie",
+                               "detailFile" : "Zombie",
+                               "unlockKey" : "encyclopedia_zombie"
+                               },
+                               {
+                               "name" : "Zombie Dog",
+                               "detailFile" : "ZombieDog",
+                               "unlockKey" : "encyclopedia_zombiedog"
+                               },
+                               {
+                               "name" : "Enhanced Zombie",
+                               "detailFile" : "EnhancedZombie",
+                               "unlockKey" : "encyclopedia_enhancedzombie"
+                               },
+                               {
+                               "name" : "Golem",
+                               "detailFile" : "Golem",
+                               "unlockKey" : "encyclopedia_golem"
+                               },
+                               {
+                               "name" : "Goblin",
+                               "detailFile" : "Goblin",
+                               "unlockKey" : "encyclopedia_goblin"
+                               },
+                               {
+                               "name" : "Demon",
+                               "detailFile" : "Demon",
+                               "unlockKey" : "encyclopedia_demon"
+                               },
+                               {
+                               "name" : "Banshee",
+                               "detailFile" : "Banshee",
+                               "unlockKey" : "encyclopedia_banshee"
+                               },
+                               {
+                               "name" : "Troll",
+                               "detailFile" : "Troll",
+                               "unlockKey" : "encyclopedia_troll"
+                               }
+                               ]},
+                  {"section" : "Magic",
+                  "unlockKey" : "encyclopedia_magic",
+                  "entries" : [
+                               {
+                               "name" : "Necromancy",
+                               "detailFile" : "necromancy",
+                               "unlockKey" : "encyclopedia_necromancy"
+                               },
+                               {
+                               "name" : "Oration",
+                               "detailFile" : "oration",
+                               "unlockKey" : "encyclopedia_oration"
+                               },
+                               {
+                               "name" : "Entomology",
+                               "detailFile" : "entomology",
+                               "unlockKey" : "encyclopedia_entomology"
+                               },
+                               {
+                               "name" : "Astrology",
+                               "detailFile" : "astrology",
+                               "unlockKey" : "encyclopedia_astrology"
+                               },
+                               {
+                               "name" : "Alchemy",
+                               "detailFile" : "alchemy",
+                               "unlockKey" : "encyclopedia_alchemy"
+                               }
+                               ]}
                   ]
 }
+

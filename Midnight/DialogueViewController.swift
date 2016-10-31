@@ -12,7 +12,8 @@ import UIKit
 class DialogueViewController : UIViewController {
     var savedGame : GameSave!
     var level : Level!
-    var scene : Scene?
+    var scene : [Scene]?
+    var currentScene : Int = 0
     var lineNo : Int = 0
     
 
@@ -38,8 +39,11 @@ class DialogueViewController : UIViewController {
         
         level = Level(filename: levelFilename)
         
-        if let filename = level.scene {
-            scene = Scene(filename: filename)
+        if let sceneArray : [String] = level.scene {
+            scene = [Scene]()
+            for item in sceneArray {
+                scene!.append(Scene(filename: item))
+            }
         }
     }
     
@@ -54,9 +58,9 @@ class DialogueViewController : UIViewController {
     }
     
     func showScene(index: Int) {
-        if lineNo < scene!.lines.count {
-            if scene?.lines[index] is DialogueLine {
-                let line = scene?.lines[index] as! DialogueLine
+        if lineNo < scene![currentScene].lines.count {
+            if scene![currentScene].lines[index] is DialogueLine {
+                let line = scene![currentScene].lines[index] as! DialogueLine
                 if line.actor != "" {
                     actorNameLabel.text = line.actor
                     actorNameLabel.isHidden = false
@@ -92,8 +96,21 @@ class DialogueViewController : UIViewController {
                 }
             }
         } else {
-            self.performSegue(withIdentifier: "showCharacterSelect", sender: self)
+            if currentScene + 1 < scene!.count {
+                resetScene()
+                currentScene += 1
+                showScene(index: lineNo)
+            } else {
+                self.performSegue(withIdentifier: "showCharacterSelect", sender: self)
+            }
         }
+    }
+    
+    func resetScene() {
+        lineNo = 0
+        actorImageRight.isHidden = true
+        actorImageLeft.isHidden = true
+        dialogueTextView.text = ""
     }
     
     func addQuestData(line: DialogueLine) {

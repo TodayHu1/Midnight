@@ -7,5 +7,6 @@
     "critChance" : 10,
     "regeneration" : 0,
     "description" : "A creature made of lead. And lead. And more lead.",
+    "specialAbilities" : "High Crit: Golems have a greater than normal chance to land a critical hit.",
     "unlockKey" : "encyclopedia_golem"
 }

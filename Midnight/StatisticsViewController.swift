@@ -16,6 +16,8 @@ class StatisticsViewController : UIViewController {
     @IBOutlet weak var elapsedTimeLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
     
+    var savedGame: GameSave!
+    
     @IBAction func backButtonPressed(_ sender: AnyObject) {
         dismiss(animated: true, completion: {})
     }
@@ -27,11 +29,9 @@ class StatisticsViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tc = self.tabBarController as! CharacterManagementTabController
-        
-        totalMovesLabel.text = String(format: "%ld", tc.savedGame.totalMoves)
-        totalDamageTakenLabel.text = String(format: "%ld", tc.savedGame.totalDamageTaken)
-        elapsedTimeLabel.text = DateComponentsFormatter().string(from: tc.savedGame.elapsedtime)
+        totalMovesLabel.text = String(format: "%ld", savedGame.totalMoves)
+        totalDamageTakenLabel.text = String(format: "%ld", savedGame.totalDamageTaken)
+        elapsedTimeLabel.text = DateComponentsFormatter().string(from: savedGame.elapsedtime)
         
     }
     

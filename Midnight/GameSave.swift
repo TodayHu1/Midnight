@@ -167,6 +167,7 @@ class GameSave: NSObject, NSCoding {
                 addCharacter(characterName: characterName)
             }
         }
+        self.save()
     }
     
     func addCharacter(characterName: String) {

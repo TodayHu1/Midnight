@@ -1,7 +1,7 @@
 {
-    "monsters" : ["Banshee"],
+    "monsters" : ["Zombie"],
     "background" : "Game Bamboo",
-    "title" : "Fairy Circle 1",
+    "title" : "The Graveyard",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -15,6 +15,8 @@
     },
     "questdata" : [
                    {"key" : "unlock_level_1_5", "value" : 1}
-                   ]
+                   ],
+    "scene" : ["Scene_1_4"],
+    "characters" : ["Camila"]
 
 }

@@ -1,7 +1,7 @@
 {
-    "monsters" : ["Troll"],
+    "monsters" : ["Zombie", "ZombieDog", "Zombie"],
     "background" : "Game Sakura 1",
-    "title" : "Fairy Circle 2",
+    "title" : "The Laboratory",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -15,5 +15,7 @@
     },
     "questdata" : [
                    {"key" : "unlock_level_1_6", "value" : 1}
-                   ]
+                   ],
+    "scene" : ["Scene_1_5"],
+    "characters" : ["Anaya","Lilly","Camila"]
 }

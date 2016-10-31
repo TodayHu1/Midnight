@@ -24,6 +24,7 @@ class MonsterStatsViewController: UIViewController {
     @IBOutlet weak var monsterResistanceLabel: UILabel!
     @IBOutlet weak var monsterDescription: UILabel!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var specialAbilityLabel: UILabel!
     
     var callingView: String = ""
     var monster: Monster!
@@ -64,5 +65,7 @@ class MonsterStatsViewController: UIViewController {
         } else {
             monsterResistance.isHidden = true
         }
+
+        specialAbilityLabel.text = monster.specialAbilities
     }
 }

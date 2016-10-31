@@ -18,7 +18,6 @@
 		4749BD181D902698007BCD74 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCF31D902698007BCD74 /* Character.swift */; };
 		4749BD191D902698007BCD74 /* CharacterCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCF41D902698007BCD74 /* CharacterCreationViewController.swift */; };
 		4749BD1B1D902698007BCD74 /* CharacterMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4749BCF61D902698007BCD74 /* CharacterMode.storyboard */; };
-		4749BD1C1D902698007BCD74 /* CharacterManagementTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCF71D902698007BCD74 /* CharacterManagementTabController.swift */; };
 		4749BD1D1D902698007BCD74 /* CharacterProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCF81D902698007BCD74 /* CharacterProfileViewController.swift */; };
 		4749BD1E1D902698007BCD74 /* ConfirmDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCF91D902698007BCD74 /* ConfirmDeleteViewController.swift */; };
 		4749BD1F1D902698007BCD74 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCFA1D902698007BCD74 /* CreditsViewController.swift */; };
@@ -88,6 +87,11 @@
 		47F96A061D938803007ADC9A /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96A051D938803007ADC9A /* IndexViewController.swift */; };
 		47F96A081D940D0F007ADC9A /* Encyclopedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96A071D940D0E007ADC9A /* Encyclopedia.swift */; };
 		47F96A0A1D942EA3007ADC9A /* IndexTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96A091D942EA3007ADC9A /* IndexTableCell.swift */; };
+		47FF61061DC5186700BB50BE /* Scene_1_4.json in Resources */ = {isa = PBXBuildFile; fileRef = 47FF61051DC5186700BB50BE /* Scene_1_4.json */; };
+		47FF61081DC578CD00BB50BE /* Scene_1_5.json in Resources */ = {isa = PBXBuildFile; fileRef = 47FF61071DC578CD00BB50BE /* Scene_1_5.json */; };
+		47FF610A1DC580C000BB50BE /* Scene_1_6A.json in Resources */ = {isa = PBXBuildFile; fileRef = 47FF61091DC580C000BB50BE /* Scene_1_6A.json */; };
+		47FF610C1DC589D100BB50BE /* Scene_1_6B.json in Resources */ = {isa = PBXBuildFile; fileRef = 47FF610B1DC589D100BB50BE /* Scene_1_6B.json */; };
+		47FF610E1DC79D4D00BB50BE /* Monsters.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47FF610D1DC79D4D00BB50BE /* Monsters.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +123,6 @@
 		4749BCF31D902698007BCD74 /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		4749BCF41D902698007BCD74 /* CharacterCreationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCreationViewController.swift; sourceTree = "<group>"; };
 		4749BCF61D902698007BCD74 /* CharacterMode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CharacterMode.storyboard; sourceTree = "<group>"; };
-		4749BCF71D902698007BCD74 /* CharacterManagementTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterManagementTabController.swift; sourceTree = "<group>"; };
 		4749BCF81D902698007BCD74 /* CharacterProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterProfileViewController.swift; sourceTree = "<group>"; };
 		4749BCF91D902698007BCD74 /* ConfirmDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteViewController.swift; sourceTree = "<group>"; };
 		4749BCFA1D902698007BCD74 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +198,11 @@
 		47F96A051D938803007ADC9A /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		47F96A071D940D0E007ADC9A /* Encyclopedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encyclopedia.swift; sourceTree = "<group>"; };
 		47F96A091D942EA3007ADC9A /* IndexTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTableCell.swift; sourceTree = "<group>"; };
+		47FF61051DC5186700BB50BE /* Scene_1_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_4.json; sourceTree = "<group>"; };
+		47FF61071DC578CD00BB50BE /* Scene_1_5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_5.json; sourceTree = "<group>"; };
+		47FF61091DC580C000BB50BE /* Scene_1_6A.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_6A.json; sourceTree = "<group>"; };
+		47FF610B1DC589D100BB50BE /* Scene_1_6B.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_6B.json; sourceTree = "<group>"; };
+		47FF610D1DC79D4D00BB50BE /* Monsters.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Monsters.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,7 +249,6 @@
 				4749BCF61D902698007BCD74 /* CharacterMode.storyboard */,
 				4749BCF31D902698007BCD74 /* Character.swift */,
 				4749BCF41D902698007BCD74 /* CharacterCreationViewController.swift */,
-				4749BCF71D902698007BCD74 /* CharacterManagementTabController.swift */,
 				4749BCF81D902698007BCD74 /* CharacterProfileViewController.swift */,
 				47DEF3371D9AEC800076BB16 /* StatisticsViewController.swift */,
 			);
@@ -338,6 +345,7 @@
 				4749BCF11D902698007BCD74 /* Array2D.swift */,
 				4749BCFC1D902698007BCD74 /* Extensions.swift */,
 				476E6EEB1D902483008A2022 /* Assets.xcassets */,
+				47FF610D1DC79D4D00BB50BE /* Monsters.xcassets */,
 				475730BD1D92EDF5002CE409 /* Character Mode */,
 				47D405D31D946D820071C78C /* Encyclopedia */,
 				4749BD411D9028FE007BCD74 /* Fonts */,
@@ -393,6 +401,10 @@
 				47C3D71D1DB6A9B8009476CE /* Scene_1_1.json */,
 				4733BA7F1DC052880082A5E7 /* Scene_1_2.json */,
 				4733BA811DC26A7D0082A5E7 /* Scene_1_3.json */,
+				47FF61051DC5186700BB50BE /* Scene_1_4.json */,
+				47FF61071DC578CD00BB50BE /* Scene_1_5.json */,
+				47FF61091DC580C000BB50BE /* Scene_1_6A.json */,
+				47FF610B1DC589D100BB50BE /* Scene_1_6B.json */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -475,7 +487,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "David Garrett";
 				TargetAttributes = {
 					476E6EDA1D902483008A2022 = {
@@ -534,20 +546,25 @@
 				47D405DD1D956C0C0071C78C /* goblin.txt in Resources */,
 				4749BD431D902915007BCD74 /* DigitalStripBB_Ital.otf in Resources */,
 				47839ED01DB7F37400615C5A /* Character_Lilly.json in Resources */,
+				47FF610E1DC79D4D00BB50BE /* Monsters.xcassets in Resources */,
 				4749BD441D902919007BCD74 /* DigitalStripBB_Reg.otf in Resources */,
 				471012AD1DB92FCB00272341 /* Character_Yuna.json in Resources */,
 				476E6EEC1D902483008A2022 /* Assets.xcassets in Resources */,
 				4749BD261D902698007BCD74 /* Grid.atlas in Resources */,
 				475730C11D92EED4002CE409 /* MonsterMode.storyboard in Resources */,
+				47FF61081DC578CD00BB50BE /* Scene_1_5.json in Resources */,
 				47D405DF1D956C460071C78C /* bugbear.txt in Resources */,
+				47FF610C1DC589D100BB50BE /* Scene_1_6B.json in Resources */,
 				478B221C1D922FFD0055C38A /* SilverBulletBB.otf in Resources */,
 				4733BA821DC26A7D0082A5E7 /* Scene_1_3.json in Resources */,
 				47D405D71D946D820071C78C /* encyclopedia.json in Resources */,
 				4733BA801DC052880082A5E7 /* Scene_1_2.json in Resources */,
 				4749BD3D1D9026A1007BCD74 /* Main.storyboard in Resources */,
 				47D405E11D956C650071C78C /* banshee.txt in Resources */,
+				47FF61061DC5186700BB50BE /* Scene_1_4.json in Resources */,
 				471012AB1DB92EA400272341 /* Character_Camila.json in Resources */,
 				47C3D71E1DB6A9B8009476CE /* Scene_1_1.json in Resources */,
+				47FF610A1DC580C000BB50BE /* Scene_1_6A.json in Resources */,
 				471012A91DB92E3E00272341 /* Character_Anaya.json in Resources */,
 				47D405D81D946D820071C78C /* midnight.txt in Resources */,
 				4749BD331D902698007BCD74 /* Sounds in Resources */,
@@ -588,7 +605,6 @@
 				47F96A081D940D0F007ADC9A /* Encyclopedia.swift in Sources */,
 				4749BD2C1D902698007BCD74 /* Monster.swift in Sources */,
 				4791B4781DA0247000661923 /* Quest.swift in Sources */,
-				4749BD1C1D902698007BCD74 /* CharacterManagementTabController.swift in Sources */,
 				4749BD171D902698007BCD74 /* Chain.swift in Sources */,
 				4749BD381D902698007BCD74 /* Tile.swift in Sources */,
 				4749BD311D902698007BCD74 /* ProgressViewController.swift in Sources */,
@@ -701,6 +717,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -751,6 +768,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

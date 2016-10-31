@@ -13,13 +13,13 @@ class IndexViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var indexTable: UITableView!
-    var indexList = [EncyclopediaEntry]()
-    var level: Int = 1
-    var selectedRow: EncyclopediaEntry?
+    var encyclopedia: Encyclopedia!
+    var entryList: [EncyclopediaEntry]!
+    var selectedRow: Int?
     var savedGame: GameSave!
     
     @IBAction func backButtonPressed(_ sender: AnyObject) {
-        dismiss(animated: true, completion: {})
+        dismiss(animated: false, completion: {})
     }
     
     override var prefersStatusBarHidden : Bool {
@@ -30,44 +30,65 @@ class IndexViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         indexTable.dataSource = self
         indexTable.delegate = self
+
+        encyclopedia = Encyclopedia(savedGame: savedGame)
         
-        if level == 1 {
-            indexList = Encyclopedia(level: 1, section: "", questData: savedGame.questData).indexList
+        if selectedRow != nil {
+            entryList = encyclopedia.entries[selectedRow!].entries
         } else {
-            indexList = Encyclopedia(level: 2, section: selectedRow!.text, questData: savedGame.questData).indexList
+            entryList = encyclopedia.entries
         }
+        
     }
     
-    func numberOfSelectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return indexList.count
+        return entryList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
-        let item = indexList[indexPath.row]
-        cell.textLabel?.text = item.text
+       
+        cell.textLabel?.text = entryList[indexPath.row].text
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedRow != nil {
+            switch entryList[indexPath.row].type{
+            case EncyclopediaEntryType.Monsters:
+                self.performSegue(withIdentifier: "presentMonsterView", sender: self)
+            default:
+                self.performSegue(withIdentifier: "presentDetail", sender: self)
+            }
+        } else {
+            self.performSegue(withIdentifier: "presentChildIndex", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "presentChildIndex" {
             let vc = segue.destination as! IndexViewController
             let indexPath = self.indexTable.indexPathForSelectedRow
-            vc.level += 1
-            vc.selectedRow = self.indexList[indexPath!.row]
+            vc.selectedRow = indexPath!.row
             vc.savedGame = savedGame
         }
         if segue.identifier == "presentDetail" {
             let vc = segue.destination as! DetailViewController
             let indexPath = self.indexTable.indexPathForSelectedRow
-            let data = self.indexList[indexPath!.row]
-            
-            vc.selectedRow = indexPath
+            let data = self.encyclopedia.entries[selectedRow!].entries[indexPath!.row]
             vc.data = data
+        }
+        if segue.identifier == "presentMonsterView" {
+            let vc = segue.destination as! MonsterStatsViewController
+            let indexPath = self.indexTable.indexPathForSelectedRow
+            let monsterFile = self.encyclopedia.entries[selectedRow!].entries[indexPath!.row].detailFile
+            let monster = Monster(filename: "Monsters/\(monsterFile)")
+            vc.monster = monster
         }
     }
 }

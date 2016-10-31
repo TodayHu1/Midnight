@@ -1,7 +1,7 @@
 {
-    "monsters" : ["Djinni"],
+    "monsters" : ["Zombie"],
     "background" : "Game Sakura 1",
-    "title" : "Burning Sands",
+    "title" : "The Temple",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -15,6 +15,7 @@
     },
     "questdata" : [
                    {"key" : "unlock_level_1_7", "value" : 1}
-                   ]
-
+                   ],
+    "scene" : ["Scene_1_6A", "Scene_1_6B"],
+    "characters" : ["Yuna"]
 }

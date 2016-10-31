@@ -17,6 +17,9 @@ class CharacterProfileViewController: UIViewController {
     @IBOutlet weak var characterStrengthLabel: UILabel!
     @IBOutlet weak var characterDefenseLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var levelLabel: UILabel!
+    @IBOutlet weak var experienceLabel: UILabel!
+    @IBOutlet weak var nextLevelLabel: UILabel!
     
     var callingView: String = ""
     var savedGame: GameSave!
@@ -34,12 +37,6 @@ class CharacterProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if self.tabBarController != nil {
-            let tc = self.tabBarController as! CharacterManagementTabController
-            self.savedGame = tc.savedGame
-            self.callingView = tc.callingView
-        }
-        
         character = savedGame.characters[savedGame.selectedCharacter]!
         
         characterNameLabel.text = character.name
@@ -47,6 +44,9 @@ class CharacterProfileViewController: UIViewController {
         characterHealthLabel.text = String(format: "%ld", character.maxHealth)
         characterStrengthLabel.text = String(format: "%ld", Int(character.strength * 100))
         characterDefenseLabel.text = String(format: "%ld", character.defense)
+        levelLabel.text = String(format: "%ld", character.level)
+        experienceLabel.text = String(format: "%ld", character.experience)
+        nextLevelLabel.text = String(format: "%ld", character.nextLevelGoal)
 
     }
 }

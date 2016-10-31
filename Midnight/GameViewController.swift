@@ -330,10 +330,6 @@ class GameViewController: UIViewController {
         // Check to see if level goals have been reached and award experience, but only if level is successfully completed
         var checkResult: LevelResult = LevelResult()
         
-//        if savedGame.levelResults.count >= savedGame.currentLevelNum {
-//            checkResult = savedGame.levelResults[savedGame.currentLevelNum - 1]
-//        }
-        
         if savedGame.levelResults[savedGame.selectedLevel] != nil {
             checkResult = savedGame.levelResults[savedGame.selectedLevel]!
         }
@@ -342,17 +338,17 @@ class GameViewController: UIViewController {
             
             addQuestData()
             
-            if level.result.totalMoves <= level.goals.totalMoves && checkResult.totalMovesGoal == false {
+            if level.result.totalMoves <= level.goals.totalMoves {
                 checkResult.totalMovesGoal = true
                 awardedExperience += level.rewards.totalMoves
             }
             
-            if level.result.totalDamageTaken <= level.goals.totalDamageTaken && checkResult.totalDamageTakenGoal == false {
+            if level.result.totalDamageTaken <= level.goals.totalDamageTaken {
                 checkResult.totalDamageTakenGoal = true
                 awardedExperience += level.rewards.totalDamageTaken
             }
             
-            if level.result.elapsedTime <= level.goals.elapsedTime && checkResult.elapsedTimeGoal == false {
+            if level.result.elapsedTime <= level.goals.elapsedTime {
                 checkResult.elapsedTimeGoal = true
                 awardedExperience += level.rewards.elapsedTime
             }
@@ -376,12 +372,6 @@ class GameViewController: UIViewController {
             checkResult.elapsedTime = level.result.elapsedTime
         }
         
-        // Save level results
-//        if savedGame.levelResults.count <= savedGame.currentLevelNum {
-//            savedGame.levelResults.append(checkResult)
-//        } else {
-//            savedGame.levelResults[savedGame.currentLevelNum - 1] = checkResult
-//        }
         savedGame.levelResults[savedGame.selectedLevel] = checkResult
     }
     

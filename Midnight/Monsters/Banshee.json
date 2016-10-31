@@ -7,5 +7,6 @@
     "critChance" : 10,
     "regeneration" : 0,
     "description" : "A female spirit who heralds the death of a family member, usually by shrieking or keening.",
+    "specialAbilities" : "High Crit: The banshee has a higher than normal chance of scoring a critical hit.",
     "unlockKey" : "encyclopedia_banshee"
 }

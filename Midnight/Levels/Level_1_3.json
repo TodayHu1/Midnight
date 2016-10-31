@@ -16,6 +16,6 @@
     "questdata" : [
                    {"key" : "unlock_level_1_4", "value" : 1}
                    ],
-    "scene" : "Scene_1_3",
+    "scene" : ["Scene_1_3"],
     "characters" : ["Anaya"]
 }

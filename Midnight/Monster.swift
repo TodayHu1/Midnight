@@ -13,6 +13,7 @@ enum SpecialAttack: String {
     case freeze = "Freeze"
     case hide = "Hide"
     case shuffle = "Shuffle"
+    case stun = "Stun"
 }
 
 class Monster {
@@ -28,11 +29,14 @@ class Monster {
     var resistance: TokenType = TokenType.unknown
     var specialAttack: SpecialAttack = SpecialAttack.none
     var specialAttackChance: Int = 0
+    var specialAbilities: String?
     var description: String = ""
     var unlockKey: String = ""
     
     init(filename: String) {
-        guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {return}
+        guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {
+            assert(false, "Unable to load monster info")
+        }
 
         maxHealth = dictionary["health"] as! Int
         currentHealth = dictionary["health"] as! Int
@@ -54,5 +58,6 @@ class Monster {
         }
         description = dictionary["description"] as! String
         unlockKey = dictionary["unlockKey"] as! String
+        specialAbilities = dictionary["specialAbilities"] as? String
     }
 }

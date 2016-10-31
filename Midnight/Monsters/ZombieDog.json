@@ -1,0 +1,12 @@
+{
+    "health" : 1000,
+    "name" : "Zombie Dog",
+    "image" : "ZombieDog",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 10,
+    "description" : "The reanimated corpse of man's best friend.",
+    "specialAbilities" : "Regeneration: Zombie dogs regain 10 health at the beginning of their turn.",
+    "unlockKey" : "encyclopedia_zombiedog"
+}

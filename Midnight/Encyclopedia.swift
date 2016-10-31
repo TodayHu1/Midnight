@@ -13,36 +13,61 @@ enum EncyclopediaEntryStatus : Int {
     case read = 1
 }
 
+enum EncyclopediaEntryType : String {
+    case unknown = ""
+    case People = "People"
+    case Places = "Places"
+    case Monsters = "Monsters"
+    case Magic = "Magic"
+}
+
 class EncyclopediaEntry {
-    var text: String
+    var text: String = ""
     var status: EncyclopediaEntryStatus = EncyclopediaEntryStatus.new
     var detailFile: String = ""
-    
-    init(text: String, detailFile: String) {
-        self.text = text
-        self.detailFile = detailFile
-    }
+    var entries: [EncyclopediaEntry] = [EncyclopediaEntry]()
+    var type: EncyclopediaEntryType = EncyclopediaEntryType.unknown
 }
 
 class Encyclopedia {
-    var indexList: [EncyclopediaEntry] = [EncyclopediaEntry]()
+    var entries: [EncyclopediaEntry] = [EncyclopediaEntry]()
     
-    init(level: Int, section: String = "", questData: [String : AnyObject]) {
+    init(section: String = "", savedGame: GameSave) {
         let filename = "encyclopedia"
         guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {return}
         
-        if level == 2 {
-            let d = dictionary[section] as! [[String: AnyObject]]
-            for entry in d {
-                let unlockKey = entry["unlockKey"] as! String
-                if questData[unlockKey] as? Bool == true {
-                indexList.append(EncyclopediaEntry(text: entry["name"] as! String, detailFile: entry["detailFile"] as! String))
+        let sectionArray = dictionary["sections"] as! [[String: AnyObject]]
+        
+        for item in sectionArray {
+            let entry = EncyclopediaEntry()
+            entry.text = item["section"] as! String
+            
+            if unlockEntry(savedGame: savedGame, unlockKey: item["unlockKey"] as! String) {
+                entries.append(entry)
+                
+                let detailArray = item["entries"] as! [[String: AnyObject]]
+                for detailItem in detailArray {
+                    let detailEntry = EncyclopediaEntry()
+                    detailEntry.text = detailItem["name"] as! String
+                    detailEntry.detailFile = detailItem["detailFile"] as! String
+                    detailEntry.type = EncyclopediaEntryType(rawValue: entry.text)!
+                    
+                    if unlockEntry(savedGame: savedGame, unlockKey: detailItem["unlockKey"] as! String) {
+                        entry.entries.append(detailEntry)
+                    }
                 }
-            }
-        } else {
-            for entry in dictionary {
-                indexList.append(EncyclopediaEntry(text: entry.key, detailFile: ""))
             }
         }
     }
+    
+    func unlockEntry(savedGame: GameSave, unlockKey: String) -> Bool {
+        var unlocked = false
+        if let key = savedGame.questData[unlockKey] {
+            if key as! Bool == true {
+                unlocked = true
+            }
+        }
+        return unlocked
+    }
+    
 }

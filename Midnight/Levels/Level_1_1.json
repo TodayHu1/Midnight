@@ -15,8 +15,9 @@
     },
     "questdata" : [
                    {"key" : "encyclopedia_unlocked", "value" : 1},
+                   {"key" : "encyclopedia_monsters", "value" : 1},
                    {"key" : "unlock_level_1_2", "value" : 1}
                    ],
-    "scene" : "Scene_1_1",
+    "scene" : ["Scene_1_1"],
     "characters" : ["Lilly"]
 }

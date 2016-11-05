@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class StoryModeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
+class StoryModeViewController: UIViewController   {
     @IBOutlet weak var characterButton: UIButton!
     @IBOutlet weak var encyclopediaButton: UIButton!
     @IBOutlet weak var levelCollection: UICollectionView!
 
-    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-    private let itemsPerRow: CGFloat = 3
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    fileprivate let itemsPerRow: CGFloat = 3
     
     var selectedLevel: String = ""
     var questHierarchy : Quest!
@@ -40,13 +40,47 @@ class StoryModeViewController: UIViewController, UICollectionViewDataSource, UIC
         }
     }
     
-    
+   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDialogue" {
+            let vc = segue.destination as! DialogueViewController
+            self.savedGame.selectedLevel = selectedLevel
+            vc.savedGame = savedGame
+        }
+        if segue.identifier == "showCharacterSelect" {
+            let vc = segue.destination as! CharacterSelectViewController
+            vc.savedGame = savedGame
+        }
+        if segue.identifier == "presentCharacter" {
+            let vc = segue.destination as! CharacterProfilePageController
+            vc.savedGame = savedGame
+        }
+        if segue.identifier == "presentEncyclopedia" {
+            let vc = segue.destination as! IndexViewController
+            vc.savedGame = savedGame
+        }
+        if segue.identifier == "presentStatistics" {
+            let vc = segue.destination as! StatisticsViewController
+            vc.savedGame = savedGame
+        }
+    }
+}
+
+extension StoryModeViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return questHierarchy.nodes.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return questHierarchy.nodes[section].nodes.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "levelCell", for: indexPath) as! LevelSelectCell
+        
+        cell.cellLabel.text = questHierarchy.nodes[indexPath.section].nodes[indexPath.row].title
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -64,15 +98,16 @@ class StoryModeViewController: UIViewController, UICollectionViewDataSource, UIC
         
         return returnView
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "levelCell", for: indexPath) as! LevelSelectCell
-        
-        cell.cellLabel.text = questHierarchy.nodes[indexPath.section].nodes[indexPath.row].title
-        
-        return cell
+}
+
+extension StoryModeViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedLevel = questHierarchy.nodes[indexPath.section].nodes[indexPath.row].id
+        self.performSegue(withIdentifier: "showDialogue", sender: self)
     }
-    
+}
+
+extension StoryModeViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
@@ -88,32 +123,5 @@ class StoryModeViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedLevel = questHierarchy.nodes[indexPath.section].nodes[indexPath.row].id
-        self.performSegue(withIdentifier: "showDialogue", sender: self)
-    }
-
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDialogue" {
-            let vc = segue.destination as! DialogueViewController
-            self.savedGame.selectedLevel = selectedLevel
-            vc.savedGame = savedGame
-        }
-        if segue.identifier == "presentCharacter" {
-            let vc = segue.destination as! CharacterProfileViewController
-            vc.savedGame = savedGame
-            vc.callingView = "storyMode"
-        }
-        if segue.identifier == "presentEncyclopedia" {
-            let vc = segue.destination as! IndexViewController
-            vc.savedGame = savedGame
-        }
-        if segue.identifier == "presentStatistics" {
-            let vc = segue.destination as! StatisticsViewController
-            vc.savedGame = savedGame
-        }
     }
 }

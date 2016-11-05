@@ -23,12 +23,17 @@ class PreGameViewController: UIViewController {
     @IBOutlet weak var elapsedTimeLabel: UILabel!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var goal1: UIImageView!
+    @IBOutlet weak var goal2: UIImageView!
+    @IBOutlet weak var goal3: UIImageView!
     
     override var prefersStatusBarHidden : Bool {
         return true
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         level = Level(filename: "Levels/\(savedGame.selectedLevel)")
         character = savedGame.characters[savedGame.selectedCharacter]
         
@@ -38,7 +43,12 @@ class PreGameViewController: UIViewController {
         totalMovesLabel.text = String(format: "%ld", level.goals.totalMoves)
         totalDamageTakenLable.text = String(format: "%ld", level.goals.totalDamageTaken)
         elapsedTimeLabel.text = DateComponentsFormatter().string(from: level.goals.elapsedTime)
-        super.viewDidLoad()
+        
+        if let levelResults = savedGame.levelResults[savedGame.selectedLevel] {
+            if levelResults.totalMovesGoal {goal1.image = UIImage(named: "goal complete")}
+            if levelResults.totalDamageTakenGoal {goal2.image = UIImage(named: "goal complete")}
+            if levelResults.elapsedTimeGoal {goal3.image = UIImage(named: "goal complete")}
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,7 +59,7 @@ class PreGameViewController: UIViewController {
         if segue.identifier == "presentCharacterProfile" {
             let vc = segue.destination as! CharacterProfileViewController
             vc.callingView = "preGame"
-            vc.savedGame = self.savedGame
+            vc.character = character
         }
         if segue.identifier == "presentMonsterStats" {
             let vc = segue.destination as! MonsterStatsViewController

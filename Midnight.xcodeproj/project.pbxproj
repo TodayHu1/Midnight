@@ -66,6 +66,7 @@
 		478B221C1D922FFD0055C38A /* SilverBulletBB.otf in Resources */ = {isa = PBXBuildFile; fileRef = 478B221B1D922FFD0055C38A /* SilverBulletBB.otf */; };
 		4791B4781DA0247000661923 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791B4771DA0247000661923 /* Quest.swift */; };
 		479F04191DBA6D00008E5FF3 /* CharacterSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F04181DBA6D00008E5FF3 /* CharacterSelectCell.swift */; };
+		47A690D51DC826E800841C21 /* CharacterProfilePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A690D41DC826E800841C21 /* CharacterProfilePageController.swift */; };
 		47BAA9D51DBE5764007F34E7 /* LevelSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BAA9D41DBE5764007F34E7 /* LevelSelectCell.swift */; };
 		47BAA9D71DBE94E4007F34E7 /* LevelSelectHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BAA9D61DBE94E4007F34E7 /* LevelSelectHeader.swift */; };
 		47C3D7171DB68EE4009476CE /* DialogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3D7161DB68EE4009476CE /* DialogueViewController.swift */; };
@@ -177,6 +178,7 @@
 		478B221B1D922FFD0055C38A /* SilverBulletBB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SilverBulletBB.otf; sourceTree = "<group>"; };
 		4791B4771DA0247000661923 /* Quest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		479F04181DBA6D00008E5FF3 /* CharacterSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectCell.swift; sourceTree = "<group>"; };
+		47A690D41DC826E800841C21 /* CharacterProfilePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterProfilePageController.swift; sourceTree = "<group>"; };
 		47BAA9D41DBE5764007F34E7 /* LevelSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelectCell.swift; sourceTree = "<group>"; };
 		47BAA9D61DBE94E4007F34E7 /* LevelSelectHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelectHeader.swift; sourceTree = "<group>"; };
 		47C3D7161DB68EE4009476CE /* DialogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogueViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				4749BCF41D902698007BCD74 /* CharacterCreationViewController.swift */,
 				4749BCF81D902698007BCD74 /* CharacterProfileViewController.swift */,
 				47DEF3371D9AEC800076BB16 /* StatisticsViewController.swift */,
+				47A690D41DC826E800841C21 /* CharacterProfilePageController.swift */,
 			);
 			name = "Character Mode";
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				4749BD1F1D902698007BCD74 /* CreditsViewController.swift in Sources */,
 				47BAA9D51DBE5764007F34E7 /* LevelSelectCell.swift in Sources */,
 				4749BD321D902698007BCD74 /* SaveMenuViewController.swift in Sources */,
+				47A690D51DC826E800841C21 /* CharacterProfilePageController.swift in Sources */,
 				47DEF3381D9AEC800076BB16 /* StatisticsViewController.swift in Sources */,
 				47C3D7191DB692B2009476CE /* Dialogue.swift in Sources */,
 				4749BD391D902698007BCD74 /* Timer.swift in Sources */,

@@ -22,8 +22,8 @@ class CharacterProfileViewController: UIViewController {
     @IBOutlet weak var nextLevelLabel: UILabel!
     
     var callingView: String = ""
-    var savedGame: GameSave!
     var character: Character!
+    var pageIndex = 0
     
     
     @IBAction func backButtonPressed(_ sender: AnyObject) {
@@ -36,8 +36,6 @@ class CharacterProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        character = savedGame.characters[savedGame.selectedCharacter]!
         
         characterNameLabel.text = character.name
         characterImagePanel.image = UIImage(named: character.image)

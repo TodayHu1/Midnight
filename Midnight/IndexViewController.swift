@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class IndexViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class IndexViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var indexTable: UITableView!
@@ -41,35 +41,6 @@ class IndexViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return entryList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
-       
-        cell.textLabel?.text = entryList[indexPath.row].text
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if selectedRow != nil {
-            switch entryList[indexPath.row].type{
-            case EncyclopediaEntryType.Monsters:
-                self.performSegue(withIdentifier: "presentMonsterView", sender: self)
-            default:
-                self.performSegue(withIdentifier: "presentDetail", sender: self)
-            }
-        } else {
-            self.performSegue(withIdentifier: "presentChildIndex", sender: self)
-        }
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "presentChildIndex" {
             let vc = segue.destination as! IndexViewController
@@ -89,6 +60,39 @@ class IndexViewController: UIViewController, UITableViewDataSource, UITableViewD
             let monsterFile = self.encyclopedia.entries[selectedRow!].entries[indexPath!.row].detailFile
             let monster = Monster(filename: "Monsters/\(monsterFile)")
             vc.monster = monster
+        }
+    }
+}
+
+extension IndexViewController : UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return entryList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
+        
+        cell.textLabel?.text = entryList[indexPath.row].text
+        
+        return cell
+    }
+}
+
+extension IndexViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if selectedRow != nil {
+            switch entryList[indexPath.row].type{
+            case EncyclopediaEntryType.Monsters:
+                self.performSegue(withIdentifier: "presentMonsterView", sender: self)
+            default:
+                self.performSegue(withIdentifier: "presentDetail", sender: self)
+            }
+        } else {
+            self.performSegue(withIdentifier: "presentChildIndex", sender: self)
         }
     }
 }

@@ -6,8 +6,10 @@
     "varStrength" : 20,
     "critChance" : 1,
     "regeneration" : 0,
-    "vulnerability": "RedSkull",
-    "resistance" : "GreenSkull",
+    "specialAttack" : "Shuffle",
+    "specialAttackChance" : 20,
     "description" : "Evil embodied. Smells faintly of sulpher.",
-    "unlockKey" : "encyclopedia_demon"
+    "unlockKey" : "encyclopedia_demon",
+    "specialAbilities" : "Chaos: A demon's special attack will cause all tiles to be shuffled.",
+    "gameOver" : "The demon does, in fact, eat your eyeballs for breakfast."
 }

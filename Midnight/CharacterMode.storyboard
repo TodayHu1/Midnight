@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVP-lW-V2k">
-                                <rect key="frame" x="141" y="70" width="93" height="20.5"/>
+                                <rect key="frame" x="141" y="70" width="93" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -47,13 +47,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cs1-2S-VCo">
-                                <rect key="frame" x="126.5" y="173.5" width="122" height="20.5"/>
+                                <rect key="frame" x="127" y="174" width="122" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character_male" translatesAutoresizingMaskIntoConstraints="NO" id="Dwj-3n-xmb">
-                                <rect key="frame" x="16" y="202" width="120" height="120"/>
+                                <rect key="frame" x="16" y="203" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="aca-5t-GJY"/>
@@ -76,20 +76,20 @@
                                 </connections>
                             </imageView>
                             <imageView alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character_female" translatesAutoresizingMaskIntoConstraints="NO" id="XIx-zQ-ELl">
-                                <rect key="frame" x="239" y="202" width="120" height="120"/>
+                                <rect key="frame" x="239" y="203" width="120" height="120"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Xpu-R8-GzO" appends="YES" id="gEG-pt-Iqq"/>
                                 </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="Left Bracket" translatesAutoresizingMaskIntoConstraints="NO" id="dNf-0p-qpD">
-                                <rect key="frame" x="16" y="93" width="42" height="66"/>
+                                <rect key="frame" x="16" y="94" width="42" height="66"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" image="Right Bracket" translatesAutoresizingMaskIntoConstraints="NO" id="soO-UY-cXf">
-                                <rect key="frame" x="317" y="93" width="42" height="66"/>
+                                <rect key="frame" x="317" y="94" width="42" height="66"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="36" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G6h-2L-1vr">
-                                <rect key="frame" x="62.5" y="98.5" width="250" height="55"/>
+                                <rect key="frame" x="63" y="99" width="250" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="JfJ-sd-wue"/>
                                 </constraints>
@@ -140,14 +140,14 @@
                                 <exclude reference="G6h-2L-1vr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Nlr-QX-L2i"/>
-                                <exclude reference="fkY-Fd-tvo"/>
-                                <exclude reference="4bk-yX-aJv"/>
-                                <exclude reference="siG-xS-CLQ"/>
                                 <exclude reference="LFt-gk-AwQ"/>
                                 <exclude reference="N79-8b-6ty"/>
                                 <exclude reference="06O-3X-b1w"/>
                                 <exclude reference="Ddc-Ws-0ac"/>
+                                <exclude reference="Nlr-QX-L2i"/>
+                                <exclude reference="fkY-Fd-tvo"/>
+                                <exclude reference="4bk-yX-aJv"/>
+                                <exclude reference="siG-xS-CLQ"/>
                                 <exclude reference="17c-Wm-FPc"/>
                                 <exclude reference="8cm-CV-1hv"/>
                                 <exclude reference="HDh-IF-Ufj"/>
@@ -164,14 +164,14 @@
                                 <include reference="G6h-2L-1vr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Nlr-QX-L2i"/>
-                                <include reference="fkY-Fd-tvo"/>
-                                <include reference="4bk-yX-aJv"/>
-                                <include reference="siG-xS-CLQ"/>
                                 <include reference="LFt-gk-AwQ"/>
                                 <include reference="N79-8b-6ty"/>
                                 <include reference="06O-3X-b1w"/>
                                 <include reference="Ddc-Ws-0ac"/>
+                                <include reference="Nlr-QX-L2i"/>
+                                <include reference="fkY-Fd-tvo"/>
+                                <include reference="4bk-yX-aJv"/>
+                                <include reference="siG-xS-CLQ"/>
                                 <include reference="17c-Wm-FPc"/>
                                 <include reference="8cm-CV-1hv"/>
                                 <exclude reference="HDh-IF-Ufj"/>
@@ -287,55 +287,55 @@
                                 <rect key="frame" x="317" y="54" width="42" height="66"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hy-Xc-caz">
-                                <rect key="frame" x="114.5" y="60" width="146.5" height="54.5"/>
+                                <rect key="frame" x="114" y="60" width="147" height="55"/>
                                 <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% Complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W5W-RC-OYj">
-                                <rect key="frame" x="16" y="156" width="94" height="20.5"/>
+                                <rect key="frame" x="16" y="156" width="94" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="992-nD-T5i">
-                                <rect key="frame" x="16" y="184.5" width="98.5" height="20.5"/>
+                                <rect key="frame" x="16" y="185" width="99" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Damage Taken" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEt-e2-hk3">
-                                <rect key="frame" x="16" y="213" width="153.5" height="20.5"/>
+                                <rect key="frame" x="16" y="214" width="154" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elapsed Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvL-8H-wBg">
-                                <rect key="frame" x="16" y="241.5" width="103" height="20.5"/>
+                                <rect key="frame" x="16" y="243" width="103" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TBD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLs-tQ-C3q">
-                                <rect key="frame" x="331" y="156" width="28" height="20.5"/>
+                                <rect key="frame" x="331" y="156" width="28" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRO-IR-Cyd">
-                                <rect key="frame" x="315.5" y="184.5" width="43.5" height="20.5"/>
+                                <rect key="frame" x="315" y="185" width="44" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7o-uj-uKL">
-                                <rect key="frame" x="315.5" y="213" width="43.5" height="20.5"/>
+                                <rect key="frame" x="315" y="214" width="44" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ed-Zd-Ubg">
-                                <rect key="frame" x="315.5" y="241.5" width="43.5" height="20.5"/>
+                                <rect key="frame" x="315" y="243" width="44" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -423,37 +423,37 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4r-ez-lG1">
-                                <rect key="frame" x="232" y="132" width="43.5" height="20.5"/>
+                                <rect key="frame" x="232" y="132" width="44" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTd-1r-nyy">
-                                <rect key="frame" x="232" y="164.5" width="43.5" height="20.5"/>
+                                <rect key="frame" x="232" y="165" width="44" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fpy-JN-Cul">
-                                <rect key="frame" x="232" y="197" width="43.5" height="20.5"/>
+                                <rect key="frame" x="232" y="198" width="44" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJe-N2-eSL">
-                                <rect key="frame" x="144" y="132" width="51.5" height="20.5"/>
+                                <rect key="frame" x="144" y="132" width="52" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71g-kG-JIT">
-                                <rect key="frame" x="144" y="164.5" width="74.5" height="20.5"/>
+                                <rect key="frame" x="144" y="165" width="75" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Defense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1P-Kb-H0J">
-                                <rect key="frame" x="144" y="197" width="66" height="20.5"/>
+                                <rect key="frame" x="144" y="198" width="66" height="21"/>
                                 <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -468,7 +468,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7L2-v4-VaA">
-                                <rect key="frame" x="72.5" y="60" width="230.5" height="54.5"/>
+                                <rect key="frame" x="72" y="60" width="231" height="55"/>
                                 <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="48"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -563,20 +563,20 @@
                                 <exclude reference="7L2-v4-VaA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="6bl-a0-uJx"/>
+                                <exclude reference="rik-5d-3hN"/>
                                 <exclude reference="4uA-qi-2EI"/>
                                 <exclude reference="A1p-eL-Wel"/>
-                                <exclude reference="DkJ-d7-hHY"/>
-                                <exclude reference="S2H-G6-qkL"/>
-                                <exclude reference="edV-9n-otU"/>
                                 <exclude reference="gxN-Qa-fi9"/>
                                 <exclude reference="ZVE-qs-vmj"/>
                                 <exclude reference="oZX-Wm-gYf"/>
-                                <exclude reference="rik-5d-3hN"/>
-                                <exclude reference="aj1-Xg-RKu"/>
+                                <exclude reference="1qa-zi-4jK"/>
                                 <exclude reference="fQS-ak-mto"/>
                                 <exclude reference="jre-wW-9wq"/>
-                                <exclude reference="1qa-zi-4jK"/>
+                                <exclude reference="DkJ-d7-hHY"/>
+                                <exclude reference="S2H-G6-qkL"/>
+                                <exclude reference="edV-9n-otU"/>
+                                <exclude reference="aj1-Xg-RKu"/>
+                                <exclude reference="6bl-a0-uJx"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -592,20 +592,20 @@
                                 <include reference="7L2-v4-VaA"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="6bl-a0-uJx"/>
+                                <include reference="rik-5d-3hN"/>
                                 <include reference="4uA-qi-2EI"/>
                                 <include reference="A1p-eL-Wel"/>
-                                <exclude reference="DkJ-d7-hHY"/>
-                                <include reference="S2H-G6-qkL"/>
-                                <include reference="edV-9n-otU"/>
                                 <include reference="gxN-Qa-fi9"/>
                                 <include reference="ZVE-qs-vmj"/>
                                 <include reference="oZX-Wm-gYf"/>
-                                <include reference="rik-5d-3hN"/>
-                                <include reference="aj1-Xg-RKu"/>
+                                <include reference="1qa-zi-4jK"/>
                                 <include reference="fQS-ak-mto"/>
                                 <include reference="jre-wW-9wq"/>
-                                <include reference="1qa-zi-4jK"/>
+                                <exclude reference="DkJ-d7-hHY"/>
+                                <include reference="S2H-G6-qkL"/>
+                                <include reference="edV-9n-otU"/>
+                                <include reference="aj1-Xg-RKu"/>
+                                <include reference="6bl-a0-uJx"/>
                             </mask>
                         </variation>
                     </view>
@@ -624,6 +624,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7B-Pf-9Ig" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1404" y="-956"/>
+        </scene>
+        <!--Character Profile Page Controller-->
+        <scene sceneID="XmI-1K-bZv">
+            <objects>
+                <pageViewController storyboardIdentifier="characterIndex" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="IO8-Z4-Xpk" customClass="CharacterProfilePageController" customModule="Midnight" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RFf-iJ-Yoi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2175" y="-957"/>
         </scene>
     </scenes>
     <resources>

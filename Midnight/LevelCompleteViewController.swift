@@ -25,6 +25,7 @@ class LevelCompleteViewController: UIViewController {
     @IBOutlet weak var goal2: UIImageView!
     @IBOutlet weak var goal3: UIImageView!
     
+    @IBOutlet weak var experienceView: UIView!
     @IBOutlet weak var experienceProgress: UIProgressView!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var retryButton: UIButton!
@@ -65,6 +66,8 @@ class LevelCompleteViewController: UIViewController {
             goal1.isHidden = true
             goal2.isHidden = true
             goal3.isHidden = true
+            
+            experienceView.isHidden = true
         } else {
             gameOverPanel.image = UIImage(named: "Level Complete")
             

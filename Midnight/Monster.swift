@@ -32,10 +32,12 @@ class Monster {
     var specialAbilities: String?
     var description: String = ""
     var unlockKey: String = ""
+    var gameOverText: String?
     
     init(filename: String) {
         guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {
             assert(false, "Unable to load monster info")
+            return
         }
 
         maxHealth = dictionary["health"] as! Int
@@ -59,5 +61,6 @@ class Monster {
         description = dictionary["description"] as! String
         unlockKey = dictionary["unlockKey"] as! String
         specialAbilities = dictionary["specialAbilities"] as? String
+        gameOverText = dictionary["gameOver"] as? String
     }
 }

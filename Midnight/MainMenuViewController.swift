@@ -25,15 +25,7 @@ class MainMenuViewController: UIViewController {
         super.viewDidLoad()
         
         options.load()
-        
-//        for family: String in UIFont.familyNames
-//        {
-//            print("\(family)")
-//            for names: String in UIFont.fontNames(forFamilyName: family)
-//            {
-//                print("== \(names)")
-//            }
-//        }
+//        printFonts()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,4 +35,13 @@ class MainMenuViewController: UIViewController {
         }
     }
     
+    func printFonts() {
+        for family: String in UIFont.familyNames {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
+    }
 }

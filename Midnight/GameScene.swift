@@ -72,7 +72,7 @@ class GameScene: SKScene {
         swipeFromColumn = nil
         swipeFromRow = nil
         
-        let _ = SKLabelNode(fontNamed: "DigitalStripBB")
+        let _ = SKLabelNode(fontNamed: "DigitalStripBB-BoldItalic")
     }
     
     func addSpritesForTokens(_ tokens: Set<Token>) {
@@ -333,8 +333,8 @@ class GameScene: SKScene {
             x: (firstSprite.position.x + lastSprite.position.x) / 2,
             y: (firstSprite.position.y + lastSprite.position.y) / 2 - 8)
         
-        let scoreLabel = SKLabelNode(fontNamed: "GillSans-BoldItalic")
-        scoreLabel.fontSize = 16
+        let scoreLabel = SKLabelNode(fontNamed: "DigitalStripBB-BoldItalic")
+        scoreLabel.fontSize = 17
         scoreLabel.text = String(format: "%ld", chain.score)
         if chain.firstToken().tokenType == monster.vulnerability {
             scoreLabel.fontColor = UIColor(red: 1.00, green: 0.00, blue: 0.00, alpha: 1.00)
@@ -343,7 +343,7 @@ class GameScene: SKScene {
         }
         scoreLabel.position = centerPosition
         scoreLabel.zPosition = 300
-       tokensLayer.addChild(scoreLabel)
+        tokensLayer.addChild(scoreLabel)
         
         let moveAction = SKAction.move(by: CGVector(dx: 0, dy: 3), duration: 0.7)
         moveAction.timingMode = .easeOut
@@ -351,8 +351,8 @@ class GameScene: SKScene {
     }
     
     func animateCharacterDamage(_ criticalHit: Bool, monsterDamage: Int, centerPosition: CGPoint) {
-        let scoreLabel = SKLabelNode(fontNamed: "GillSans-BoldItalic")
-        scoreLabel.fontSize = 16
+        let scoreLabel = SKLabelNode(fontNamed: "DigialStripBB")
+        scoreLabel.fontSize = 17
         scoreLabel.text = String(format: "%ld", monsterDamage)
         if criticalHit {
             scoreLabel.color = UIColor(red:1.00, green:0.00, blue:0.00, alpha:1.0)
@@ -362,6 +362,23 @@ class GameScene: SKScene {
         tokensLayer.addChild(scoreLabel)
         
         let moveAction = SKAction.move(by: CGVector(dx: 0, dy: 3), duration: 0.7)
+        moveAction.timingMode = .easeOut
+        scoreLabel.run(SKAction.sequence([moveAction, SKAction.removeFromParent()]))
+    }
+
+    func animateBigText(text: String, color: UIColor = UIColor.white) {
+        let scoreLabel = SKLabelNode(fontNamed: "SilverBulletBB")
+        scoreLabel.fontSize = 72
+        scoreLabel.text = text
+        scoreLabel.fontColor = color
+        
+        let gridCenter = CGPoint(x: TileWidth * CGFloat(NumColumns) / 2, y: TileHeight * CGFloat(NumRows) / 2)
+        
+        scoreLabel.position = gridCenter
+        scoreLabel.zPosition = 300
+        tokensLayer.addChild(scoreLabel)
+        
+        let moveAction = SKAction.move(by: CGVector(dx: 0, dy: 50), duration: 1.5)
         moveAction.timingMode = .easeOut
         scoreLabel.run(SKAction.sequence([moveAction, SKAction.removeFromParent()]))
     }

@@ -157,10 +157,13 @@ class GameViewController: UIViewController {
         shuffle()
     }
     
-    func shuffle() {
+    func shuffle(text: String = "", color: UIColor = UIColor.white) {
         scene.removeAllTokenSprites()
         let newTokens = level.shuffle()
         scene.addSpritesForTokens(newTokens)
+        if text != "" {
+            scene.animateBigText(text: text, color: color)
+        }
     }
     
     func hide() {
@@ -171,12 +174,17 @@ class GameViewController: UIViewController {
         
     }
     
+    func stun() {
+        
+    }
+    
     func nextWave() {
         wave += 1
         monsterImagePanel.image = UIImage(named: level.monsters[wave].image)
         addMonsterData(unlockKey: level.monsters[wave].unlockKey)
         level.resetComboMultiplier()
         updateLabels()
+        scene.animateBigText(text: level.monsters[wave].name)
     }
     
     func handleSwipe(_ swap: Swap) {
@@ -217,7 +225,7 @@ class GameViewController: UIViewController {
         level.resetComboMultiplier()
         level.detectPossibleSwaps()
         if level.noSwaps == true {
-            shuffle()
+            shuffle(text: "Out of Moves")
         }
         decrementMoves()
         self.view.isUserInteractionEnabled = true
@@ -282,17 +290,21 @@ class GameViewController: UIViewController {
             }
             
             // Monster special attack
-            let specialAttackChance: Bool = Int(arc4random_uniform(100)) <= level.monsters[wave].specialAttackChance ? true : false
-            if specialAttackChance {
-                switch level.monsters[wave].specialAttack {
-                case SpecialAttack.freeze:
-                    freeze()
-                case SpecialAttack.hide:
-                    hide()
-                case SpecialAttack.shuffle:
-                    shuffle()
-                default:
-                    shuffle()
+            if level.monsters[wave].specialAttackChance > 0 {
+                let specialAttackSuccess: Bool = Int(arc4random_uniform(100)) <= level.monsters[wave].specialAttackChance ? true : false
+                if specialAttackSuccess {
+                    switch level.monsters[wave].specialAttack {
+                    case .freeze:
+                        freeze()
+                    case .hide:
+                        hide()
+                    case .shuffle:
+                        shuffle(text: "Chaos!", color: UIColor.red)
+                    case .stun:
+                        stun()
+                    default:
+                        assert(false, "Unknown Special Attack type")
+                    }
                 }
             }
         }
@@ -431,8 +443,7 @@ class GameViewController: UIViewController {
         }
         if segue.identifier == "presentCharacterProfile" {
             let vc = segue.destination as! CharacterProfileViewController
-            vc.callingView = "game"
-            vc.savedGame = self.savedGame
+            vc.character = character
         }
         if segue.identifier == "presentMonsterStats" {
             let vc = segue.destination as! MonsterStatsViewController

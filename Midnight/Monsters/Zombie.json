@@ -8,5 +8,6 @@
     "regeneration" : 10,
     "description" : "A zombie is a reanimated corpse.",
     "specialAbilities" : "Regeneration: Zombies regain 10 health at the beginning of their turn.",
-    "unlockKey" : "encyclopedia_zombie"
+    "unlockKey" : "encyclopedia_zombie",
+    "gameOver" : "You got eaten by a zombie."
 }

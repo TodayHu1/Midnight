@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class CharacterSelectViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class CharacterSelectViewController : UIViewController {
     var savedGame: GameSave!
     var party: [Character] = [Character]()
     var selectedCharacter: String?
     
-    private let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-    private let itemsPerRow: CGFloat = 2
+    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    fileprivate let itemsPerRow: CGFloat = 2
     
     @IBOutlet weak var buttonOK: UIButton!
     @IBOutlet weak var characterCollection: UICollectionView!
@@ -52,7 +52,16 @@ class CharacterSelectViewController : UIViewController, UICollectionViewDataSour
             }
         }
     }
-    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPreGame" {
+            let vc = segue.destination as! PreGameViewController
+            vc.savedGame = savedGame
+        }
+    }
+}
+
+extension CharacterSelectViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -72,7 +81,15 @@ class CharacterSelectViewController : UIViewController, UICollectionViewDataSour
         
         return cell
     }
-    
+}
+
+extension CharacterSelectViewController : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCharacter = party[indexPath.row].name
+    }
+}
+
+extension CharacterSelectViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
@@ -88,16 +105,5 @@ class CharacterSelectViewController : UIViewController, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCharacter = party[indexPath.row].name
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPreGame" {
-            let vc = segue.destination as! PreGameViewController
-            vc.savedGame = savedGame
-        }
     }
 }

@@ -40,14 +40,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqu-GB-RO1">
-                                <rect key="frame" x="249" y="596.5" width="50" height="48"/>
+                                <rect key="frame" x="249" y="597" width="50" height="48"/>
                                 <state key="normal" image="Encyclopedia"/>
                                 <connections>
                                     <segue destination="SBN-RG-VAn" kind="presentation" identifier="presentEncyclopedia" id="2Nh-j1-psW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Story" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NzD-3c-OgY">
-                                <rect key="frame" x="145" y="60" width="85.5" height="54.5"/>
+                                <rect key="frame" x="145" y="60" width="86" height="55"/>
                                 <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -82,7 +82,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GY-iH-0FW">
-                                                    <rect key="frame" x="8" y="147" width="108" height="20"/>
+                                                    <rect key="frame" x="8" y="146" width="108" height="21"/>
                                                     <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -108,8 +108,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Chapter One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-8g-1ka">
-                                            <rect key="frame" x="100" y="15" width="142" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-8g-1ka">
+                                            <rect key="frame" x="117" y="9" width="109" height="32"/>
                                             <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="28"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -124,8 +124,8 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyI-91-Gec">
-                                <rect key="frame" x="143" y="597" width="89" height="47"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyI-91-Gec">
+                                <rect key="frame" x="164" y="597" width="47" height="47"/>
                                 <state key="normal" image="Statistics"/>
                                 <connections>
                                     <segue destination="Nbg-jC-gJj" kind="presentation" identifier="presentStatistics" id="41A-5L-U97"/>
@@ -172,6 +172,7 @@
                         <outlet property="encyclopediaButton" destination="Kqu-GB-RO1" id="WhP-2d-JUY"/>
                         <outlet property="levelCollection" destination="lVd-gG-m67" id="fQc-a3-qS2"/>
                         <segue destination="VRt-FV-wR4" kind="show" identifier="showDialogue" id="u3w-6F-60C"/>
+                        <segue destination="igZ-AN-Ocj" kind="show" identifier="showCharacterSelect" id="SfX-AJ-Jsv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7IX-an-dsP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,26 +199,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfd-91-nsL">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Tm-aH-1VY">
                                 <rect key="frame" x="46" y="389" width="283" height="248"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="248" id="W7I-LY-EVA"/>
+                                    <constraint firstAttribute="height" constant="248" id="iyb-SL-DJH"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="mDD-BG-HnV" appends="YES" id="sn5-K4-7kt"/>
+                                    <outletCollection property="gestureRecognizers" destination="Sv4-uO-zLg" appends="YES" id="mDi-Ri-Pkm"/>
                                 </connections>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-iz-Tbp">
-                                <rect key="frame" x="52" y="397" width="271" height="0.0"/>
-                                <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aqB-iV-XIq">
                                 <rect key="frame" x="16" y="245" width="124" height="124"/>
                                 <constraints>
@@ -232,18 +223,25 @@
                                     <constraint firstAttribute="width" constant="124" id="ydh-X6-eDn"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ziY-iz-Tbp">
+                                <rect key="frame" x="52" y="397" width="271" height="0.0"/>
+                                <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pfd-91-nsL" firstAttribute="top" secondItem="ziY-iz-Tbp" secondAttribute="bottom" constant="-8" id="1vV-g3-j5w"/>
-                            <constraint firstItem="pfd-91-nsL" firstAttribute="leading" secondItem="U48-hl-fdu" secondAttribute="leadingMargin" constant="30" id="A1B-ae-jTD"/>
+                            <constraint firstItem="0Tm-aH-1VY" firstAttribute="top" secondItem="ziY-iz-Tbp" secondAttribute="bottom" constant="-8" id="Fxl-43-9ax"/>
+                            <constraint firstItem="0Tm-aH-1VY" firstAttribute="top" secondItem="mhr-cb-VAV" secondAttribute="bottom" constant="20" id="Lp6-FC-h44"/>
+                            <constraint firstItem="cm6-w3-K84" firstAttribute="top" secondItem="0Tm-aH-1VY" secondAttribute="bottom" constant="30" id="Oo3-eI-0aw"/>
                             <constraint firstItem="ziY-iz-Tbp" firstAttribute="leading" secondItem="U48-hl-fdu" secondAttribute="leadingMargin" constant="36" id="QOQ-oD-yPG"/>
-                            <constraint firstItem="pfd-91-nsL" firstAttribute="top" secondItem="aqB-iV-XIq" secondAttribute="bottom" constant="20" id="Tcq-6m-cQO"/>
-                            <constraint firstItem="cm6-w3-K84" firstAttribute="top" secondItem="pfd-91-nsL" secondAttribute="bottom" constant="30" id="aQ8-or-9h2"/>
+                            <constraint firstItem="aqB-iV-XIq" firstAttribute="leading" secondItem="U48-hl-fdu" secondAttribute="leadingMargin" id="STm-0h-45v"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mhr-cb-VAV" secondAttribute="trailing" id="ba3-jx-K1r"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pfd-91-nsL" secondAttribute="trailing" constant="30" id="cc1-yW-tRi"/>
-                            <constraint firstItem="pfd-91-nsL" firstAttribute="top" secondItem="mhr-cb-VAV" secondAttribute="bottom" constant="20" id="fcG-TH-M8f"/>
+                            <constraint firstItem="0Tm-aH-1VY" firstAttribute="top" secondItem="aqB-iV-XIq" secondAttribute="bottom" constant="20" id="dH1-XL-aci"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ziY-iz-Tbp" secondAttribute="trailing" constant="36" id="gL0-t4-uIh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Tm-aH-1VY" secondAttribute="trailing" constant="30" id="huJ-cQ-B49"/>
+                            <constraint firstItem="0Tm-aH-1VY" firstAttribute="leading" secondItem="U48-hl-fdu" secondAttribute="leadingMargin" constant="30" id="lXc-TD-qwy"/>
                             <constraint firstItem="aqB-iV-XIq" firstAttribute="leading" secondItem="U48-hl-fdu" secondAttribute="leadingMargin" id="sDY-dr-yt7"/>
                         </constraints>
                     </view>
@@ -251,20 +249,20 @@
                         <outlet property="actorImageLeft" destination="aqB-iV-XIq" id="Xhu-KR-SwB"/>
                         <outlet property="actorImageRight" destination="mhr-cb-VAV" id="M4g-Nu-EbE"/>
                         <outlet property="actorNameLabel" destination="ziY-iz-Tbp" id="iD3-Do-1Y8"/>
-                        <outlet property="dialogueTap" destination="mDD-BG-HnV" id="NB5-QO-Akl"/>
-                        <outlet property="dialogueTextView" destination="pfd-91-nsL" id="o0W-R5-kZI"/>
+                        <outlet property="dialogueContentView" destination="0Tm-aH-1VY" id="dcK-jz-kCT"/>
+                        <outlet property="dialogueTap" destination="Sv4-uO-zLg" id="fgX-1k-eFC"/>
                         <segue destination="Bkk-PM-dmn" kind="show" identifier="showPreGame" id="oIS-e6-c4o"/>
                         <segue destination="igZ-AN-Ocj" kind="show" identifier="showCharacterSelect" id="0CW-Am-mpG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6I-V9-XIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="mDD-BG-HnV">
+                <tapGestureRecognizer id="Sv4-uO-zLg">
                     <connections>
-                        <action selector="dialogueTapped:" destination="VRt-FV-wR4" id="8Dw-yI-s4p"/>
+                        <action selector="dialogueTapped:" destination="VRt-FV-wR4" id="fJh-z4-aay"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-537" y="888"/>
+            <point key="canvasLocation" x="-559" y="811"/>
         </scene>
         <!--Response View Controller-->
         <scene sceneID="Ony-Ck-vlu">
@@ -279,7 +277,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCL-AP-CGO">
-                                <rect key="frame" x="63.5" y="389" width="248" height="248"/>
+                                <rect key="frame" x="64" y="389" width="248" height="248"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sad" translatesAutoresizingMaskIntoConstraints="NO" id="BRH-vC-M2j">
                                         <rect key="frame" x="128" y="0.0" width="120" height="120"/>
@@ -395,7 +393,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="328.80000000000001" y="888.30584707646187"/>
+            <point key="canvasLocation" x="-538" y="1576"/>
         </scene>
         <!--Character Select View Controller-->
         <scene sceneID="Tkb-TA-ejr">
@@ -410,7 +408,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Character" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlA-mJ-CRR">
-                                <rect key="frame" x="66" y="60" width="243.5" height="54.5"/>
+                                <rect key="frame" x="66" y="60" width="244" height="55"/>
                                 <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -452,7 +450,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J74-o9-MpG">
-                                                    <rect key="frame" x="40.5" y="120" width="43.5" height="20"/>
+                                                    <rect key="frame" x="40" y="119" width="44" height="21"/>
                                                     <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -504,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDC-ZD-Jp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024.8" y="887.40629685157433"/>
+            <point key="canvasLocation" x="294" y="811"/>
         </scene>
         <!--Encyclopedia-->
         <scene sceneID="OVi-9X-vUZ">
@@ -520,12 +518,12 @@
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="PreGameViewController" id="Bkk-PM-dmn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15p-Rx-u0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="578" y="-314"/>
+            <point key="canvasLocation" x="126" y="249"/>
         </scene>
-        <!--characterProfile-->
+        <!--characterIndex-->
         <scene sceneID="Bae-aT-gMu">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="characterProfile" storyboardName="CharacterMode" referencedIdentifier="characterProfile" id="3X0-p7-xUu" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="characterProfile" storyboardName="CharacterMode" referencedIdentifier="characterIndex" id="3X0-p7-xUu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IL2-PB-lJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-218" y="-385"/>
@@ -545,6 +543,7 @@
         <image name="castle" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="0CW-Am-mpG"/>
         <segue reference="oIS-e6-c4o"/>
     </inferredMetricsTieBreakers>
 </document>

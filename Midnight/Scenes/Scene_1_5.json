@@ -2,8 +2,9 @@
     "background" : "",
     "items" :
     [
-     {"sceneType" : "line",
-     "text" : "*Crash*"},
+     {"sceneType" : "fx",
+     "text" : "*Crash*",
+     "image" : "crash"},
      {"sceneType" : "line",
      "actor" : "Anaya",
      "image" : "Anaya",

@@ -24,10 +24,11 @@
      {"sceneType" : "line",
      "actor" : "Olivia",
      "text" : "Oh, that kind."},
-     {"sceneType" : "line",
+     {"sceneType" : "fx",
      "actor" : "Demon",
      "direction" : "right",
-     "text" : "*SCREECH*"},
+     "text" : "*SCREECH*",
+     "image" : "screech"},
      {"sceneType" : "line",
      "actor" : "Olivia",
      "text" : "Curses! Now I'm going to get demon blood all over my dress!"}

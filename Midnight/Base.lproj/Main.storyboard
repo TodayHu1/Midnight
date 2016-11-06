@@ -190,6 +190,7 @@
                         <outlet property="scoreLabel" destination="55R-eT-pig" id="aSd-F6-3cr"/>
                         <segue destination="7JO-0A-GQH" kind="show" identifier="exitGame" id="cRn-nX-PGA"/>
                         <segue destination="Kq0-D4-K3b" kind="show" identifier="showLevelComplete" id="GDb-jr-hNJ"/>
+                        <segue destination="qJd-7t-pPe" kind="show" identifier="showGameOver" id="Y2h-gG-Btw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -748,7 +749,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PDg-Ym-KyY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Level Complete" translatesAutoresizingMaskIntoConstraints="NO" id="PDg-Ym-KyY">
                                 <rect key="frame" x="38" y="100" width="300" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="ONd-dd-xhC"/>
@@ -864,7 +865,7 @@
                                         <rect key="frame" x="8" y="49" width="343" height="2"/>
                                     </progressView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Experience" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLr-Z8-Cr9">
-                                        <rect key="frame" x="136.5" y="8" width="86" height="21"/>
+                                        <rect key="frame" x="137" y="8" width="86" height="21"/>
                                         <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -978,6 +979,7 @@
                         <outlet property="totalMovesResult" destination="hhI-Ei-rxw" id="XjJ-LM-sdN"/>
                         <segue destination="hDS-9s-ifB" kind="show" identifier="showStoryMode" id="LeP-8B-rvT"/>
                         <segue destination="7JO-0A-GQH" kind="show" identifier="showMainMenu" id="5UN-oS-wFB"/>
+                        <segue destination="EQJ-2Z-5yy" kind="show" identifier="showLevelUp" id="toy-F5-S5v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLj-Yr-W3U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -991,6 +993,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nih-rv-OaN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="692" y="-1047"/>
+        </scene>
+        <!--levelUp-->
+        <scene sceneID="AAp-aF-xeO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CharacterMode" referencedIdentifier="levelUp" id="EQJ-2Z-5yy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vNl-jc-Lcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="-948"/>
         </scene>
         <!--StoryModeViewController-->
         <scene sceneID="ohZ-o4-oqi">
@@ -1693,12 +1703,94 @@
             </objects>
             <point key="canvasLocation" x="1338" y="659"/>
         </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="nKt-Jc-KX0">
+            <objects>
+                <viewController id="qJd-7t-pPe" userLabel="Game Over View Controller" customClass="GameOverViewController" customModule="Midnight" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O3H-0O-gYC"/>
+                        <viewControllerLayoutGuide type="bottom" id="MLE-HJ-ySh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FGt-zf-CRZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Game Over" translatesAutoresizingMaskIntoConstraints="NO" id="avo-3P-hsw">
+                                <rect key="frame" x="38" y="100" width="300" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="HFF-tk-cqV"/>
+                                    <constraint firstAttribute="height" constant="80" id="MAd-AI-m3j"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWP-0L-ZTY">
+                                <rect key="frame" x="76" y="588" width="48" height="49"/>
+                                <state key="normal" image="Retry">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="z9i-po-2OM" kind="show" identifier="showPreGame" id="pU9-1M-hoL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbo-9I-HR9">
+                                <rect key="frame" x="267" y="590" width="47" height="47"/>
+                                <state key="normal" image="Ok">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7JO-0A-GQH" kind="show" identifier="showMainMenu" id="Bjp-1n-NEl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Died!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sl6-96-FWu">
+                                <rect key="frame" x="24" y="323" width="327" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="avo-3P-hsw" firstAttribute="centerX" secondItem="FGt-zf-CRZ" secondAttribute="centerX" id="15u-eJ-CYP"/>
+                            <constraint firstItem="Sl6-96-FWu" firstAttribute="leading" secondItem="FGt-zf-CRZ" secondAttribute="leadingMargin" constant="8" id="1pb-IF-zaf"/>
+                            <constraint firstItem="MLE-HJ-ySh" firstAttribute="top" secondItem="Gbo-9I-HR9" secondAttribute="bottom" constant="30" id="F9v-1h-eKO"/>
+                            <constraint firstItem="Sl6-96-FWu" firstAttribute="centerY" secondItem="FGt-zf-CRZ" secondAttribute="centerY" id="KrV-pH-o53"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gbo-9I-HR9" secondAttribute="trailing" constant="45" id="Oqn-yq-P5k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sl6-96-FWu" secondAttribute="trailing" constant="8" id="ZI4-C6-opI"/>
+                            <constraint firstItem="nWP-0L-ZTY" firstAttribute="leading" secondItem="FGt-zf-CRZ" secondAttribute="leadingMargin" constant="60" id="aV4-s7-LYg"/>
+                            <constraint firstItem="MLE-HJ-ySh" firstAttribute="top" secondItem="nWP-0L-ZTY" secondAttribute="bottom" constant="30" id="bKW-Va-dlm"/>
+                            <constraint firstItem="avo-3P-hsw" firstAttribute="top" secondItem="O3H-0O-gYC" secondAttribute="bottom" constant="80" id="oXw-Gt-hqx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="avo-3P-hsw"/>
+                                <exclude reference="Gbo-9I-HR9"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="avo-3P-hsw"/>
+                                <include reference="Gbo-9I-HR9"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="continueButton" destination="Gbo-9I-HR9" id="lJA-Vc-wRc"/>
+                        <outlet property="gameOverPanel" destination="avo-3P-hsw" id="FYx-TR-TOh"/>
+                        <outlet property="gameOverText" destination="Sl6-96-FWu" id="9zo-AX-kBB"/>
+                        <outlet property="retryButton" destination="nWP-0L-ZTY" id="L3X-K2-Vwd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48q-zX-mij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2498" y="-557"/>
+        </scene>
     </scenes>
     <resources>
         <image name="About" width="50" height="48"/>
         <image name="Delete" width="26" height="27"/>
+        <image name="Game Over" width="263" height="53"/>
         <image name="Left Bracket" width="42" height="66"/>
         <image name="Left Dots" width="18" height="27"/>
+        <image name="Level Complete" width="332" height="65"/>
         <image name="Ok" width="47" height="47"/>
         <image name="Pause" width="26" height="34"/>
         <image name="Retry" width="48" height="49"/>
@@ -1715,6 +1807,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="uLz-91-fux"/>
         <segue reference="5UN-oS-wFB"/>
+        <segue reference="4oA-R5-B1h"/>
         <segue reference="LeP-8B-rvT"/>
         <segue reference="snQ-CE-0Hb"/>
         <segue reference="g8D-u4-9xV"/>

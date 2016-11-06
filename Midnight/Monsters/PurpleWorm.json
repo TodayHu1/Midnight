@@ -7,5 +7,6 @@
     "critChance" : 1,
     "regeneration" : 0,
     "description" : "A humongous, ravenous worm capable of swollowing a man and his horse whole.",
-    "unlockKey" : "encyclopedia_purpleworm"
+    "unlockKey" : "encyclopedia_purpleworm",
+    "gameOver" : "*gulp*"
 }

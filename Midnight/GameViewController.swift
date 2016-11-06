@@ -20,6 +20,7 @@ class GameViewController: UIViewController {
     var gameOver: Bool = false
     lazy var backgroundMusic: AVAudioPlayer? = self.loadBackgroundMusic()
     var awardedExperience: Int = 0
+    var levelUp: Bool = false
     var wave: Int = 0
     
     @IBOutlet weak var movesLabel: UILabel!
@@ -317,19 +318,23 @@ class GameViewController: UIViewController {
                 level.result.elapsedTime = scene.elapsedTime
                 saveLevelResults()
                 savedGame.save()
-                showGameOver()
+                showLevelOver(gameOver: false)
             }
         } else if character.currentHealth <= 0 {
             level.result.elapsedTime = scene.elapsedTime
             gameOver = true
             saveLevelResults()
             savedGame.save()
-            showGameOver()
+            showLevelOver(gameOver: true)
         }
     }
     
-    func showGameOver() {
-        self.performSegue(withIdentifier: "showLevelComplete", sender: self)
+    func showLevelOver(gameOver: Bool) {
+        if gameOver {
+            self.performSegue(withIdentifier: "showGameOver", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "showLevelComplete", sender: self)
+        }
     }
     
     func updateOptions() {
@@ -367,6 +372,7 @@ class GameViewController: UIViewController {
             
             character.experience += awardedExperience
             if character.experience >= character.nextLevelGoal {
+                levelUp = true
                 character.levelUp()
             }
         }
@@ -440,6 +446,7 @@ class GameViewController: UIViewController {
             vc.gameOver = self.gameOver
             vc.savedGame = self.savedGame
             vc.awardedExperience = self.awardedExperience
+            vc.levelUp = self.levelUp
         }
         if segue.identifier == "presentCharacterProfile" {
             let vc = segue.destination as! CharacterProfileViewController
@@ -449,6 +456,11 @@ class GameViewController: UIViewController {
             let vc = segue.destination as! MonsterStatsViewController
             vc.callingView = "game"
             vc.monster = self.level.monsters[wave]
+        }
+        if segue.identifier == "showGameOver" {
+            let vc = segue.destination as! GameOverViewController
+            vc.savedGame = savedGame
+            vc.monster = level.monsters[wave]
         }
     }
 }

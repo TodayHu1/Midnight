@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C32f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -211,63 +211,6 @@
             </objects>
             <point key="canvasLocation" x="-487.5" y="-253"/>
         </scene>
-        <!--LevelUpViewController-->
-        <scene sceneID="kp4-1x-qZL">
-            <objects>
-                <viewController storyboardIdentifier="levelUp" id="UjP-yu-02B" userLabel="LevelUpViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ypq-wE-XWT"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cih-oi-qYl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sAB-gj-Ew2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09p-xg-ErL">
-                                <rect key="frame" x="242" y="260" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMX-5D-jhy">
-                                <rect key="frame" x="116" y="260" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="s3e-mS-6hU">
-                                <rect key="frame" x="125" y="182" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="09p-xg-ErL"/>
-                                <exclude reference="tMX-5D-jhy"/>
-                                <exclude reference="s3e-mS-6hU"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="09p-xg-ErL"/>
-                                <include reference="tMX-5D-jhy"/>
-                                <include reference="s3e-mS-6hU"/>
-                            </mask>
-                        </variation>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="oxx-sk-9lN" appends="YES" id="dmK-Mu-mak"/>
-                        </connections>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HR0-Om-kUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="oxx-sk-9lN"/>
-            </objects>
-            <point key="canvasLocation" x="474" y="131"/>
-        </scene>
         <!--Statistics View Controller-->
         <scene sceneID="8SZ-7e-vqh">
             <objects>
@@ -390,6 +333,150 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nu1-iT-XLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1404" y="-272.11394302848578"/>
+        </scene>
+        <!--Level Up View Controller-->
+        <scene sceneID="mCN-c1-pDx">
+            <objects>
+                <viewController storyboardIdentifier="levelUp" id="FXh-li-LWZ" customClass="LevelUpViewController" customModule="Midnight" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ngh-dX-YT6"/>
+                        <viewControllerLayoutGuide type="bottom" id="EPr-zT-SwZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mxw-HS-SMn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ffx-SB-qkN">
+                                <rect key="frame" x="119" y="316" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdv-2M-QP6">
+                                <rect key="frame" x="119" y="349" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQT-gA-Cfs">
+                                <rect key="frame" x="119" y="382" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvV-89-meD">
+                                <rect key="frame" x="24" y="316" width="52" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIN-Ji-GLh">
+                                <rect key="frame" x="24" y="349" width="75" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Defense" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnU-ei-IXJ">
+                                <rect key="frame" x="24" y="382" width="66" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAU-0p-luK">
+                                <rect key="frame" x="164" y="590" width="47" height="47"/>
+                                <state key="normal" image="Ok"/>
+                                <connections>
+                                    <segue destination="uDv-nz-V4T" kind="show" identifier="showStory" id="msi-Ry-7O1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFF-IV-Osq">
+                                <rect key="frame" x="183" y="316" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2G-qz-GoA">
+                                <rect key="frame" x="183" y="349" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5E-Kn-Z60">
+                                <rect key="frame" x="183" y="382" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fy-5q-Use">
+                                <rect key="frame" x="166" y="452" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsc-3i-0QO">
+                                <rect key="frame" x="145" y="423" width="86" height="21"/>
+                                <fontDescription key="fontDescription" name="DigitalStripBB" family="DigitalStrip BB" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Level Up" translatesAutoresizingMaskIntoConstraints="NO" id="Jjz-Vp-Ccr">
+                                <rect key="frame" x="84" y="100" width="207" height="68"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fqc-IH-KnJ">
+                                <rect key="frame" x="128" y="176" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="WZ4-Ff-bkd"/>
+                                    <constraint firstAttribute="width" constant="120" id="aJI-pY-cul"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Fy-5q-Use" firstAttribute="centerX" secondItem="mxw-HS-SMn" secondAttribute="centerX" id="0Vb-rp-0LL"/>
+                            <constraint firstItem="Jsc-3i-0QO" firstAttribute="centerX" secondItem="mxw-HS-SMn" secondAttribute="centerX" id="9Fw-fW-LC0"/>
+                            <constraint firstItem="CnU-ei-IXJ" firstAttribute="top" secondItem="mIN-Ji-GLh" secondAttribute="bottom" constant="12" id="9lc-a4-BIB"/>
+                            <constraint firstItem="3Fy-5q-Use" firstAttribute="top" secondItem="Jsc-3i-0QO" secondAttribute="bottom" constant="8" id="AN3-Sp-OY9"/>
+                            <constraint firstItem="RFF-IV-Osq" firstAttribute="leading" secondItem="Ffx-SB-qkN" secondAttribute="trailing" constant="20" id="B7Z-fP-haC"/>
+                            <constraint firstItem="Jsc-3i-0QO" firstAttribute="top" secondItem="J5E-Kn-Z60" secondAttribute="bottom" constant="20" id="Chc-Gt-3rE"/>
+                            <constraint firstItem="RFF-IV-Osq" firstAttribute="top" secondItem="Ffx-SB-qkN" secondAttribute="top" id="FkH-vx-W7N"/>
+                            <constraint firstItem="p2G-qz-GoA" firstAttribute="leading" secondItem="RFF-IV-Osq" secondAttribute="leading" id="GaT-P8-KaJ"/>
+                            <constraint firstItem="Ffx-SB-qkN" firstAttribute="leading" secondItem="mIN-Ji-GLh" secondAttribute="trailing" constant="20" id="HRe-d4-9wn"/>
+                            <constraint firstItem="fvV-89-meD" firstAttribute="top" secondItem="fqc-IH-KnJ" secondAttribute="bottom" constant="20" id="LZv-vJ-X1x"/>
+                            <constraint firstItem="kQT-gA-Cfs" firstAttribute="leading" secondItem="Ffx-SB-qkN" secondAttribute="leading" id="Tt7-qT-K9S"/>
+                            <constraint firstItem="Ffx-SB-qkN" firstAttribute="top" secondItem="fvV-89-meD" secondAttribute="top" id="X07-fA-YKB"/>
+                            <constraint firstItem="Qdv-2M-QP6" firstAttribute="top" secondItem="Ffx-SB-qkN" secondAttribute="bottom" constant="12" id="aSI-dQ-F2V"/>
+                            <constraint firstItem="kQT-gA-Cfs" firstAttribute="top" secondItem="Qdv-2M-QP6" secondAttribute="bottom" constant="12" id="eN5-Or-qgw"/>
+                            <constraint firstItem="CnU-ei-IXJ" firstAttribute="leading" secondItem="fvV-89-meD" secondAttribute="leading" id="ecq-Pu-Vk1"/>
+                            <constraint firstItem="oAU-0p-luK" firstAttribute="centerX" secondItem="mxw-HS-SMn" secondAttribute="centerX" id="gIs-bo-HaG"/>
+                            <constraint firstItem="J5E-Kn-Z60" firstAttribute="top" secondItem="p2G-qz-GoA" secondAttribute="bottom" constant="12" id="gTJ-mX-8kd"/>
+                            <constraint firstItem="fqc-IH-KnJ" firstAttribute="centerX" secondItem="mxw-HS-SMn" secondAttribute="centerX" id="i98-9e-Zsk"/>
+                            <constraint firstItem="Jjz-Vp-Ccr" firstAttribute="centerX" secondItem="mxw-HS-SMn" secondAttribute="centerX" id="ibc-n4-Ogp"/>
+                            <constraint firstItem="p2G-qz-GoA" firstAttribute="top" secondItem="RFF-IV-Osq" secondAttribute="bottom" constant="12" id="jvb-K0-6bz"/>
+                            <constraint firstItem="fqc-IH-KnJ" firstAttribute="top" secondItem="Jjz-Vp-Ccr" secondAttribute="bottom" constant="8" id="lKx-6l-pMW"/>
+                            <constraint firstItem="J5E-Kn-Z60" firstAttribute="leading" secondItem="RFF-IV-Osq" secondAttribute="leading" id="pLc-02-INY"/>
+                            <constraint firstItem="Jjz-Vp-Ccr" firstAttribute="top" secondItem="Ngh-dX-YT6" secondAttribute="bottom" constant="80" id="q9H-52-37f"/>
+                            <constraint firstItem="mIN-Ji-GLh" firstAttribute="top" secondItem="fvV-89-meD" secondAttribute="bottom" constant="12" id="qvL-gg-OCc"/>
+                            <constraint firstItem="Ffx-SB-qkN" firstAttribute="top" secondItem="fvV-89-meD" secondAttribute="top" id="tjV-NK-4sL"/>
+                            <constraint firstItem="EPr-zT-SwZ" firstAttribute="top" secondItem="oAU-0p-luK" secondAttribute="bottom" constant="30" id="twu-zH-rIp"/>
+                            <constraint firstItem="mIN-Ji-GLh" firstAttribute="leading" secondItem="fvV-89-meD" secondAttribute="leading" id="wtx-He-poF"/>
+                            <constraint firstItem="Qdv-2M-QP6" firstAttribute="leading" secondItem="Ffx-SB-qkN" secondAttribute="leading" id="ydW-cC-7Vq"/>
+                            <constraint firstItem="fvV-89-meD" firstAttribute="leading" secondItem="mxw-HS-SMn" secondAttribute="leadingMargin" constant="8" id="znk-Th-BVw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="characterProfile" destination="fqc-IH-KnJ" id="gHA-80-gaf"/>
+                        <outlet property="defenseNew" destination="J5E-Kn-Z60" id="P1A-tT-g6L"/>
+                        <outlet property="defenseReward" destination="kQT-gA-Cfs" id="qwO-gG-A7b"/>
+                        <outlet property="healthNew" destination="RFF-IV-Osq" id="FLj-2W-2x5"/>
+                        <outlet property="healthReward" destination="Ffx-SB-qkN" id="Qw4-yP-6rz"/>
+                        <outlet property="nextLevelGoal" destination="3Fy-5q-Use" id="BWL-pq-mMg"/>
+                        <outlet property="strengthNew" destination="p2G-qz-GoA" id="slL-6P-3WS"/>
+                        <outlet property="strengthReward" destination="Qdv-2M-QP6" id="Xgt-W0-flD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUv-BO-XZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2173.5999999999999" y="-272.11394302848578"/>
         </scene>
         <!--CharacterProfileViewController-->
         <scene sceneID="9Fz-Qd-Nl1">
@@ -636,10 +723,14 @@
     </scenes>
     <resources>
         <image name="Left Bracket" width="42" height="66"/>
+        <image name="Level Up" width="207" height="68"/>
         <image name="Ok" width="47" height="47"/>
         <image name="Return" width="47" height="47"/>
         <image name="Right Bracket" width="42" height="66"/>
         <image name="character_female" width="120" height="120"/>
         <image name="character_male" width="240" height="240"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="msi-Ry-7O1"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -33,16 +33,19 @@ class LevelCompleteViewController: UIViewController {
     @IBAction func continueButtonPressed() {
         if gameOver {
             performSegue(withIdentifier: "showMainMenu", sender: self)
+        } else if levelUp {
+            performSegue(withIdentifier: "showLevelUp", sender: self)
         } else {
             performSegue(withIdentifier: "showStoryMode", sender: self)
         }
     }
     
     var savedGame: GameSave!
-    var character: Character!
+    private var character: Character!
     var level: Level!
     var gameOver: Bool = false
     var awardedExperience: Int = 0
+    var levelUp: Bool = false
 
     override var prefersStatusBarHidden : Bool {
         return true
@@ -52,48 +55,33 @@ class LevelCompleteViewController: UIViewController {
         super.viewDidLoad()
         character = savedGame.characters[savedGame.selectedCharacter]
         
-        if gameOver {
-            gameOverPanel.image = UIImage(named: "Game Over")
-            
-            totalMovesGoal.text = String(format: "%ld", level.goals.totalMoves)
-            damageTakenGoal.text = String(format: "%ld", level.goals.totalDamageTaken)
-            elapsedTimeGoal.text = DateComponentsFormatter().string(from: level.goals.elapsedTime)
-            
-            totalMovesResult.text = String(format: "%ld", level.result.totalMoves)
-            damageTakenResult.text = String(format: "%ld", level.result.totalDamageTaken)
-            elapsedTimeResult.text = DateComponentsFormatter().string(from: level.result.elapsedTime)
-            
-            goal1.isHidden = true
-            goal2.isHidden = true
-            goal3.isHidden = true
-            
-            experienceView.isHidden = true
+        totalMovesGoal.text = String(format: "%ld", level.goals.totalMoves)
+        damageTakenGoal.text = String(format: "%ld", level.goals.totalDamageTaken)
+        elapsedTimeGoal.text = DateComponentsFormatter().string(from: level.goals.elapsedTime)
+        
+        totalMovesResult.text = String(format: "%ld", level.result.totalMoves)
+        damageTakenResult.text = String(format: "%ld", level.result.totalDamageTaken)
+        elapsedTimeResult.text = DateComponentsFormatter().string(from: level.result.elapsedTime)
+        
+        if level.result.totalMoves <= level.goals.totalMoves {goal1.image = UIImage(named: "goal complete")}
+        if level.result.totalDamageTaken <= level.goals.totalDamageTaken {goal2.image = UIImage(named: "goal complete")}
+        if level.result.elapsedTime <= level.goals.elapsedTime {goal3.image = UIImage(named: "goal complete")}
+        
+        if awardedExperience > 0 {
+            currentLevel.text = String(format: "Level %ld", character.level)
+            nextLevel.text = String(format: "Level %ld", character.level + 1)
         } else {
-            gameOverPanel.image = UIImage(named: "Level Complete")
-            
-            totalMovesGoal.text = String(format: "%ld", level.goals.totalMoves)
-            damageTakenGoal.text = String(format: "%ld", level.goals.totalDamageTaken)
-            elapsedTimeGoal.text = DateComponentsFormatter().string(from: level.goals.elapsedTime)
-            
-            totalMovesResult.text = String(format: "%ld", level.result.totalMoves)
-            damageTakenResult.text = String(format: "%ld", level.result.totalDamageTaken)
-            elapsedTimeResult.text = DateComponentsFormatter().string(from: level.result.elapsedTime)
-            
-            if level.result.totalMoves <= level.goals.totalMoves {goal1.image = UIImage(named: "goal complete")}
-            if level.result.totalDamageTaken <= level.goals.totalDamageTaken {goal2.image = UIImage(named: "goal complete")}
-            if level.result.elapsedTime <= level.goals.elapsedTime {goal3.image = UIImage(named: "goal complete")}
-            
-            if awardedExperience > 0 {
-                let progressPercentage = Float(character.experience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
-                experienceProgress.setProgress(progressPercentage, animated: true)
-                currentLevel.text = String(format: "Level %ld", character.level)
-                nextLevel.text = String(format: "Level %ld", character.level + 1)
-            } else {
-                experienceProgress.isHidden = true
-                currentLevel.isHidden = true
-                nextLevel.isHidden = true
-            }
+            experienceProgress.isHidden = true
+            currentLevel.isHidden = true
+            nextLevel.isHidden = true
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let progressPercentage = Float(character.experience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
+        experienceProgress.setProgress(progressPercentage, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -103,6 +91,10 @@ class LevelCompleteViewController: UIViewController {
         }
         if segue.identifier == "showPreGame" {
             let vc = segue.destination as! PreGameViewController
+            vc.savedGame = savedGame
+        }
+        if segue.identifier == "showLevelUp" {
+            let vc = segue.destination as! LevelUpViewController
             vc.savedGame = savedGame
         }
     }

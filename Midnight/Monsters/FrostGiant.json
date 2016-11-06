@@ -7,5 +7,6 @@
     "critChance" : 1,
     "regeneration" : 0,
     "description" : "A giant. Who likes snow.",
-    "unlockKey" : "encyclopedia_frostgiant"
+    "unlockKey" : "encyclopedia_frostgiant",
+    "gameOver" : "The big, frozen giant pummles you into oblivion with his big, frozen fists."
 }

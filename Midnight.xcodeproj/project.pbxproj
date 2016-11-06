@@ -72,6 +72,9 @@
 		47C3D7171DB68EE4009476CE /* DialogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3D7161DB68EE4009476CE /* DialogueViewController.swift */; };
 		47C3D7191DB692B2009476CE /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3D7181DB692B2009476CE /* Dialogue.swift */; };
 		47C3D71E1DB6A9B8009476CE /* Scene_1_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 47C3D71D1DB6A9B8009476CE /* Scene_1_1.json */; };
+		47CE89A71DCE425A00D80F7F /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE89A61DCE425A00D80F7F /* GameOverViewController.swift */; };
+		47CE89A91DCE501300D80F7F /* Scene_1_7.json in Resources */ = {isa = PBXBuildFile; fileRef = 47CE89A81DCE501300D80F7F /* Scene_1_7.json */; };
+		47CE89AB1DCE57E500D80F7F /* LevelUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE89AA1DCE57E500D80F7F /* LevelUpViewController.swift */; };
 		47D405CB1D9454DE0071C78C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D405CA1D9454DE0071C78C /* DetailViewController.swift */; };
 		47D405D71D946D820071C78C /* encyclopedia.json in Resources */ = {isa = PBXBuildFile; fileRef = 47D405D41D946D820071C78C /* encyclopedia.json */; };
 		47D405D81D946D820071C78C /* midnight.txt in Resources */ = {isa = PBXBuildFile; fileRef = 47D405D51D946D820071C78C /* midnight.txt */; };
@@ -184,6 +187,9 @@
 		47C3D7161DB68EE4009476CE /* DialogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogueViewController.swift; sourceTree = "<group>"; };
 		47C3D7181DB692B2009476CE /* Dialogue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
 		47C3D71D1DB6A9B8009476CE /* Scene_1_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_1.json; sourceTree = "<group>"; };
+		47CE89A61DCE425A00D80F7F /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		47CE89A81DCE501300D80F7F /* Scene_1_7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_7.json; sourceTree = "<group>"; };
+		47CE89AA1DCE57E500D80F7F /* LevelUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelUpViewController.swift; sourceTree = "<group>"; };
 		47D405CA1D9454DE0071C78C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		47D405D41D946D820071C78C /* encyclopedia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = encyclopedia.json; sourceTree = "<group>"; };
 		47D405D51D946D820071C78C /* midnight.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = midnight.txt; sourceTree = "<group>"; };
@@ -254,6 +260,7 @@
 				4749BCF81D902698007BCD74 /* CharacterProfileViewController.swift */,
 				47DEF3371D9AEC800076BB16 /* StatisticsViewController.swift */,
 				47A690D41DC826E800841C21 /* CharacterProfilePageController.swift */,
+				47CE89AA1DCE57E500D80F7F /* LevelUpViewController.swift */,
 			);
 			name = "Character Mode";
 			sourceTree = "<group>";
@@ -266,14 +273,18 @@
 				4749BCFA1D902698007BCD74 /* CreditsViewController.swift */,
 				4749BCFB1D902698007BCD74 /* DebugMenuViewController.swift */,
 				4749BCFD1D902698007BCD74 /* GameOptions.swift */,
+				47CE89A61DCE425A00D80F7F /* GameOverViewController.swift */,
 				4749BCFE1D902698007BCD74 /* GameSave.swift */,
 				4749BCFF1D902698007BCD74 /* GameScene.swift */,
 				4749BD001D902698007BCD74 /* GameViewController.swift */,
 				4749BD021D902698007BCD74 /* Level.swift */,
 				4749BD031D902698007BCD74 /* LevelCompleteViewController.swift */,
 				4749BD041D902698007BCD74 /* LevelResult.swift */,
+				4749BD3B1D9026A1007BCD74 /* Main.storyboard */,
 				4749BD061D902698007BCD74 /* MainMenuViewController.swift */,
 				4749BD071D902698007BCD74 /* Monster.swift */,
+				475730C01D92EED4002CE409 /* MonsterMode.storyboard */,
+				475730C21D92F406002CE409 /* MonsterStatsViewController.swift */,
 				4749BD091D902698007BCD74 /* OptionsViewController.swift */,
 				4749BD0A1D902698007BCD74 /* PauseViewController.swift */,
 				4749BD0B1D902698007BCD74 /* PreGameViewController.swift */,
@@ -282,9 +293,6 @@
 				4749BD131D902698007BCD74 /* Tile.swift */,
 				4749BD141D902698007BCD74 /* Timer.swift */,
 				4749BD151D902698007BCD74 /* Token.swift */,
-				4749BD3B1D9026A1007BCD74 /* Main.storyboard */,
-				475730C01D92EED4002CE409 /* MonsterMode.storyboard */,
-				475730C21D92F406002CE409 /* MonsterStatsViewController.swift */,
 			);
 			name = "Game Mode";
 			sourceTree = "<group>";
@@ -408,6 +416,7 @@
 				47FF61071DC578CD00BB50BE /* Scene_1_5.json */,
 				47FF61091DC580C000BB50BE /* Scene_1_6A.json */,
 				47FF610B1DC589D100BB50BE /* Scene_1_6B.json */,
+				47CE89A81DCE501300D80F7F /* Scene_1_7.json */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -576,6 +585,7 @@
 				476E6EEF1D902483008A2022 /* LaunchScreen.storyboard in Resources */,
 				476E6EE31D902483008A2022 /* Actions.sks in Resources */,
 				4749BD421D902912007BCD74 /* DigitalStripBB_BoldItal.otf in Resources */,
+				47CE89A91DCE501300D80F7F /* Scene_1_7.json in Resources */,
 				471012A71DB92D4E00272341 /* Character_Olivia.json in Resources */,
 				47D405DB1D956BE00071C78C /* kobold.txt in Resources */,
 				47839ED41DB7FB7900615C5A /* Character_Progression.json in Resources */,
@@ -615,6 +625,7 @@
 				4749BD2E1D902698007BCD74 /* OptionsViewController.swift in Sources */,
 				4749BD1D1D902698007BCD74 /* CharacterProfileViewController.swift in Sources */,
 				4749BD291D902698007BCD74 /* LevelResult.swift in Sources */,
+				47CE89AB1DCE57E500D80F7F /* LevelUpViewController.swift in Sources */,
 				4749BD361D902698007BCD74 /* StoryModeViewController.swift in Sources */,
 				4749BD191D902698007BCD74 /* CharacterCreationViewController.swift in Sources */,
 				4749BD281D902698007BCD74 /* LevelCompleteViewController.swift in Sources */,
@@ -649,6 +660,7 @@
 				4749BD301D902698007BCD74 /* PreGameViewController.swift in Sources */,
 				4749BD181D902698007BCD74 /* Character.swift in Sources */,
 				4749BD371D902698007BCD74 /* Swap.swift in Sources */,
+				47CE89A71DCE425A00D80F7F /* GameOverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

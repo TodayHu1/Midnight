@@ -81,7 +81,7 @@
      "actor" : "Yuna",
      "image" : "Yuna",
      "direction" : "right",
-     "text" : "Well, one of the Edicts seems to effect whether dead things stay dead, and it's caused a bit of a mess..."},
+     "text" : "Well, one of the Edicts seems to affect whether dead things stay dead, and it's caused a bit of a mess..."},
      {"sceneType" : "fx",
      "text" : "*Crash*",
      "image" : "crash"},

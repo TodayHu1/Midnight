@@ -10,16 +10,17 @@ import Foundation
 import UIKit
 
 class StoryModeViewController: UIViewController   {
-    @IBOutlet weak var characterButton: UIButton!
-    @IBOutlet weak var encyclopediaButton: UIButton!
+
     @IBOutlet weak var levelCollection: UICollectionView!
 
-    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-    fileprivate let itemsPerRow: CGFloat = 3
+//    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 0, bottom: 10.0, right: 0)
+//    fileprivate let itemsPerRow: CGFloat = 1
     
     var selectedLevel: String = ""
     var questHierarchy : Quest!
     var savedGame : GameSave!
+    var chapters : [QuestHierarchyNode]!
+    var levels : [QuestHierarchyNode]!
     
     override var prefersStatusBarHidden : Bool {
         return true
@@ -29,15 +30,12 @@ class StoryModeViewController: UIViewController   {
         super.viewDidLoad()
         
         questHierarchy = Quest(savedGame: savedGame)
+        chapters = questHierarchy.nodes.reversed()
+        levels = chapters[savedGame.selectedChapter].nodes.reversed()
         
         levelCollection.dataSource = self
         levelCollection.delegate = self
         
-        if savedGame.getQuestData(key: "encyclopedia_unlocked") as? Bool == true {
-            encyclopediaButton.isHidden = false
-        } else {
-            encyclopediaButton.isHidden = true
-        }
     }
     
    
@@ -51,16 +49,8 @@ class StoryModeViewController: UIViewController   {
             let vc = segue.destination as! CharacterSelectViewController
             vc.savedGame = savedGame
         }
-        if segue.identifier == "presentCharacter" {
-            let vc = segue.destination as! CharacterProfilePageController
-            vc.savedGame = savedGame
-        }
-        if segue.identifier == "presentEncyclopedia" {
-            let vc = segue.destination as! IndexViewController
-            vc.savedGame = savedGame
-        }
-        if segue.identifier == "presentStatistics" {
-            let vc = segue.destination as! StatisticsViewController
+        if segue.identifier == "showChapterSelect" {
+            let vc = segue.destination as! ChapterSelectViewController
             vc.savedGame = savedGame
         }
     }
@@ -68,60 +58,58 @@ class StoryModeViewController: UIViewController   {
 
 extension StoryModeViewController : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return questHierarchy.nodes.count
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return questHierarchy.nodes[section].nodes.count
+        return levels.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "levelCell", for: indexPath) as! LevelSelectCell
         
-        cell.cellLabel.text = questHierarchy.nodes[indexPath.section].nodes[indexPath.row].title
+        cell.cellLabel.text = levels[indexPath.row].title
+        cell.wavesLabel.text = String(levels[indexPath.row].waves)
         
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        var returnView : UICollectionReusableView!
-        
-        switch kind {
-        case UICollectionElementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "levelSelectHeader", for: indexPath) as! LevelSelectHeader
-            headerView.chapterLabel.text = questHierarchy.nodes[indexPath.section].title
-            returnView = headerView
-        default:
-            assert(false, "Unexpected element kind")
+        if levels[indexPath.row].totalMovesGoal {
+            cell.totalMovesImage.image = UIImage(named: "Complete_Star")
         }
         
-        return returnView
+        if levels[indexPath.row].totalDamageTakenGoal {
+            cell.totalDamageImage.image = UIImage(named: "Complete_Star")
+        }
+        
+        if levels[indexPath.row].elapsedTimeGoal {
+            cell.elapsedTimeImage.image = UIImage(named: "Complete_Star")
+        }
+        
+        return cell
     }
 }
 
 extension StoryModeViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedLevel = questHierarchy.nodes[indexPath.section].nodes[indexPath.row].id
+        selectedLevel = levels[indexPath.row].id
         self.performSegue(withIdentifier: "showDialogue", sender: self)
     }
 }
 
-extension StoryModeViewController : UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        
-        return CGSize(width: widthPerItem, height: widthPerItem)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
-    }
-}
+//extension StoryModeViewController : UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
+//        let availableWidth = view.frame.width - paddingSpace
+//        let widthPerItem = availableWidth / itemsPerRow
+//        let heightPerItem = widthPerItem / 2
+//        
+//        return CGSize(width: widthPerItem, height: heightPerItem)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return sectionInsets
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return sectionInsets.left
+//    }
+//}

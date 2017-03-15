@@ -1,7 +1,7 @@
 {
     "monsters" : ["Golem"],
     "background" : "Game Bamboo",
-    "title" : "The Laboratory",
+    "title" : "An Unexpected Discovery",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,

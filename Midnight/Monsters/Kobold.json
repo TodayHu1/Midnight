@@ -6,7 +6,7 @@
     "varStrength" : 20,
     "critChance" : 1,
     "regeneration" : 0,
-    "vulnerability": "RedSkull",
+    "vulnerability": "Token1",
     "description" : "A kobold is a stinky, nasty, goblinoid.",
     "unlockKey" : "encyclopedia_kobold"
 }

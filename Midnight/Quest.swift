@@ -14,6 +14,11 @@ class QuestHierarchyNode {
     var unlockKey : String!
     var unlocked : Bool = false
     var nodes : [QuestHierarchyNode] = [QuestHierarchyNode]()
+    var percentComplete : Int = 0
+    var totalMovesGoal: Bool = false
+    var totalDamageTakenGoal: Bool = false
+    var elapsedTimeGoal: Bool = false
+    var waves: Int = 1
 }
 
 class Quest {
@@ -33,18 +38,30 @@ class Quest {
             if unlockNode(savedGame: savedGame, unlockKey: chapter.unlockKey) {
                 
                 let levelArray = chapterItem["levels"] as! [[String: AnyObject]]
+                var starCount: Int = 0
                 
                 for levelItem in levelArray {
                     let level = QuestHierarchyNode()
                     level.id = levelItem["level"] as! String
                     level.title = levelItem["title"] as! String
                     level.unlockKey = levelItem["unlockKey"] as! String
+                    level.waves = levelItem["waves"] as! Int
                     
                     if unlockNode(savedGame: savedGame, unlockKey: level.unlockKey) {
+                        if let levelResults = savedGame.levelResults[level.id] {
+                            level.totalMovesGoal = levelResults.totalMovesGoal
+                            level.totalDamageTakenGoal = levelResults.totalDamageTakenGoal
+                            level.elapsedTimeGoal = levelResults.elapsedTimeGoal
+                            
+                            if level.totalDamageTakenGoal { starCount += 1 }
+                            if level.totalMovesGoal { starCount += 1 }
+                            if level.elapsedTimeGoal { starCount += 1 }
+                        }
                         chapter.nodes.append(level)
                     }
                 }
                 
+                chapter.percentComplete = Int(Double(starCount) / Double(levelArray.count * 3) * 100)
                 self.nodes.append(chapter)
             }
         }
@@ -59,4 +76,5 @@ class Quest {
         }
         return unlocked
     }
+    
 }

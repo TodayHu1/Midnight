@@ -9,27 +9,35 @@
 import SpriteKit
 
 enum TokenType: Int, CustomStringConvertible {
-    case unknown = 0, redskull, purpleskull, blueskull, greenskull, goldskull
+    case unknown = 0, Token1, Token2, Token3, Token4, Token5
     
     var spriteName: String {
         let spriteNames = [
-            "RedSkull",
-            "PurpleSkull",
-            "BlueSkull",
-            "GreenSkull",
-            "GoldSkull"
+            "Token1",
+            "Token2",
+            "Token3",
+            "Token4",
+            "Token5"
         ]
         
         return spriteNames[rawValue - 1]
     }
     
     var highlightedSpriteName: String {
-//        return spriteName + "-highlighted"
-        return spriteName
+        return spriteName + "-highlighted"
+//        return spriteName
     }
     
     var hiddenSpriteName: String {
-        return spriteName + "=hidden"
+        return spriteName + "-" + TokenStatus.Hidden.rawValue
+    }
+    
+    var poisonSpriteName: String {
+        return spriteName + "-" + TokenStatus.Poison.rawValue
+    }
+
+    var freezeSpriteName: String {
+        return spriteName + "-" + TokenStatus.Freeze.rawValue
     }
     
     static func random() -> TokenType {
@@ -43,15 +51,15 @@ enum TokenType: Int, CustomStringConvertible {
     static func createFromString(_ type: String) -> TokenType {
         var raw: Int
         switch type {
-        case "RedSkull":
+        case "Token1":
             raw = 1
-        case "PurpleSkull":
+        case "Token2":
             raw = 2
-        case "BlueSkull":
+        case "Token3":
             raw = 3
-        case "GreenSkull":
+        case "Token4":
             raw = 4
-        case "GoldSkull":
+        case "Token5":
             raw = 5
         default:
             raw = 0
@@ -60,10 +68,18 @@ enum TokenType: Int, CustomStringConvertible {
     }
 }
 
+enum TokenStatus : String {
+    case None = ""
+    case Poison = "poison"
+    case Hidden = "hidden"
+    case Freeze = "freeze"
+}
+
 class Token: CustomStringConvertible, Hashable {
     var column: Int
     var row: Int
     var tokenType: TokenType
+    var status: TokenStatus = TokenStatus.None
     var sprite: SKSpriteNode?
     var description: String {
         return "type:\(tokenType) square:(\(column),\(row))"

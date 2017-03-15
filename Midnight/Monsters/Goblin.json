@@ -6,7 +6,7 @@
     "varStrength" : 20,
     "critChance" : 1,
     "regeneration" : 0,
-    "resistance" : "BlueSkull",
+    "resistance" : "Token2",
     "description" : "A race of twisted creatures that thrive in dirt and filth.",
     "unlockKey" : "encyclopedia_goblin"
 }

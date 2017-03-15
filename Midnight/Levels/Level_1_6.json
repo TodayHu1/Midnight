@@ -1,10 +1,10 @@
 {
     "monsters" : ["Zombie"],
     "background" : "Game Sakura 1",
-    "title" : "The Temple",
+    "title" : "Edicts",
     "music" : "Mining by Moonlight",
     "goals" : {
-        "totalMoves" : 10,
+        "totalMoves" : 15,
         "totalDamageTaken" : 1000,
         "elapsedTime" : 100
     },
@@ -17,5 +17,6 @@
                    {"key" : "unlock_level_1_7", "value" : 1}
                    ],
     "scene" : ["Scene_1_6A", "Scene_1_6B"],
-    "characters" : ["Yuna"]
+    "characters" : ["Yuna"],
+    "supportCharacters" : ["Olivia","Lilly","Camila","Anaya"]
 }

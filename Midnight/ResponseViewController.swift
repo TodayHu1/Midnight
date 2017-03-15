@@ -24,11 +24,11 @@ class ResponseViewController: UIViewController {
     @IBOutlet weak var dialogueLabel: UILabel!
     
     @IBAction func responseTapped(_ sender: UITapGestureRecognizer) {
-        let response: String = ""
+//        let response: String = ""
         
 //        switch sender {
 //        case tap1:
-//            response = swnder.
+//            response = sender.
 //        }
     }
     

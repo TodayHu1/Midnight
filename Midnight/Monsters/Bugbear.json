@@ -6,8 +6,6 @@
     "varStrength" : 30,
     "critChance" : 1,
     "regeneration" : 0,
-    "specialAttack" : "Shuffle",
-    "specialAttackChance" : 10,
     "description" : "A larger, meaner, smarter, and furrier cousin of the goblin.",
     "unlockKey" : "encyclopedia_bugbear"
 }

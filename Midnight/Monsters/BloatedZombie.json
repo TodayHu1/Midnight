@@ -1,0 +1,15 @@
+{
+    "health" : 1500,
+    "name" : "Bloated Zombie",
+    "image" : "bloatedzombie",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 10,
+    "specialAttack" : "Poison",
+    "specialAttackChance" : 20,
+    "description" : "This bloated corpse continuously belches a toxic gas.",
+    "specialAbilities" : "Regeneration: Zombies regain 10 health at the beginning of their turn.\nPoison: Bloated Zombies randomly emit a cloud of toxic gas.",
+    "unlockKey" : "encyclopedia_bloatedzombie",
+    "gameOver" : "The bloated zombie's toxig gas metls the skin right off your bones."
+}

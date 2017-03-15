@@ -54,17 +54,18 @@ class GameScene: SKScene {
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
 //        let background = SKSpriteNode(imageNamed: level.background)
-//        background.size = size
-//        addChild(background)
+        let background = SKSpriteNode(imageNamed: "Background Clean")
+        background.size = size
+        addChild(background)
         
         gameLayer.isHidden = true
         addChild(gameLayer)
         
-        let y: CGFloat = size.height / 4
+//        let y: CGFloat = size.height / 2
         
         layerPosition = CGPoint(
             x: -TileWidth * CGFloat(NumColumns) / 2,
-            y: (-TileHeight * CGFloat(NumRows) / 2) - y)
+            y: (-TileHeight * CGFloat(NumRows) / 2))
 
         tokensLayer.position = layerPosition
         gameLayer.addChild(tokensLayer)
@@ -75,9 +76,23 @@ class GameScene: SKScene {
         let _ = SKLabelNode(fontNamed: "DigitalStripBB-BoldItalic")
     }
     
-    func addSpritesForTokens(_ tokens: Set<Token>) {
+    func addSpritesForTokens(tokens: Set<Token>) {
         for token in tokens {
-            let sprite = SKSpriteNode(imageNamed: token.tokenType.spriteName)
+            
+            let spriteName: String
+            
+            switch token.status {
+            case .Poison:
+                spriteName = token.tokenType.poisonSpriteName
+            case .Freeze:
+                spriteName = token.tokenType.freezeSpriteName
+            case .Hidden:
+                spriteName = token.tokenType.hiddenSpriteName
+            default:
+                spriteName = token.tokenType.spriteName
+            }
+
+            let sprite = SKSpriteNode(imageNamed: spriteName)
             sprite.size = CGSize(width: TileWidth, height: TileHeight)
 
             sprite.position = pointForColumn(token.column, row: token.row)
@@ -97,6 +112,18 @@ class GameScene: SKScene {
                         ])
                     ])
             )
+        }
+    }
+    
+    func removeSpritesForTokens(tokens: Set<Token>) {
+        for token in tokens {
+            if let sprite = token.sprite {
+                if sprite.action(forKey: "removing") == nil {
+                    let scaleAction = SKAction.scale(to: 0.1, duration: 0.3)
+                    scaleAction.timingMode = .easeOut
+                    sprite.run(SKAction.sequence([scaleAction, SKAction.removeFromParent()]), withKey: "removing")
+                }
+            }
         }
     }
     
@@ -389,7 +416,19 @@ class GameScene: SKScene {
         }
         
         if let sprite = token.sprite {
-            let texture = SKTexture(imageNamed: token.tokenType.highlightedSpriteName)
+            let spriteName: String
+            switch token.status {
+            case .Poison:
+                spriteName = token.tokenType.poisonSpriteName
+            case .Hidden:
+                spriteName = token.tokenType.hiddenSpriteName
+            case .Freeze:
+                spriteName = token.tokenType.freezeSpriteName
+            default:
+                spriteName = token.tokenType.highlightedSpriteName
+            }
+            
+            let texture = SKTexture(imageNamed: spriteName)
             selectionSprite.size = CGSize(width: TileWidth, height: TileHeight)
             selectionSprite.run(SKAction.setTexture(texture))
             

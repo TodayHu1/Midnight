@@ -21,7 +21,6 @@
 		4749BD1D1D902698007BCD74 /* CharacterProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCF81D902698007BCD74 /* CharacterProfileViewController.swift */; };
 		4749BD1E1D902698007BCD74 /* ConfirmDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCF91D902698007BCD74 /* ConfirmDeleteViewController.swift */; };
 		4749BD1F1D902698007BCD74 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCFA1D902698007BCD74 /* CreditsViewController.swift */; };
-		4749BD201D902698007BCD74 /* DebugMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCFB1D902698007BCD74 /* DebugMenuViewController.swift */; };
 		4749BD211D902698007BCD74 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCFC1D902698007BCD74 /* Extensions.swift */; };
 		4749BD221D902698007BCD74 /* GameOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCFD1D902698007BCD74 /* GameOptions.swift */; };
 		4749BD231D902698007BCD74 /* GameSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BCFE1D902698007BCD74 /* GameSave.swift */; };
@@ -36,7 +35,6 @@
 		4749BD2C1D902698007BCD74 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BD071D902698007BCD74 /* Monster.swift */; };
 		4749BD2D1D902698007BCD74 /* Monsters in Resources */ = {isa = PBXBuildFile; fileRef = 4749BD081D902698007BCD74 /* Monsters */; };
 		4749BD2E1D902698007BCD74 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BD091D902698007BCD74 /* OptionsViewController.swift */; };
-		4749BD2F1D902698007BCD74 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BD0A1D902698007BCD74 /* PauseViewController.swift */; };
 		4749BD301D902698007BCD74 /* PreGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BD0B1D902698007BCD74 /* PreGameViewController.swift */; };
 		4749BD311D902698007BCD74 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BD0C1D902698007BCD74 /* ProgressViewController.swift */; };
 		4749BD321D902698007BCD74 /* SaveMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4749BD0D1D902698007BCD74 /* SaveMenuViewController.swift */; };
@@ -54,6 +52,7 @@
 		4749BD441D902919007BCD74 /* DigitalStripBB_Reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4749BD401D9028F0007BCD74 /* DigitalStripBB_Reg.otf */; };
 		475730C11D92EED4002CE409 /* MonsterMode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 475730C01D92EED4002CE409 /* MonsterMode.storyboard */; };
 		475730C31D92F406002CE409 /* MonsterStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475730C21D92F406002CE409 /* MonsterStatsViewController.swift */; };
+		4759FD9D1DD3B79F0019DE7A /* Scene_1_8.json in Resources */ = {isa = PBXBuildFile; fileRef = 4759FD9C1DD3B79F0019DE7A /* Scene_1_8.json */; };
 		476E6EDF1D902483008A2022 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476E6EDE1D902483008A2022 /* AppDelegate.swift */; };
 		476E6EE31D902483008A2022 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 476E6EE21D902483008A2022 /* Actions.sks */; };
 		476E6EEC1D902483008A2022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476E6EEB1D902483008A2022 /* Assets.xcassets */; };
@@ -67,6 +66,8 @@
 		4791B4781DA0247000661923 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4791B4771DA0247000661923 /* Quest.swift */; };
 		479F04191DBA6D00008E5FF3 /* CharacterSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479F04181DBA6D00008E5FF3 /* CharacterSelectCell.swift */; };
 		47A690D51DC826E800841C21 /* CharacterProfilePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A690D41DC826E800841C21 /* CharacterProfilePageController.swift */; };
+		47AFDA0B1DD4BFA200A2DFD7 /* Fx.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AFDA0A1DD4BFA200A2DFD7 /* Fx.xcassets */; };
+		47AFDA0D1DD61BD300A2DFD7 /* Scene_1_9.json in Resources */ = {isa = PBXBuildFile; fileRef = 47AFDA0C1DD61BD200A2DFD7 /* Scene_1_9.json */; };
 		47BAA9D51DBE5764007F34E7 /* LevelSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BAA9D41DBE5764007F34E7 /* LevelSelectCell.swift */; };
 		47BAA9D71DBE94E4007F34E7 /* LevelSelectHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BAA9D61DBE94E4007F34E7 /* LevelSelectHeader.swift */; };
 		47C3D7171DB68EE4009476CE /* DialogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3D7161DB68EE4009476CE /* DialogueViewController.swift */; };
@@ -75,6 +76,7 @@
 		47CE89A71DCE425A00D80F7F /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE89A61DCE425A00D80F7F /* GameOverViewController.swift */; };
 		47CE89A91DCE501300D80F7F /* Scene_1_7.json in Resources */ = {isa = PBXBuildFile; fileRef = 47CE89A81DCE501300D80F7F /* Scene_1_7.json */; };
 		47CE89AB1DCE57E500D80F7F /* LevelUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE89AA1DCE57E500D80F7F /* LevelUpViewController.swift */; };
+		47CE89AD1DD0D9DE00D80F7F /* Scene_1_10.json in Resources */ = {isa = PBXBuildFile; fileRef = 47CE89AC1DD0D9DE00D80F7F /* Scene_1_10.json */; };
 		47D405CB1D9454DE0071C78C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D405CA1D9454DE0071C78C /* DetailViewController.swift */; };
 		47D405D71D946D820071C78C /* encyclopedia.json in Resources */ = {isa = PBXBuildFile; fileRef = 47D405D41D946D820071C78C /* encyclopedia.json */; };
 		47D405D81D946D820071C78C /* midnight.txt in Resources */ = {isa = PBXBuildFile; fileRef = 47D405D51D946D820071C78C /* midnight.txt */; };
@@ -87,6 +89,7 @@
 		47DEF3381D9AEC800076BB16 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DEF3371D9AEC800076BB16 /* StatisticsViewController.swift */; };
 		47E2827E1D9DE526000BD625 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2827D1D9DE526000BD625 /* ResponseViewController.swift */; };
 		47E3008D1DBA567E00A3439D /* CharacterSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E3008C1DBA567E00A3439D /* CharacterSelectViewController.swift */; };
+		47F117911DE348FF003F0F4F /* Affinity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F117901DE348FF003F0F4F /* Affinity.swift */; };
 		47F96A041D938395007ADC9A /* Encyclopedia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F96A031D938395007ADC9A /* Encyclopedia.storyboard */; };
 		47F96A061D938803007ADC9A /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96A051D938803007ADC9A /* IndexViewController.swift */; };
 		47F96A081D940D0F007ADC9A /* Encyclopedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96A071D940D0E007ADC9A /* Encyclopedia.swift */; };
@@ -96,6 +99,15 @@
 		47FF610A1DC580C000BB50BE /* Scene_1_6A.json in Resources */ = {isa = PBXBuildFile; fileRef = 47FF61091DC580C000BB50BE /* Scene_1_6A.json */; };
 		47FF610C1DC589D100BB50BE /* Scene_1_6B.json in Resources */ = {isa = PBXBuildFile; fileRef = 47FF610B1DC589D100BB50BE /* Scene_1_6B.json */; };
 		47FF610E1DC79D4D00BB50BE /* Monsters.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47FF610D1DC79D4D00BB50BE /* Monsters.xcassets */; };
+		B31EC3471E09B33D0097F20F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B31EC3461E09B33D0097F20F /* GoogleService-Info.plist */; };
+		B31EC3481E09B3420097F20F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B31EC3461E09B33D0097F20F /* GoogleService-Info.plist */; };
+		B31EC3491E09B3420097F20F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B31EC3461E09B33D0097F20F /* GoogleService-Info.plist */; };
+		B3218F5F1E6F9349001B203F /* ChapterSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3218F5E1E6F9349001B203F /* ChapterSelectViewController.swift */; };
+		B3218F611E6FA6C7001B203F /* ChapterSelectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3218F601E6FA6C7001B203F /* ChapterSelectCell.swift */; };
+		B3A5D8651E6594E4005A1B90 /* StoryHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A5D8641E6594E4005A1B90 /* StoryHubViewController.swift */; };
+		BA41FEA43FCD09882DCF7340 /* Pods_Midnight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB30EB912A0C2944627CCBC8 /* Pods_Midnight.framework */; };
+		CB7DD2976A857F64878EAB13 /* Pods_MidnightTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9292DA6A0B8A15004C14B6 /* Pods_MidnightTests.framework */; };
+		DE8078090034691DB146F73E /* Pods_MidnightUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3244D54FEA9CC253E6FADD /* Pods_MidnightUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +128,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		445A2EB2CDC629B670D06CEB /* Pods-Midnight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midnight.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Midnight/Pods-Midnight.debug.xcconfig"; sourceTree = "<group>"; };
 		471012A61DB92D4E00272341 /* Character_Olivia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Character_Olivia.json; sourceTree = "<group>"; };
 		471012A81DB92E3E00272341 /* Character_Anaya.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Character_Anaya.json; sourceTree = "<group>"; };
 		471012AA1DB92EA400272341 /* Character_Camila.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Character_Camila.json; sourceTree = "<group>"; };
@@ -130,7 +143,6 @@
 		4749BCF81D902698007BCD74 /* CharacterProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterProfileViewController.swift; sourceTree = "<group>"; };
 		4749BCF91D902698007BCD74 /* ConfirmDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmDeleteViewController.swift; sourceTree = "<group>"; };
 		4749BCFA1D902698007BCD74 /* CreditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
-		4749BCFB1D902698007BCD74 /* DebugMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugMenuViewController.swift; sourceTree = "<group>"; };
 		4749BCFC1D902698007BCD74 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		4749BCFD1D902698007BCD74 /* GameOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOptions.swift; sourceTree = "<group>"; };
 		4749BCFE1D902698007BCD74 /* GameSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSave.swift; sourceTree = "<group>"; };
@@ -145,7 +157,6 @@
 		4749BD071D902698007BCD74 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		4749BD081D902698007BCD74 /* Monsters */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Monsters; sourceTree = "<group>"; };
 		4749BD091D902698007BCD74 /* OptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
-		4749BD0A1D902698007BCD74 /* PauseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
 		4749BD0B1D902698007BCD74 /* PreGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreGameViewController.swift; sourceTree = "<group>"; };
 		4749BD0C1D902698007BCD74 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		4749BD0D1D902698007BCD74 /* SaveMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveMenuViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +174,7 @@
 		4749BD401D9028F0007BCD74 /* DigitalStripBB_Reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DigitalStripBB_Reg.otf; sourceTree = "<group>"; };
 		475730C01D92EED4002CE409 /* MonsterMode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MonsterMode.storyboard; sourceTree = "<group>"; };
 		475730C21D92F406002CE409 /* MonsterStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterStatsViewController.swift; sourceTree = "<group>"; };
+		4759FD9C1DD3B79F0019DE7A /* Scene_1_8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_8.json; sourceTree = "<group>"; };
 		476E6EDB1D902483008A2022 /* Midnight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midnight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		476E6EDE1D902483008A2022 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476E6EE21D902483008A2022 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -182,6 +194,8 @@
 		4791B4771DA0247000661923 /* Quest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		479F04181DBA6D00008E5FF3 /* CharacterSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectCell.swift; sourceTree = "<group>"; };
 		47A690D41DC826E800841C21 /* CharacterProfilePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterProfilePageController.swift; sourceTree = "<group>"; };
+		47AFDA0A1DD4BFA200A2DFD7 /* Fx.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Fx.xcassets; sourceTree = "<group>"; };
+		47AFDA0C1DD61BD200A2DFD7 /* Scene_1_9.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_9.json; sourceTree = "<group>"; };
 		47BAA9D41DBE5764007F34E7 /* LevelSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelectCell.swift; sourceTree = "<group>"; };
 		47BAA9D61DBE94E4007F34E7 /* LevelSelectHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSelectHeader.swift; sourceTree = "<group>"; };
 		47C3D7161DB68EE4009476CE /* DialogueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogueViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +204,7 @@
 		47CE89A61DCE425A00D80F7F /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		47CE89A81DCE501300D80F7F /* Scene_1_7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_7.json; sourceTree = "<group>"; };
 		47CE89AA1DCE57E500D80F7F /* LevelUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelUpViewController.swift; sourceTree = "<group>"; };
+		47CE89AC1DD0D9DE00D80F7F /* Scene_1_10.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_10.json; sourceTree = "<group>"; };
 		47D405CA1D9454DE0071C78C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		47D405D41D946D820071C78C /* encyclopedia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = encyclopedia.json; sourceTree = "<group>"; };
 		47D405D51D946D820071C78C /* midnight.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = midnight.txt; sourceTree = "<group>"; };
@@ -202,6 +217,7 @@
 		47DEF3371D9AEC800076BB16 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		47E2827D1D9DE526000BD625 /* ResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
 		47E3008C1DBA567E00A3439D /* CharacterSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectViewController.swift; sourceTree = "<group>"; };
+		47F117901DE348FF003F0F4F /* Affinity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Affinity.swift; sourceTree = "<group>"; };
 		47F96A031D938395007ADC9A /* Encyclopedia.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Encyclopedia.storyboard; sourceTree = "<group>"; };
 		47F96A051D938803007ADC9A /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		47F96A071D940D0E007ADC9A /* Encyclopedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encyclopedia.swift; sourceTree = "<group>"; };
@@ -211,6 +227,18 @@
 		47FF61091DC580C000BB50BE /* Scene_1_6A.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_6A.json; sourceTree = "<group>"; };
 		47FF610B1DC589D100BB50BE /* Scene_1_6B.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scene_1_6B.json; sourceTree = "<group>"; };
 		47FF610D1DC79D4D00BB50BE /* Monsters.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Monsters.xcassets; sourceTree = "<group>"; };
+		5DC4E882E255C46EA4717220 /* Pods-MidnightUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidnightUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MidnightUITests/Pods-MidnightUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		69EA8EF6722F6A3E8BCE1EF2 /* Pods-Midnight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midnight.release.xcconfig"; path = "Pods/Target Support Files/Pods-Midnight/Pods-Midnight.release.xcconfig"; sourceTree = "<group>"; };
+		8A8AB96DB2AA902A4635645B /* Pods-MidnightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidnightTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MidnightTests/Pods-MidnightTests.release.xcconfig"; sourceTree = "<group>"; };
+		B31EC3461E09B33D0097F20F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B3218F5E1E6F9349001B203F /* ChapterSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterSelectViewController.swift; sourceTree = "<group>"; };
+		B3218F601E6FA6C7001B203F /* ChapterSelectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterSelectCell.swift; sourceTree = "<group>"; };
+		B3A5D8641E6594E4005A1B90 /* StoryHubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryHubViewController.swift; sourceTree = "<group>"; };
+		BA9292DA6A0B8A15004C14B6 /* Pods_MidnightTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MidnightTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB30EB912A0C2944627CCBC8 /* Pods_Midnight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Midnight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC51D0A1C43023319F1C222F /* Pods-MidnightTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidnightTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MidnightTests/Pods-MidnightTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EC3244D54FEA9CC253E6FADD /* Pods_MidnightUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MidnightUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F11F9FBB95C3187EF82E5C44 /* Pods-MidnightUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MidnightUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MidnightUITests/Pods-MidnightUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				476E6F141D9024A7008A2022 /* GameKit.framework in Frameworks */,
+				BA41FEA43FCD09882DCF7340 /* Pods_Midnight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7DD2976A857F64878EAB13 /* Pods_MidnightTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +263,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE8078090034691DB146F73E /* Pods_MidnightUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +302,6 @@
 				4749BCF21D902698007BCD74 /* Chain.swift */,
 				4749BCF91D902698007BCD74 /* ConfirmDeleteViewController.swift */,
 				4749BCFA1D902698007BCD74 /* CreditsViewController.swift */,
-				4749BCFB1D902698007BCD74 /* DebugMenuViewController.swift */,
 				4749BCFD1D902698007BCD74 /* GameOptions.swift */,
 				47CE89A61DCE425A00D80F7F /* GameOverViewController.swift */,
 				4749BCFE1D902698007BCD74 /* GameSave.swift */,
@@ -286,7 +316,6 @@
 				475730C01D92EED4002CE409 /* MonsterMode.storyboard */,
 				475730C21D92F406002CE409 /* MonsterStatsViewController.swift */,
 				4749BD091D902698007BCD74 /* OptionsViewController.swift */,
-				4749BD0A1D902698007BCD74 /* PauseViewController.swift */,
 				4749BD0B1D902698007BCD74 /* PreGameViewController.swift */,
 				4749BD0D1D902698007BCD74 /* SaveMenuViewController.swift */,
 				4749BD121D902698007BCD74 /* Swap.swift */,
@@ -315,7 +344,11 @@
 				47E3008C1DBA567E00A3439D /* CharacterSelectViewController.swift */,
 				479F04181DBA6D00008E5FF3 /* CharacterSelectCell.swift */,
 				47BAA9D41DBE5764007F34E7 /* LevelSelectCell.swift */,
+				B3218F601E6FA6C7001B203F /* ChapterSelectCell.swift */,
 				47BAA9D61DBE94E4007F34E7 /* LevelSelectHeader.swift */,
+				47F117901DE348FF003F0F4F /* Affinity.swift */,
+				B3A5D8641E6594E4005A1B90 /* StoryHubViewController.swift */,
+				B3218F5E1E6F9349001B203F /* ChapterSelectViewController.swift */,
 			);
 			name = "Story Mode";
 			sourceTree = "<group>";
@@ -328,6 +361,7 @@
 				476E6F031D902484008A2022 /* MidnightUITests */,
 				476E6EDC1D902483008A2022 /* Products */,
 				476E6F121D9024A7008A2022 /* Frameworks */,
+				95006F1BAF6327EAD4F1BA93 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -344,25 +378,27 @@
 		476E6EDD1D902483008A2022 /* Midnight */ = {
 			isa = PBXGroup;
 			children = (
-				47839ECE1DB7F35A00615C5A /* Characters */,
-				4749BD051D902698007BCD74 /* Levels */,
-				4749BD081D902698007BCD74 /* Monsters */,
-				4749BD0E1D902698007BCD74 /* Sounds */,
-				4749BD011D902698007BCD74 /* Grid.atlas */,
-				4749BD0F1D902698007BCD74 /* Sprites.atlas */,
-				476E6EF01D902483008A2022 /* Info.plist */,
 				476E6EE21D902483008A2022 /* Actions.sks */,
 				476E6EDE1D902483008A2022 /* AppDelegate.swift */,
 				4749BCF11D902698007BCD74 /* Array2D.swift */,
-				4749BCFC1D902698007BCD74 /* Extensions.swift */,
 				476E6EEB1D902483008A2022 /* Assets.xcassets */,
-				47FF610D1DC79D4D00BB50BE /* Monsters.xcassets */,
 				475730BD1D92EDF5002CE409 /* Character Mode */,
+				47839ECE1DB7F35A00615C5A /* Characters */,
 				47D405D31D946D820071C78C /* Encyclopedia */,
+				4749BCFC1D902698007BCD74 /* Extensions.swift */,
 				4749BD411D9028FE007BCD74 /* Fonts */,
+				47AFDA0A1DD4BFA200A2DFD7 /* Fx.xcassets */,
 				475730BE1D92EE14002CE409 /* Game Mode */,
+				B31EC3461E09B33D0097F20F /* GoogleService-Info.plist */,
+				4749BD011D902698007BCD74 /* Grid.atlas */,
+				476E6EF01D902483008A2022 /* Info.plist */,
 				476E6EED1D902483008A2022 /* LaunchScreen.storyboard */,
+				4749BD051D902698007BCD74 /* Levels */,
+				4749BD081D902698007BCD74 /* Monsters */,
+				47FF610D1DC79D4D00BB50BE /* Monsters.xcassets */,
 				47C3D71C1DB6A9A1009476CE /* Scenes */,
+				4749BD0E1D902698007BCD74 /* Sounds */,
+				4749BD0F1D902698007BCD74 /* Sprites.atlas */,
 				475730BF1D92EE1C002CE409 /* Story Mode */,
 			);
 			path = Midnight;
@@ -390,6 +426,9 @@
 			isa = PBXGroup;
 			children = (
 				476E6F131D9024A7008A2022 /* GameKit.framework */,
+				BB30EB912A0C2944627CCBC8 /* Pods_Midnight.framework */,
+				BA9292DA6A0B8A15004C14B6 /* Pods_MidnightTests.framework */,
+				EC3244D54FEA9CC253E6FADD /* Pods_MidnightUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -417,6 +456,9 @@
 				47FF61091DC580C000BB50BE /* Scene_1_6A.json */,
 				47FF610B1DC589D100BB50BE /* Scene_1_6B.json */,
 				47CE89A81DCE501300D80F7F /* Scene_1_7.json */,
+				4759FD9C1DD3B79F0019DE7A /* Scene_1_8.json */,
+				47AFDA0C1DD61BD200A2DFD7 /* Scene_1_9.json */,
+				47CE89AC1DD0D9DE00D80F7F /* Scene_1_10.json */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -436,6 +478,19 @@
 			path = Encyclopedia;
 			sourceTree = "<group>";
 		};
+		95006F1BAF6327EAD4F1BA93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				445A2EB2CDC629B670D06CEB /* Pods-Midnight.debug.xcconfig */,
+				69EA8EF6722F6A3E8BCE1EF2 /* Pods-Midnight.release.xcconfig */,
+				BC51D0A1C43023319F1C222F /* Pods-MidnightTests.debug.xcconfig */,
+				8A8AB96DB2AA902A4635645B /* Pods-MidnightTests.release.xcconfig */,
+				5DC4E882E255C46EA4717220 /* Pods-MidnightUITests.debug.xcconfig */,
+				F11F9FBB95C3187EF82E5C44 /* Pods-MidnightUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -443,9 +498,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 476E6F091D902484008A2022 /* Build configuration list for PBXNativeTarget "Midnight" */;
 			buildPhases = (
+				9CE3F2F5A69CEA037AF13CCF /* [CP] Check Pods Manifest.lock */,
 				476E6ED71D902483008A2022 /* Sources */,
 				476E6ED81D902483008A2022 /* Frameworks */,
 				476E6ED91D902483008A2022 /* Resources */,
+				5A404E7BEE75AE346D461D6C /* [CP] Embed Pods Frameworks */,
+				E00CCB71FD6BEBC4B8F8C23E /* [CP] Copy Pods Resources */,
+				B3F947E01E76E6D9004BCA90 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -460,9 +519,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 476E6F0C1D902484008A2022 /* Build configuration list for PBXNativeTarget "MidnightTests" */;
 			buildPhases = (
+				6963433FF9A9CE699C234068 /* [CP] Check Pods Manifest.lock */,
 				476E6EF11D902484008A2022 /* Sources */,
 				476E6EF21D902484008A2022 /* Frameworks */,
 				476E6EF31D902484008A2022 /* Resources */,
+				4BDF3244A59FAC08AAE13395 /* [CP] Embed Pods Frameworks */,
+				0AA7C7EA80938A507EF63BEE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -478,9 +540,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 476E6F0F1D902484008A2022 /* Build configuration list for PBXNativeTarget "MidnightUITests" */;
 			buildPhases = (
+				0BE6200DA44B98889F56A7A1 /* [CP] Check Pods Manifest.lock */,
 				476E6EFC1D902484008A2022 /* Sources */,
 				476E6EFD1D902484008A2022 /* Frameworks */,
 				476E6EFE1D902484008A2022 /* Resources */,
+				9B99890126C5F81D0536607A /* [CP] Embed Pods Frameworks */,
+				932914D1E76AA52AF5769F2F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -553,13 +618,16 @@
 			files = (
 				47D405D91D946D820071C78C /* vampire.txt in Resources */,
 				47F96A041D938395007ADC9A /* Encyclopedia.storyboard in Resources */,
+				B31EC3471E09B33D0097F20F /* GoogleService-Info.plist in Resources */,
 				47D405E31D956C8F0071C78C /* troll.txt in Resources */,
 				4749BD2A1D902698007BCD74 /* Levels in Resources */,
 				47D405DD1D956C0C0071C78C /* goblin.txt in Resources */,
 				4749BD431D902915007BCD74 /* DigitalStripBB_Ital.otf in Resources */,
+				47AFDA0B1DD4BFA200A2DFD7 /* Fx.xcassets in Resources */,
 				47839ED01DB7F37400615C5A /* Character_Lilly.json in Resources */,
 				47FF610E1DC79D4D00BB50BE /* Monsters.xcassets in Resources */,
 				4749BD441D902919007BCD74 /* DigitalStripBB_Reg.otf in Resources */,
+				4759FD9D1DD3B79F0019DE7A /* Scene_1_8.json in Resources */,
 				471012AD1DB92FCB00272341 /* Character_Yuna.json in Resources */,
 				476E6EEC1D902483008A2022 /* Assets.xcassets in Resources */,
 				4749BD261D902698007BCD74 /* Grid.atlas in Resources */,
@@ -573,9 +641,11 @@
 				4733BA801DC052880082A5E7 /* Scene_1_2.json in Resources */,
 				4749BD3D1D9026A1007BCD74 /* Main.storyboard in Resources */,
 				47D405E11D956C650071C78C /* banshee.txt in Resources */,
+				47AFDA0D1DD61BD300A2DFD7 /* Scene_1_9.json in Resources */,
 				47FF61061DC5186700BB50BE /* Scene_1_4.json in Resources */,
 				471012AB1DB92EA400272341 /* Character_Camila.json in Resources */,
 				47C3D71E1DB6A9B8009476CE /* Scene_1_1.json in Resources */,
+				47CE89AD1DD0D9DE00D80F7F /* Scene_1_10.json in Resources */,
 				47FF610A1DC580C000BB50BE /* Scene_1_6A.json in Resources */,
 				471012A91DB92E3E00272341 /* Character_Anaya.json in Resources */,
 				47D405D81D946D820071C78C /* midnight.txt in Resources */,
@@ -598,6 +668,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31EC3481E09B3420097F20F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,10 +676,162 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31EC3491E09B3420097F20F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AA7C7EA80938A507EF63BEE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MidnightTests/Pods-MidnightTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0BE6200DA44B98889F56A7A1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4BDF3244A59FAC08AAE13395 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MidnightTests/Pods-MidnightTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A404E7BEE75AE346D461D6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Midnight/Pods-Midnight-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6963433FF9A9CE699C234068 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		932914D1E76AA52AF5769F2F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MidnightUITests/Pods-MidnightUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B99890126C5F81D0536607A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MidnightUITests/Pods-MidnightUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CE3F2F5A69CEA037AF13CCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B3F947E01E76E6D9004BCA90 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Replace this with the GOOGLE_APP_ID from your GoogleService-Info.plist file\nGOOGLE_APP_ID=1:96478761446:ios:9476b71b8b2370b6\n\n# Replace the /Path/To/ServiceAccount.json with the path to the key you just downloaded\n\"${PODS_ROOT}\"/FirebaseCrash/upload-sym \"${PODS_ROOT}/midnight-62691-firebase-crashreporting-cpd88-426da797c3.json\"";
+		};
+		E00CCB71FD6BEBC4B8F8C23E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Midnight/Pods-Midnight-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		476E6ED71D902483008A2022 /* Sources */ = {
@@ -623,6 +846,8 @@
 				4749BD311D902698007BCD74 /* ProgressViewController.swift in Sources */,
 				47C3D7171DB68EE4009476CE /* DialogueViewController.swift in Sources */,
 				4749BD2E1D902698007BCD74 /* OptionsViewController.swift in Sources */,
+				B3218F5F1E6F9349001B203F /* ChapterSelectViewController.swift in Sources */,
+				B3218F611E6FA6C7001B203F /* ChapterSelectCell.swift in Sources */,
 				4749BD1D1D902698007BCD74 /* CharacterProfileViewController.swift in Sources */,
 				4749BD291D902698007BCD74 /* LevelResult.swift in Sources */,
 				47CE89AB1DCE57E500D80F7F /* LevelUpViewController.swift in Sources */,
@@ -630,20 +855,20 @@
 				4749BD191D902698007BCD74 /* CharacterCreationViewController.swift in Sources */,
 				4749BD281D902698007BCD74 /* LevelCompleteViewController.swift in Sources */,
 				47F96A061D938803007ADC9A /* IndexViewController.swift in Sources */,
+				B3A5D8651E6594E4005A1B90 /* StoryHubViewController.swift in Sources */,
 				47E2827E1D9DE526000BD625 /* ResponseViewController.swift in Sources */,
 				4749BD1F1D902698007BCD74 /* CreditsViewController.swift in Sources */,
 				47BAA9D51DBE5764007F34E7 /* LevelSelectCell.swift in Sources */,
 				4749BD321D902698007BCD74 /* SaveMenuViewController.swift in Sources */,
 				47A690D51DC826E800841C21 /* CharacterProfilePageController.swift in Sources */,
+				47F117911DE348FF003F0F4F /* Affinity.swift in Sources */,
 				47DEF3381D9AEC800076BB16 /* StatisticsViewController.swift in Sources */,
 				47C3D7191DB692B2009476CE /* Dialogue.swift in Sources */,
 				4749BD391D902698007BCD74 /* Timer.swift in Sources */,
 				475730C31D92F406002CE409 /* MonsterStatsViewController.swift in Sources */,
 				47BAA9D71DBE94E4007F34E7 /* LevelSelectHeader.swift in Sources */,
-				4749BD201D902698007BCD74 /* DebugMenuViewController.swift in Sources */,
 				47E3008D1DBA567E00A3439D /* CharacterSelectViewController.swift in Sources */,
 				4749BD221D902698007BCD74 /* GameOptions.swift in Sources */,
-				4749BD2F1D902698007BCD74 /* PauseViewController.swift in Sources */,
 				4749BD1E1D902698007BCD74 /* ConfirmDeleteViewController.swift in Sources */,
 				476E6EDF1D902483008A2022 /* AppDelegate.swift in Sources */,
 				4749BD161D902698007BCD74 /* Array2D.swift in Sources */,
@@ -812,6 +1037,7 @@
 		};
 		476E6F0A1D902484008A2022 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 445A2EB2CDC629B670D06CEB /* Pods-Midnight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JN87LXGFJ5;
@@ -826,6 +1052,7 @@
 		};
 		476E6F0B1D902484008A2022 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69EA8EF6722F6A3E8BCE1EF2 /* Pods-Midnight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JN87LXGFJ5;
@@ -841,6 +1068,7 @@
 		};
 		476E6F0D1D902484008A2022 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC51D0A1C43023319F1C222F /* Pods-MidnightTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -856,6 +1084,7 @@
 		};
 		476E6F0E1D902484008A2022 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A8AB96DB2AA902A4635645B /* Pods-MidnightTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -871,6 +1100,7 @@
 		};
 		476E6F101D902484008A2022 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DC4E882E255C46EA4717220 /* Pods-MidnightUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = JN87LXGFJ5;
@@ -885,6 +1115,7 @@
 		};
 		476E6F111D902484008A2022 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F11F9FBB95C3187EF82E5C44 /* Pods-MidnightUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = JN87LXGFJ5;

@@ -7,13 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
 enum SpecialAttack: String {
     case none = "None"
     case freeze = "Freeze"
-    case hide = "Hide"
-    case shuffle = "Shuffle"
+    case hide = "Darkness"
+    case shuffle = "Chaos"
     case stun = "Stun"
+    case poison = "Poison"
+    case engulf = "Entomb"
+    case explode = "Meteor"
+    
+    var attackColor: UIColor {
+        let color = ["None": UIColor.clear, "Freeze": UIColor.blue, "Darkness": UIColor.darkGray, "Chaos": UIColor.red, "Stun": UIColor.lightGray, "Poison": UIColor.green, "Entomb": UIColor.brown, "Meteor": UIColor.orange]
+        
+        return color[rawValue]!
+    }
 }
 
 class Monster {
@@ -62,5 +72,66 @@ class Monster {
         unlockKey = dictionary["unlockKey"] as! String
         specialAbilities = dictionary["specialAbilities"] as? String
         gameOverText = dictionary["gameOver"] as? String
+    }
+}
+
+//Special attacks
+extension GameViewController {
+    func executeSpecialAttack() {
+        switch level.monsters[wave].specialAttack {
+        case .freeze:
+            freeze()
+        case .hide:
+            hide()
+        case .shuffle:
+            randomizeGrid()
+        case .stun:
+            stun()
+        case .poison:
+            poison()
+        case .engulf:
+            engulf()
+        case .explode:
+            explode()
+        default:
+            assert(false, "Unknown Special Attack type")
+        }
+    }
+    
+    func hide() {
+        let hiddenTokens = level.hide()
+        scene.removeSpritesForTokens(tokens: hiddenTokens)
+        scene.addSpritesForTokens(tokens: hiddenTokens)
+        scene.animateBigText(text: SpecialAttack.hide.rawValue, color: SpecialAttack.hide.attackColor)
+    }
+    
+    func freeze() {
+        scene.animateBigText(text: SpecialAttack.freeze.rawValue, color: SpecialAttack.freeze.attackColor)
+    }
+    
+    func stun() {
+        scene.animateBigText(text: SpecialAttack.stun.rawValue, color: SpecialAttack.stun.attackColor)
+    }
+    
+    func poison() {
+        let poisonTokens = level.poison()
+        scene.removeSpritesForTokens(tokens: poisonTokens)
+        scene.addSpritesForTokens(tokens: poisonTokens)
+        scene.animateBigText(text: SpecialAttack.poison.rawValue, color: SpecialAttack.poison.attackColor)
+    }
+    
+    func engulf() {
+        scene.animateBigText(text: SpecialAttack.engulf.rawValue, color: SpecialAttack.engulf.attackColor)
+    }
+    
+    func explode() {
+        scene.animateBigText(text: SpecialAttack.explode.rawValue, color: SpecialAttack.explode.attackColor)
+    }
+    
+    func randomizeGrid() {
+        scene.removeAllTokenSprites()
+        let newTokens = level.shuffle()
+        scene.addSpritesForTokens(tokens: newTokens)
+        scene.animateBigText(text: SpecialAttack.shuffle.rawValue, color: SpecialAttack.shuffle.attackColor)
     }
 }

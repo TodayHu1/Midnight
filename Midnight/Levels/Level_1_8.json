@@ -1,7 +1,7 @@
 {
-    "monsters" : ["Beholder"],
+    "monsters" : ["ShadowSpawn"],
     "background" : "Game Bamboo 2",
-    "title" : "Dark Dungeon 1",
+    "title" : "Embrace the Darkness",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -15,6 +15,8 @@
     },
     "questdata" : [
                    {"key" : "unlock_level_1_9", "value" : 1}
-                   ]
-
+                   ],
+    "scene" : ["Scene_1_8"],
+    "characters" : ["Olivia"],
+    "supportCharacters" : ["Lilly","Camila","Anaya","Yuna"]
 }

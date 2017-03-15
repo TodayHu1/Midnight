@@ -14,6 +14,7 @@ enum DialogueItemType : String {
     case FX = "fx"
     case Branch = "branch"
     case Choice = "choice"
+    case Title = "title"
 }
 
 class DialogueItem {
@@ -23,25 +24,22 @@ class DialogueItem {
     var type : DialogueItemType = .Unknown
 }
 
-class DialogueFX : DialogueItem {
-    var text : String = ""
-    var image : String?
-    var actor : String?
-    var direction : String = "left"
+// A chapter or scene title, displayed prominantly
+class DialogueTitle : DialogueItem {
+    var text : String!
     
-    init(text: String, image: String?, actor: String?, direction: String?) {
+    init(text: String, questData: [String: AnyObject]?) {
         super.init()
         
-        self.type = .FX
         self.text = text
-        self.image = image
-        self.actor = actor
-        if direction != nil {
-            self.direction = direction!
+        self.type = DialogueItemType.Title
+        if questData != nil {
+            self.questData = questData
         }
     }
 }
 
+// A line of dialogue spoken by an actor or a line of narration
 class DialogueLine : DialogueItem {
     var text : String = ""
     var actor : String = ""
@@ -68,10 +66,32 @@ class DialogueLine : DialogueItem {
     }
 }
 
+// A visual representation of a sound effect (e.g. *kapow*, *crash*, *crunch*)
+class DialogueFX : DialogueItem {
+    var text : String = ""
+    var image : String?
+    var actor : String?
+    var direction : String = "left"
+    
+    init(text: String, image: String?, actor: String?, direction: String?) {
+        super.init()
+        
+        self.type = .FX
+        self.text = text
+        self.image = image
+        self.actor = actor
+        if direction != nil {
+            self.direction = direction!
+        }
+    }
+}
+
+// A branch in the script based on previous story choices
 class DialogueBranch : DialogueItem {
     
 }
 
+// An interactive prompt to allow the player to choose from one or more responses
 class DialogueChoice : DialogueItem {
     var responses : [String] = [String]()
 }
@@ -79,6 +99,8 @@ class DialogueChoice : DialogueItem {
 class DialogueStageDirection : DialogueItem {
     
 }
+
+
 
 class Scene {
     var lines : [AnyObject] = [AnyObject]()
@@ -103,12 +125,12 @@ class Scene {
                     for item in questDataArray {
                         let key = item["key"] as! String
                         let value = item["value"]
-                        
                         questData![key] = value
                     }
                 }
                 let line = DialogueLine(text: text, actor: actor, image: image, direction: direction, questData: questData)
                 lines.append(line)
+                
             case "fx":
                 let text = item["text"] as! String
                 let image = item["image"] as? String
@@ -116,6 +138,21 @@ class Scene {
                 let direction = item["direction"] as? String
                 let line = DialogueFX(text: text, image: image, actor: actor, direction: direction)
                 lines.append(line)
+                
+            case "title":
+                let text = item["text"] as! String
+                var questData: [String: AnyObject]?
+                if let questDataArray = item["questdata"] as? [[String: AnyObject]] {
+                    questData = [String: AnyObject]()
+                    for item in questDataArray {
+                        let key = item["key"] as! String
+                        let value = item["value"]
+                        questData![key] = value
+                    }
+                }
+                let line = DialogueTitle(text: text, questData: questData)
+                lines.append(line)
+                
             default:
                 assert(false, "unknown dialogue type")
             }

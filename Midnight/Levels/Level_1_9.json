@@ -1,7 +1,7 @@
 {
-    "monsters" : ["PurpleWorm"],
+    "monsters" : ["ZombieDog", "Zombie", "BloatedZombie"],
     "background" : "Game Sakura 2",
-    "title" : "Dark Dungeon 2",
+    "title" : "The Walking Dead",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -15,6 +15,8 @@
     },
     "questdata" : [
                    {"key" : "unlock_level_1_10", "value" : 1}
-                   ]
-
+                   ],
+    "scene" : ["Scene_1_9"],
+    "characters" : ["Olivia","Lilly","Camila","Anaya","Yuna"],
+    "supportCharacters" : ["Olivia","Lilly","Camila","Anaya","Yuna"]
 }

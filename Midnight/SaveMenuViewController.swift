@@ -59,8 +59,6 @@ class SaveMenuViewcontroller: UIViewController {
             savedGame.setQuestData(key: "unlock_level_1_1", value: true as AnyObject!)
             
             performSegue(withIdentifier: "showDialogue", sender: self)
-                
-//            performSegue(withIdentifier: "showCharacterProfile", sender: self)
         } else {
             performSegue(withIdentifier: "showSavedGame", sender: self)
         }
@@ -139,7 +137,7 @@ class SaveMenuViewcontroller: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSavedGame" {
-            let vc = segue.destination as! StoryModeViewController
+            let vc = segue.destination as! StoryHubViewController
             savedGame.saveSlot = self.saveSlot
             savedGame.load()
             

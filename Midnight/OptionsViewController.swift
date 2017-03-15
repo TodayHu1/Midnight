@@ -49,10 +49,6 @@ class OptionsViewcontroller: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "unwindOptionsMenuToPauseMenu" {
-            let vc = segue.destination as! PauseViewController
-            vc.options = self.options
-        }
     }
     
 

@@ -75,6 +75,28 @@ class DialogueViewController : UIViewController {
             }
             
             switch scene![currentScene].lines[index] {
+            case is DialogueTitle:
+                let line = scene![currentScene].lines[index] as! DialogueTitle
+
+                if line.questData != nil {
+                    addQuestData(questData: line.questData!)
+                }
+                
+                let textView = UILabel(frame: CGRect(x: 0, y: 0, width: dialogueContentView.frame.width, height: dialogueContentView.frame.height))
+                textView.font = UIFont(name: "SilverBulletBB", size: 36.0)
+                textView.textColor = UIColor.white
+                textView.text = line.text
+                textView.textAlignment = .center
+                
+                actorImageRight.isHidden = true
+                actorImageLeft.isHidden = true
+                actorNameLabel.isHidden = true
+                
+                dialogueContentView.backgroundColor = UIColor.darkGray
+                dialogueContentView.alpha = 0.5
+                dialogueContentView.addSubview(textView)
+                
+                
             case is DialogueLine:
                 let line = scene![currentScene].lines[index] as! DialogueLine
                 if line.actor != "" {
@@ -106,7 +128,7 @@ class DialogueViewController : UIViewController {
                 }
 
                 if line.questData != nil {
-                    addQuestData(line: line)
+                    addQuestData(questData: line.questData!)
                 }
                 
                 let textView = UITextView(frame: CGRect(x: 0, y: 0, width: dialogueContentView.frame.width, height: dialogueContentView.frame.height))
@@ -174,11 +196,11 @@ class DialogueViewController : UIViewController {
         lineNo = 0
         actorImageRight.isHidden = true
         actorImageLeft.isHidden = true
-//        dialogueContentView
+        actorNameLabel.isHidden = true
     }
     
-    func addQuestData(line: DialogueLine) {
-        for (key, value) in line.questData! {
+    func addQuestData(questData: [String: AnyObject]) {
+        for (key, value) in questData {
             savedGame.setQuestData(key: key, value: value)
         }
     }

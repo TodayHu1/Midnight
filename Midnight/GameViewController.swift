@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 import AVFoundation
 import GameKit
+import Firebase
 
 class GameViewController: UIViewController {
     var scene: GameScene!
@@ -29,20 +30,16 @@ class GameViewController: UIViewController {
     @IBOutlet weak var characterImagePanel: UIImageView!
     @IBOutlet weak var comboLabel: UILabel!
     @IBOutlet weak var comboView: UIStackView!
-
+    @IBOutlet weak var support1: UIButton!
+    @IBOutlet weak var support2: UIButton!
+    @IBOutlet weak var support3: UIButton!
+    @IBOutlet weak var support4: UIButton!
+    @IBOutlet weak var characterName: UILabel!
+    @IBOutlet weak var monsterName: UILabel!
 
     
     @IBAction func myUnwindAction(_ unwindSegue: UIStoryboardSegue) {
-        if unwindSegue.identifier == "dismissDebugMenu" {
-            scene.timer.unpause()
-            let vc = unwindSegue.source as! DebugMenuViewcontroller
-            setInvincibility(vc.invincibleSwitch.isOn)
-        }
-        
-        if unwindSegue.identifier == "unwindPauseMenu" {
-            scene.timer.unpause()
-            updateOptions()
-        }
+
     }
     
     var tapGestureRecognizer: UITapGestureRecognizer!
@@ -130,6 +127,7 @@ class GameViewController: UIViewController {
        
         //create level
         level = Level(filename: "Levels/\(selectedLevel)" )
+        configureSupportButtons()
         
         //create and configure the scene
         scene = GameScene(size: skView.bounds.size)
@@ -145,13 +143,40 @@ class GameViewController: UIViewController {
         beginGame()
     }
     
+    func configureSupportButtons() {
+        var supportButtons = [support1, support2, support3, support4]
+        
+        var supportCharacterFilter = [String]()
+        if level.supportCharacters != nil {
+            for item in level.supportCharacters! {
+                if item != character.name {
+                    supportCharacterFilter.append(item)
+                }
+            }
+        } else {
+            for item in savedGame.characters {
+                if item.key != character.name {
+                    supportCharacterFilter.append(item.key)
+                }
+            }
+        }
+        
+        for index in 0..<supportCharacterFilter.count {
+            let characterName = supportCharacterFilter[index]
+            supportButtons[index]!.setImage(UIImage(named: savedGame.characters[characterName]!.image), for: UIControlState.normal)
+            supportButtons[index]!.isHidden = false
+        }
+    }
+    
     func beginGame() {
         
         character.currentHealth = character.maxHealth
         
         updateLabels()
         monsterImagePanel.image = UIImage(named: level.monsters[wave].image)
+        monsterName.text = level.monsters[wave].name
         characterImagePanel.image = UIImage(named: character.image)
+        characterName.text = character.name
         addMonsterData(unlockKey: level.monsters[wave].unlockKey)
         level.resetComboMultiplier()
         scene.animateBeginGame() {}
@@ -161,31 +186,21 @@ class GameViewController: UIViewController {
     func shuffle(text: String = "", color: UIColor = UIColor.white) {
         scene.removeAllTokenSprites()
         let newTokens = level.shuffle()
-        scene.addSpritesForTokens(newTokens)
+        scene.addSpritesForTokens(tokens: newTokens)
         if text != "" {
             scene.animateBigText(text: text, color: color)
         }
     }
     
-    func hide() {
-        
-    }
-    
-    func freeze() {
-        
-    }
-    
-    func stun() {
-        
-    }
     
     func nextWave() {
         wave += 1
         monsterImagePanel.image = UIImage(named: level.monsters[wave].image)
+        monsterName.text = level.monsters[wave].name
         addMonsterData(unlockKey: level.monsters[wave].unlockKey)
         level.resetComboMultiplier()
         updateLabels()
-        scene.animateBigText(text: level.monsters[wave].name)
+        scene.animateBigText(text: String(format: "Wave %ld", wave + 1))
     }
     
     func handleSwipe(_ swap: Swap) {
@@ -201,14 +216,14 @@ class GameViewController: UIViewController {
     }
     
     func handleMatches() {
-        let chains = level.removeMatches(character.strength, wave: wave)
-        if chains.count == 0 {
+        let matchResults = level.removeMatches(strength: character.strength, wave: wave)
+        if matchResults.count == 0 {
             beginNextTurn()
             return
         }
-        
-        scene.animateMatchedTokens(chains, monster: level.monsters[wave]) {
-            for chain in chains {
+
+        scene.animateMatchedTokens(matchResults, monster: level.monsters[wave]) {
+            for chain in matchResults {
                 self.level.monsters[self.wave].currentHealth -= chain.score
             }
             self.updateLabels()
@@ -243,7 +258,7 @@ class GameViewController: UIViewController {
             movesLabel.text = String("∞")
         } else if character.currentHealth >= 0 && character.invincible == false {
             movesLabel.text = String(format: "%ld", character.currentHealth)
-            if Double(character.currentHealth) <= (Double(character.maxHealth) * 0.2) {movesLabel.textColor = UIColor(red:1.00, green:0.00, blue:0.00, alpha:1.0)}
+            if Double(character.currentHealth) <= (Double(character.maxHealth) * 0.2) {movesLabel.textColor = UIColor.red}
         } else {
             movesLabel.text = String("0")
         }
@@ -260,6 +275,12 @@ class GameViewController: UIViewController {
         if level.monsters[wave].currentHealth > 0 {
             // Calculate miss chance
  
+            // Calculate poison damage
+            let poisonDamage: Int = level.countPoisonTokens() * Int(level.monsters[wave].varStrength)
+            if character.invincible == false {
+                character.currentHealth -= poisonDamage
+            }
+            
             // Calculate monster damage
             var monsterDamage: Double
             let criticalHit: Bool = Int(arc4random_uniform(100)) <= level.monsters[wave].critChance ? true : false
@@ -294,18 +315,7 @@ class GameViewController: UIViewController {
             if level.monsters[wave].specialAttackChance > 0 {
                 let specialAttackSuccess: Bool = Int(arc4random_uniform(100)) <= level.monsters[wave].specialAttackChance ? true : false
                 if specialAttackSuccess {
-                    switch level.monsters[wave].specialAttack {
-                    case .freeze:
-                        freeze()
-                    case .hide:
-                        hide()
-                    case .shuffle:
-                        shuffle(text: "Chaos!", color: UIColor.red)
-                    case .stun:
-                        stun()
-                    default:
-                        assert(false, "Unknown Special Attack type")
-                    }
+                    executeSpecialAttack()
                 }
             }
         }
@@ -391,6 +401,7 @@ class GameViewController: UIViewController {
         }
         
         savedGame.levelResults[savedGame.selectedLevel] = checkResult
+        FIRAnalytics.logEvent(withName: "level_complete", parameters: ["name": level.title as NSObject, "total_moves": level.result.totalMoves as NSObject, "total_damage_taken": level.result.totalDamageTaken as NSObject, "elapsed_time": level.result.elapsedTime as NSObject])
     }
     
     func addQuestData() {
@@ -428,18 +439,6 @@ class GameViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "presentDebugMenu" {
-            scene.timer.pause()
-            let vc = segue.destination as! DebugMenuViewcontroller
-            vc.totalMoves = self.level.result.totalMoves
-            vc.totalDamageTaken = self.level.result.totalDamageTaken
-            vc.invincible = character.invincible
-        }
-        if segue.identifier == "presentPauseMenu" {
-            scene.timer.pause()
-            let vc = segue.destination as! PauseViewController
-            vc.options = self.options
-        }
         if segue.identifier == "showLevelComplete" {
             let vc = segue.destination as! LevelCompleteViewController
             vc.level = self.level

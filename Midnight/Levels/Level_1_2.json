@@ -1,7 +1,7 @@
 {
-    "monsters" : ["Demon"],
+    "monsters" : ["Darkspawn"],
     "background" : "Background",
-    "title" : "The Temple",
+    "title" : "An Unwelcome Guest",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,

@@ -1,7 +1,7 @@
 {
     "monsters" : ["Zombie", "ZombieDog", "Zombie"],
     "background" : "Game Sakura 1",
-    "title" : "The Laboratory",
+    "title" : "In The Laboratory",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -17,5 +17,6 @@
                    {"key" : "unlock_level_1_6", "value" : 1}
                    ],
     "scene" : ["Scene_1_5"],
-    "characters" : ["Anaya","Lilly","Camila"]
+    "characters" : ["Anaya","Lilly","Camila"],
+    "supportCharacters" : ["Anaya","Lilly","Camila"]
 }

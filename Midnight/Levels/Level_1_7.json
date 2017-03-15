@@ -1,7 +1,7 @@
 {
-    "monsters" : ["FrostGiant"],
+    "monsters" : ["BloatedZombie"],
     "background" : "Game Bamboo 2",
-    "title" : "Frozen Hills",
+    "title" : "A Funny Smell",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -15,6 +15,8 @@
     },
     "questdata" : [
                    {"key" : "unlock_level_1_8", "value" : 1}
-                   ]
-
+                   ],
+    "scene" : ["Scene_1_7"],
+    "characters" : ["Olivia","Lilly","Camila","Anaya","Yuna"],
+    "supportCharacters" : ["Olivia","Lilly","Camila","Anaya","Yuna"]
 }

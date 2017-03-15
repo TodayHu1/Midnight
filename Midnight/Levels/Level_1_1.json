@@ -1,7 +1,7 @@
 {
     "monsters" : ["Zombie"],
     "background" : "Background",
-    "title" : "The Graveyard",
+    "title" : "Out for a Walk",
     "music" : "Starlight",
     "goals" : {
         "totalMoves" : 15,

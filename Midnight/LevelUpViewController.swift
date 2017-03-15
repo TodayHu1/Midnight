@@ -21,7 +21,12 @@ class LevelUpViewController : UIViewController {
     @IBOutlet weak var strengthNew: UILabel!
     @IBOutlet weak var defenseNew: UILabel!
     @IBOutlet weak var nextLevelGoal: UILabel!
+    @IBOutlet weak var okButton: UIButton!
 
+    @IBAction func okButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: {})
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         character = savedGame.characters[savedGame.selectedCharacter]

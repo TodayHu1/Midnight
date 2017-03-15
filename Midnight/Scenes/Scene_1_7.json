@@ -1,6 +1,40 @@
 {
     "background" : "",
-    "items" :
-    [
-    ]
+    "items" : [
+               {"sceneType" : "line",
+               "actor" : "Camila",
+               "image" : "Camila",
+               "text" : "Merciful Mother! What is that smell?"},
+               {"sceneType" : "line",
+               "actor" : "Lilly",
+               "image" : "Lilly",
+               "direction" : "right",
+               "text" : "Which smell are you referring to, dearest? The piquant smell of decayed flesh, or the enchanting odor of flatulance?"},
+               {"sceneType" : "line",
+               "actor" : "Anaya",
+               "image" : "Anaya",
+               "text" : "Lilly, seriously, what the fuck is wrong with you?"},
+               {"sceneType" : "line",
+               "actor" : "Lilly",
+               "image" : "Lilly",
+               "direction" : "right",
+               "text" : "One woman's trash is another's treasure, Anaya."},
+               {"sceneType" : "line",
+               "actor" : "Olivia",
+               "image" : "Olivia",
+               "text" : "Hey, yeah, don't yuck her yum."},
+               {"sceneType" : "line",
+               "actor" : "Olivia",
+               "image" : "Olivia",
+               "text" : "Although, wow, that smell is really awful."},
+               {"sceneType" : "line",
+               "actor" : "Bloated Zombie",
+               "image" : "bloatedzombie",
+               "text" : "*BRAAAAP* BRAIIIINS..."},
+               {"sceneType" : "line",
+               "actor" : "Lilly",
+               "image" : "Lilly",
+               "direction" : "right",
+               "text" : "You know, I have to admit that, while the scent of this one does tickle the nose, it does also sting the eyes."}
+               ]
 }

@@ -97,9 +97,14 @@
                                "unlockKey" : "encyclopedia_goblin"
                                },
                                {
-                               "name" : "Demon",
-                               "detailFile" : "Demon",
-                               "unlockKey" : "encyclopedia_demon"
+                               "name" : "Darkspawn",
+                               "detailFile" : "Darkspawn",
+                               "unlockKey" : "encyclopedia_darkspawn"
+                               },
+                               {
+                               "name" : "Shadow Spawn",
+                               "detailFile" : "Shadowspawn",
+                               "unlockKey" : "encyclopedia_shadowspawn"
                                },
                                {
                                "name" : "Banshee",

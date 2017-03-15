@@ -23,6 +23,7 @@ class GameSave: NSObject, NSCoding {
     lazy var totalDamageTaken: Int = self.getTotalDamageTaken()
     lazy var elapsedtime: TimeInterval = self.getElapsedTime()
     var selectedCharacter: String = ""
+    var selectedChapter: Int = 1
     var levelResults: [String: LevelResult] = [String: LevelResult]()
     var difficulty: Difficulty = Difficulty.normal
     var questData: [String: AnyObject] = [String: AnyObject]()
@@ -35,13 +36,14 @@ class GameSave: NSObject, NSCoding {
         super.init()
     }
 
-    init?(selectedLevel: String, selectedCharacter: String, levelResults: [String: LevelResult], difficulty: Double, questData: [String: AnyObject], characters: [String: Character]) {
+    init?(selectedLevel: String, selectedCharacter: String, levelResults: [String: LevelResult], difficulty: Double, questData: [String: AnyObject], characters: [String: Character], selectedChapter: Int) {
         self.selectedLevel = selectedLevel
         self.selectedCharacter = selectedCharacter
         self.levelResults = levelResults
         self.difficulty = Difficulty(rawValue: difficulty)!
         self.questData = questData
         self.characters = characters
+        self.selectedChapter = selectedChapter
         
         super.init()
     }
@@ -53,6 +55,7 @@ class GameSave: NSObject, NSCoding {
         aCoder.encode(difficulty.rawValue, forKey: "difficulty")
         aCoder.encode(questData, forKey: "questData")
         aCoder.encode(characters, forKey: "characters")
+        aCoder.encode(selectedChapter, forKey: "selectedChapter")
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -85,7 +88,12 @@ class GameSave: NSObject, NSCoding {
             characters = c
         }
         
-        self.init(selectedLevel: selectedLevel, selectedCharacter: selectedCharacter, levelResults: levelResults, difficulty: difficulty, questData: questData, characters: characters)
+        var selectedChapter = 1
+        if aDecoder.containsValue(forKey: "selectedChapter") {
+            selectedChapter = aDecoder.decodeInteger(forKey: "selectedChapter")
+        }
+        
+        self.init(selectedLevel: selectedLevel, selectedCharacter: selectedCharacter, levelResults: levelResults, difficulty: difficulty, questData: questData, characters: characters, selectedChapter: selectedChapter)
     }
     
     func save() {
@@ -107,6 +115,7 @@ class GameSave: NSObject, NSCoding {
             self.difficulty = savedGame.difficulty
             self.questData = savedGame.questData
             self.characters = savedGame.characters
+            self.selectedChapter = savedGame.selectedChapter
         }
     }
     

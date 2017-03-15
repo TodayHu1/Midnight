@@ -12,7 +12,11 @@ import UIKit
 class LevelSelectCell: UICollectionViewCell {
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
-    
+    @IBOutlet weak var totalDamageImage: UIImageView!
+    @IBOutlet weak var elapsedTimeImage: UIImageView!
+    @IBOutlet weak var totalMovesImage: UIImageView!
+    @IBOutlet weak var wavesLabel: UILabel!
+
     override var isSelected: Bool {
         didSet {
             cellImage.layer.borderWidth = isSelected ? 3 : 0

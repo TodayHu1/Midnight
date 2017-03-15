@@ -33,8 +33,8 @@ class LevelCompleteViewController: UIViewController {
     @IBAction func continueButtonPressed() {
         if gameOver {
             performSegue(withIdentifier: "showMainMenu", sender: self)
-        } else if levelUp {
-            performSegue(withIdentifier: "showLevelUp", sender: self)
+//        } else if levelUp {
+//            performSegue(withIdentifier: "showLevelUp", sender: self)
         } else {
             performSegue(withIdentifier: "showStoryMode", sender: self)
         }
@@ -63,13 +63,19 @@ class LevelCompleteViewController: UIViewController {
         damageTakenResult.text = String(format: "%ld", level.result.totalDamageTaken)
         elapsedTimeResult.text = DateComponentsFormatter().string(from: level.result.elapsedTime)
         
-        if level.result.totalMoves <= level.goals.totalMoves {goal1.image = UIImage(named: "goal complete")}
-        if level.result.totalDamageTaken <= level.goals.totalDamageTaken {goal2.image = UIImage(named: "goal complete")}
-        if level.result.elapsedTime <= level.goals.elapsedTime {goal3.image = UIImage(named: "goal complete")}
+        if level.result.totalMoves <= level.goals.totalMoves {goal1.image = UIImage(named: "Complete_Star")}
+        if level.result.totalDamageTaken <= level.goals.totalDamageTaken {goal2.image = UIImage(named: "Complete_Star")}
+        if level.result.elapsedTime <= level.goals.elapsedTime {goal3.image = UIImage(named: "Complete_Star")}
         
         if awardedExperience > 0 {
             currentLevel.text = String(format: "Level %ld", character.level)
             nextLevel.text = String(format: "Level %ld", character.level + 1)
+            
+            //set base experience on progress bar for animation purposes
+            let previousExperience = character.experience - awardedExperience
+            let basePercentage = Float(previousExperience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
+            experienceProgress.setProgress(basePercentage, animated: false)
+            
         } else {
             experienceProgress.isHidden = true
             currentLevel.isHidden = true
@@ -80,8 +86,14 @@ class LevelCompleteViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+         //animate experience progress
         let progressPercentage = Float(character.experience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
         experienceProgress.setProgress(progressPercentage, animated: true)
+        
+        if levelUp {
+            levelUp = false
+            self.performSegue(withIdentifier: "presentLevelUp", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -93,7 +105,7 @@ class LevelCompleteViewController: UIViewController {
             let vc = segue.destination as! PreGameViewController
             vc.savedGame = savedGame
         }
-        if segue.identifier == "showLevelUp" {
+        if segue.identifier == "presentLevelUp" {
             let vc = segue.destination as! LevelUpViewController
             vc.savedGame = savedGame
         }

@@ -1,7 +1,7 @@
 {
     "monsters" : ["Zombie"],
     "background" : "Game Bamboo",
-    "title" : "The Graveyard",
+    "title" : "Watching the Stars",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -17,6 +17,7 @@
                    {"key" : "unlock_level_1_5", "value" : 1}
                    ],
     "scene" : ["Scene_1_4"],
-    "characters" : ["Camila"]
+    "characters" : ["Camila"],
+    "supportCharacters" : ["Lilly"]
 
 }

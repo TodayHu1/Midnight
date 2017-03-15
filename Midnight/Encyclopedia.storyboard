@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gTJ-xl-6Py">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gTJ-xl-6Py">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -30,21 +29,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Clean" translatesAutoresizingMaskIntoConstraints="NO" id="ZVr-9e-CWa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Necronomicon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlb-1N-6dn">
-                                <rect key="frame" x="91" y="60" width="194" height="55"/>
-                                <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="48"/>
+                                <rect key="frame" x="115" y="10" width="145" height="41"/>
+                                <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Left Bracket" translatesAutoresizingMaskIntoConstraints="NO" id="vgM-Pd-6f8">
-                                <rect key="frame" x="16" y="54" width="42" height="66"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Right Bracket" translatesAutoresizingMaskIntoConstraints="NO" id="Psu-Gr-7PS">
-                                <rect key="frame" x="317" y="54" width="42" height="66"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eS8-Bu-XfX">
-                                <rect key="frame" x="164" y="590" width="47" height="47"/>
-                                <state key="normal" image="Return">
+                                <rect key="frame" x="10" y="16" width="30" height="30"/>
+                                <state key="normal" image="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -80,14 +76,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hlb-1N-6dn" firstAttribute="centerY" secondItem="vgM-Pd-6f8" secondAttribute="centerY" id="1a1-oj-NWh"/>
-                            <constraint firstItem="vgM-Pd-6f8" firstAttribute="top" secondItem="Edi-U2-PAl" secondAttribute="bottom" constant="34" id="37p-Jl-aZh"/>
-                            <constraint firstItem="u2q-La-dHh" firstAttribute="top" secondItem="eS8-Bu-XfX" secondAttribute="bottom" constant="30" id="8HL-Uh-fAv"/>
-                            <constraint firstItem="vgM-Pd-6f8" firstAttribute="leading" secondItem="LRa-mp-cWR" secondAttribute="leadingMargin" id="8sD-oc-5FQ"/>
+                            <constraint firstItem="ZVr-9e-CWa" firstAttribute="leading" secondItem="LRa-mp-cWR" secondAttribute="leading" id="9cW-Ik-y0J"/>
+                            <constraint firstItem="hlb-1N-6dn" firstAttribute="top" secondItem="LRa-mp-cWR" secondAttribute="top" constant="10" id="CKh-Ow-YvL"/>
                             <constraint firstItem="hlb-1N-6dn" firstAttribute="centerX" secondItem="LRa-mp-cWR" secondAttribute="centerX" id="ONk-wy-jFV"/>
-                            <constraint firstItem="Psu-Gr-7PS" firstAttribute="trailing" secondItem="LRa-mp-cWR" secondAttribute="trailingMargin" id="Sj9-2g-Opw"/>
-                            <constraint firstItem="Psu-Gr-7PS" firstAttribute="top" secondItem="Edi-U2-PAl" secondAttribute="bottom" constant="34" id="bMB-jm-uK6"/>
-                            <constraint firstItem="eS8-Bu-XfX" firstAttribute="centerX" secondItem="LRa-mp-cWR" secondAttribute="centerX" id="nUy-35-apS"/>
+                            <constraint firstAttribute="trailing" secondItem="ZVr-9e-CWa" secondAttribute="trailing" id="TXM-OX-vOI"/>
+                            <constraint firstItem="eS8-Bu-XfX" firstAttribute="leading" secondItem="LRa-mp-cWR" secondAttribute="leading" constant="10" id="ZgW-Vp-cF4"/>
+                            <constraint firstItem="ZVr-9e-CWa" firstAttribute="top" secondItem="LRa-mp-cWR" secondAttribute="top" id="fFN-JN-bkn"/>
+                            <constraint firstItem="eS8-Bu-XfX" firstAttribute="top" secondItem="LRa-mp-cWR" secondAttribute="top" constant="16" id="ggV-6D-T2l"/>
+                            <constraint firstAttribute="bottom" secondItem="ZVr-9e-CWa" secondAttribute="bottom" id="svO-KF-Cjr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -121,21 +117,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Clean" translatesAutoresizingMaskIntoConstraints="NO" id="pOT-HE-w2H">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Necronomicon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTN-oF-vpo">
-                                <rect key="frame" x="91" y="60" width="194" height="55"/>
-                                <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="48"/>
+                                <rect key="frame" x="115.5" y="10" width="145" height="41"/>
+                                <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Left Bracket" translatesAutoresizingMaskIntoConstraints="NO" id="bqu-S5-kzz">
-                                <rect key="frame" x="16" y="54" width="42" height="66"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Right Bracket" translatesAutoresizingMaskIntoConstraints="NO" id="DyS-BL-SWt">
-                                <rect key="frame" x="317" y="54" width="42" height="66"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cQ-TR-ZdH">
-                                <rect key="frame" x="164" y="590" width="47" height="47"/>
-                                <state key="normal" image="Return">
+                                <rect key="frame" x="10" y="16" width="30" height="30"/>
+                                <state key="normal" image="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -154,14 +147,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DyS-BL-SWt" firstAttribute="top" secondItem="11z-EI-PZl" secondAttribute="bottom" constant="34" id="Ce9-bj-xlg"/>
-                            <constraint firstItem="W5v-bP-W7W" firstAttribute="top" secondItem="8cQ-TR-ZdH" secondAttribute="bottom" constant="30" id="Knd-eU-4qb"/>
-                            <constraint firstItem="DyS-BL-SWt" firstAttribute="trailing" secondItem="mjK-5F-g2Q" secondAttribute="trailingMargin" id="VJe-vE-WIe"/>
-                            <constraint firstItem="8cQ-TR-ZdH" firstAttribute="centerX" secondItem="mjK-5F-g2Q" secondAttribute="centerX" id="Wzo-ah-YKO"/>
-                            <constraint firstItem="bqu-S5-kzz" firstAttribute="leading" secondItem="mjK-5F-g2Q" secondAttribute="leadingMargin" id="XmT-L2-eUf"/>
-                            <constraint firstItem="bqu-S5-kzz" firstAttribute="top" secondItem="11z-EI-PZl" secondAttribute="bottom" constant="34" id="mZn-bB-Mvu"/>
-                            <constraint firstItem="eTN-oF-vpo" firstAttribute="centerY" secondItem="bqu-S5-kzz" secondAttribute="centerY" id="w4D-8y-XGZ"/>
+                            <constraint firstAttribute="trailing" secondItem="pOT-HE-w2H" secondAttribute="trailing" id="EOb-qV-Nul"/>
+                            <constraint firstAttribute="bottom" secondItem="pOT-HE-w2H" secondAttribute="bottom" id="boY-0G-VTd"/>
+                            <constraint firstItem="eTN-oF-vpo" firstAttribute="top" secondItem="mjK-5F-g2Q" secondAttribute="top" constant="10" id="gBq-2B-CXr"/>
+                            <constraint firstItem="pOT-HE-w2H" firstAttribute="top" secondItem="mjK-5F-g2Q" secondAttribute="top" id="gOQ-8I-6eJ"/>
+                            <constraint firstItem="8cQ-TR-ZdH" firstAttribute="top" secondItem="mjK-5F-g2Q" secondAttribute="top" constant="16" id="pcX-60-EaT"/>
+                            <constraint firstItem="8cQ-TR-ZdH" firstAttribute="leading" secondItem="mjK-5F-g2Q" secondAttribute="leading" constant="10" id="r3U-n5-Xci"/>
                             <constraint firstItem="eTN-oF-vpo" firstAttribute="centerX" secondItem="mjK-5F-g2Q" secondAttribute="centerX" id="wTd-jg-tl3"/>
+                            <constraint firstItem="pOT-HE-w2H" firstAttribute="leading" secondItem="mjK-5F-g2Q" secondAttribute="leading" id="xBn-Rf-Iz4"/>
                         </constraints>
                     </view>
                     <connections>
@@ -185,21 +178,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background Clean" translatesAutoresizingMaskIntoConstraints="NO" id="TqT-h1-Sfe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Necronomicon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goK-7v-LlH">
-                                <rect key="frame" x="91" y="60" width="194" height="55"/>
-                                <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="48"/>
+                                <rect key="frame" x="115.5" y="10" width="145" height="41"/>
+                                <fontDescription key="fontDescription" name="SilverBulletBB" family="SilverBullet BB" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Left Bracket" translatesAutoresizingMaskIntoConstraints="NO" id="hF9-Ev-UGy">
-                                <rect key="frame" x="16" y="54" width="42" height="66"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Right Bracket" translatesAutoresizingMaskIntoConstraints="NO" id="Gyx-7s-I2t">
-                                <rect key="frame" x="317" y="54" width="42" height="66"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqM-eA-xyD">
-                                <rect key="frame" x="164" y="590" width="47" height="47"/>
-                                <state key="normal" image="Return">
+                                <rect key="frame" x="10" y="16" width="30" height="30"/>
+                                <state key="normal" image="Back">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -238,14 +228,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="goK-7v-LlH" firstAttribute="centerY" secondItem="hF9-Ev-UGy" secondAttribute="centerY" id="61L-nN-SMM"/>
-                            <constraint firstItem="Gyx-7s-I2t" firstAttribute="top" secondItem="78F-Md-HcC" secondAttribute="bottom" constant="34" id="Cy8-X3-qSq"/>
-                            <constraint firstItem="hF9-Ev-UGy" firstAttribute="top" secondItem="78F-Md-HcC" secondAttribute="bottom" constant="34" id="D1s-Ju-VTL"/>
-                            <constraint firstItem="Gyx-7s-I2t" firstAttribute="trailing" secondItem="l25-w3-COB" secondAttribute="trailingMargin" id="FUJ-Yb-Iza"/>
-                            <constraint firstItem="pqM-eA-xyD" firstAttribute="centerX" secondItem="l25-w3-COB" secondAttribute="centerX" id="KQh-xu-bs4"/>
+                            <constraint firstItem="TqT-h1-Sfe" firstAttribute="leading" secondItem="l25-w3-COB" secondAttribute="leading" id="3Sd-7A-h53"/>
+                            <constraint firstItem="pqM-eA-xyD" firstAttribute="top" secondItem="l25-w3-COB" secondAttribute="top" constant="16" id="5TX-mu-duy"/>
+                            <constraint firstItem="pqM-eA-xyD" firstAttribute="leading" secondItem="l25-w3-COB" secondAttribute="leading" constant="10" id="95v-h7-1Vp"/>
+                            <constraint firstAttribute="trailing" secondItem="TqT-h1-Sfe" secondAttribute="trailing" id="LlV-U7-SdL"/>
+                            <constraint firstItem="goK-7v-LlH" firstAttribute="top" secondItem="l25-w3-COB" secondAttribute="top" constant="10" id="Vsi-Fz-3kC"/>
+                            <constraint firstItem="TqT-h1-Sfe" firstAttribute="top" secondItem="l25-w3-COB" secondAttribute="top" id="nqj-Gn-N0A"/>
                             <constraint firstItem="goK-7v-LlH" firstAttribute="centerX" secondItem="l25-w3-COB" secondAttribute="centerX" id="tH5-iQ-Ia7"/>
-                            <constraint firstItem="arg-y0-7Jl" firstAttribute="top" secondItem="pqM-eA-xyD" secondAttribute="bottom" constant="30" id="uBp-zg-Hol"/>
-                            <constraint firstItem="hF9-Ev-UGy" firstAttribute="leading" secondItem="l25-w3-COB" secondAttribute="leadingMargin" id="xt2-pI-Waa"/>
+                            <constraint firstAttribute="bottom" secondItem="TqT-h1-Sfe" secondAttribute="bottom" id="uRv-44-73I"/>
                         </constraints>
                     </view>
                     <connections>
@@ -259,8 +249,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Left Bracket" width="42" height="66"/>
-        <image name="Return" width="47" height="47"/>
-        <image name="Right Bracket" width="42" height="66"/>
+        <image name="Back" width="30" height="30"/>
+        <image name="Background Clean" width="750" height="1334"/>
     </resources>
 </document>

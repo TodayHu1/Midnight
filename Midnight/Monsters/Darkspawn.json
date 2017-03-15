@@ -1,0 +1,15 @@
+{
+    "health" : 1500,
+    "name" : "Darkspawn",
+    "image" : "darkspawn",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 0,
+    "specialAttack" : "Chaos",
+    "specialAttackChance" : 20,
+    "description" : "One of the Dark Queen's drones. Voracious and vicious.",
+    "unlockKey" : "encyclopedia_darkspawn",
+    "specialAbilities" : "Chaos: A darkspawn's special attack will cause all tiles to be shuffled.",
+    "gameOver" : "The darkspawn does, in fact, eat your eyeballs for breakfast."
+}

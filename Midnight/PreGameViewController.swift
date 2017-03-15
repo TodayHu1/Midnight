@@ -45,9 +45,9 @@ class PreGameViewController: UIViewController {
         elapsedTimeLabel.text = DateComponentsFormatter().string(from: level.goals.elapsedTime)
         
         if let levelResults = savedGame.levelResults[savedGame.selectedLevel] {
-            if levelResults.totalMovesGoal {goal1.image = UIImage(named: "goal complete")}
-            if levelResults.totalDamageTakenGoal {goal2.image = UIImage(named: "goal complete")}
-            if levelResults.elapsedTimeGoal {goal3.image = UIImage(named: "goal complete")}
+            if levelResults.totalMovesGoal {goal1.image = UIImage(named: "Complete_Star")}
+            if levelResults.totalDamageTakenGoal {goal2.image = UIImage(named: "Complete_Star")}
+            if levelResults.elapsedTimeGoal {goal3.image = UIImage(named: "Complete_Star")}
         }
     }
     

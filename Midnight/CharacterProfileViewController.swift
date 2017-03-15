@@ -27,7 +27,7 @@ class CharacterProfileViewController: UIViewController {
     
     
     @IBAction func backButtonPressed(_ sender: AnyObject) {
-        dismiss(animated: true, completion: {})
+        dismiss(animated: false, completion: {})
     }
     
     override var prefersStatusBarHidden : Bool {

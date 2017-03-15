@@ -10,7 +10,6 @@ import Foundation
 
 let NumColumns = 8
 let NumRows = 8
-//let NumLevels = 10
 
 struct LevelRewards {
     var totalMoves: Int = 0
@@ -35,7 +34,9 @@ class Level {
     var rewards: LevelRewards = LevelRewards()
     var questData: [String: AnyObject] = [String: AnyObject]()
     var scene: [String]?
+    var postlude: [String]?
     var availableCharacters: [String]?
+    var supportCharacters: [String]?
     
     init(filename: String) {
         guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {return}
@@ -84,9 +85,14 @@ class Level {
         }
         
         scene = dictionary["scene"] as? [String]
+        postlude = dictionary["postlude"] as? [String]
         
         if let availableCharacterArray : [String] = dictionary["characters"] as? [String] {
             availableCharacters = availableCharacterArray
+        }
+        
+        if let supportCharacterArray : [String] = dictionary["supportCharacters"] as? [String] {
+            supportCharacters = supportCharacterArray
         }
     }
     
@@ -111,6 +117,54 @@ class Level {
         } while possibleSwaps.count == 0
         
         return set
+    }
+    
+    func poison() -> Set<Token> {
+        var set = Set<Token>()
+        
+        for _ in 1...NumRows {
+            let column = Int(arc4random_uniform(UInt32(NumColumns)))
+            let row = Int(arc4random_uniform(UInt32(NumRows)))
+            
+            if tokens[column, row]?.status == TokenStatus.None {
+                tokens[column, row]?.status = .Poison
+                set.insert(tokens[column, row]!)
+            }
+        }
+        return set
+    }
+    
+    func hide() -> Set<Token> {
+        var set = Set<Token>()
+        
+        let columnRange = Range(uncheckedBounds: (lower: 2, upper: NumColumns - 1))
+        let rowRange = Range(uncheckedBounds: (lower: 2, upper: NumRows - 1))
+        
+        let originColumn = Int.random(range: columnRange)
+        let originRow = Int.random(range: rowRange)
+        
+        for row in originRow - 1...originRow + 1 {
+            for column in originColumn - 1...originColumn + 1 {
+                if tokens[column, row]?.status == TokenStatus.None {
+                    tokens[column, row]?.status = .Hidden
+                    set.insert(tokens[column, row]!)
+                }
+            }
+        }
+        return set
+    }
+    
+    func countPoisonTokens() -> Int {
+        var tokenCount = 0
+        
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                if tokens[row, column]?.status == .Poison {
+                    tokenCount += 1
+                }
+            }
+        }
+        return tokenCount
     }
     
     func createInitialTokens() -> Set<Token> {
@@ -338,14 +392,14 @@ class Level {
         return set
     }
     
-    func removeMatches(_ strength: Double, wave: Int) -> Set<Chain> {
+    func removeMatches(strength: Double, wave: Int) -> Set<Chain> {
         var horizontalChains = detectHorizontalMatches()
         var verticalChains = detectVerticalMatches()
         let specialChains = detectSpecialMatches(&horizontalChains, verticalChains: &verticalChains)
         
-        removeTokens(horizontalChains)
-        removeTokens(verticalChains)
-        removeTokens(specialChains)
+        processTokens(chains: horizontalChains)
+        processTokens(chains: verticalChains)
+        processTokens(chains: specialChains)
         
         calculateScores(horizontalChains, strength: strength, wave: wave)
         calculateScores(verticalChains, strength: strength, wave: wave)
@@ -354,10 +408,18 @@ class Level {
         return horizontalChains.union(verticalChains).union(specialChains)
     }
     
-    fileprivate func removeTokens(_ chains: Set<Chain>) {
+    fileprivate func processTokens(chains: Set<Chain>) {
         for chain in chains {
             for token in chain.tokens {
-                tokens[token.column, token.row] = nil
+                switch token.status {
+                case .Poison:
+                    tokens[token.column, token.row] = nil
+                case .Freeze:
+                    // change status back to none, but do not remove from grid
+                    tokens[token.column, token.row]!.status = .None
+                default:
+                    tokens[token.column, token.row] = nil
+                }
             }
         }
     }

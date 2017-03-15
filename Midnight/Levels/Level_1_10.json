@@ -1,7 +1,7 @@
 {
-    "monsters" : ["RedDragon"],
-    "background" : "Game Sakura 2",
-    "title" : "Mt. Doom",
+    "monsters" : ["EnhancedZombie"],
+    "background" : "Boss Fight",
+    "title" : "Boss Fight",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 10,
@@ -16,5 +16,8 @@
     "questdata" : [
                    {"key" : "unlock_chapter_2", "value" : 1},
                    {"key" : "unlock_level_2_1", "value" : 1}
-                   ]
+                   ],
+    "scene" : ["Scene_1_10"],
+    "characters" : ["Olivia","Lilly","Camila","Anaya","Yuna"],
+    "supportCharacters" : ["Olivia","Lilly","Camila","Anaya","Yuna"]
 }

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="60ce61db-0e85-41d9-a4dc-fbeae3e7163a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Attention.imageset/Attention.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Attention.imageset/Attention@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Attention.imageset/Attention@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Bracelet.imageset/Bracelet.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Bracelet.imageset/Bracelet@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Bracelet.imageset/Bracelet@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Chain.imageset/Chain.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Chain.imageset/Chain@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Chain.imageset/Chain@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Chain_Background.imageset/Chain_Background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Chain_Background.imageset/Chain_Background@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Chain_Background.imageset/Chain_Background@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character Names Gradiant.imageset/Character Names Gradiant.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character Names Gradiant.imageset/Character Names Gradiant@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character Names Gradiant.imageset/Character Names Gradiant@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character_Select_Background.imageset/Character_Select_Background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character_Select_Background.imageset/Character_Select_Background@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character_Select_Background.imageset/Character_Select_Background@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character_Select_Cell_Background.imageset/Character_Select_Cell_Background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character_Select_Cell_Background.imageset/Character_Select_Cell_Background@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character_Select_Cell_Background.imageset/Character_Select_Cell_Background@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Cleanse.imageset/Cleanse.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Cleanse.imageset/Cleanse@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Cleanse.imageset/Cleanse@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Continue.imageset/Continue.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Continue.imageset/Continue@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Continue.imageset/Continue@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Defense.imageset/Defense.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Defense.imageset/Defense@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Defense.imageset/Defense@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Dialogue_Background.imageset/Dialogue_Background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Dialogue_Background.imageset/Dialogue_Background@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Dialogue_Background.imageset/Dialogue_Background@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Fast Forward.imageset/Fast Forward.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Fast Forward.imageset/Fast Forward@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Fast Forward.imageset/Fast Forward@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Fight.imageset/Fight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Fight.imageset/Fight@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Fight.imageset/Fight@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Goals.imageset/Goals.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Goals.imageset/Goals@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Goals.imageset/Goals@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Handshake.imageset/Handshake.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Handshake.imageset/Handshake@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Handshake.imageset/Handshake@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Heal.imageset/Heal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Heal.imageset/Heal@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Heal.imageset/Heal@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Health.imageset/Health.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Health.imageset/Health@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Health.imageset/Health@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Next Screen.imageset/Next Screen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Next Screen.imageset/Next Screen@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Next Screen.imageset/Next Screen@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shield.imageset/Shield.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shield.imageset/Shield@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shield.imageset/Shield@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shield_Purple.imageset/Shield_Purple.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shield_Purple.imageset/Shield_Purple@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shield_Purple.imageset/Shield_Purple@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Skip.imageset/Skip.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Skip.imageset/Skip@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Skip.imageset/Skip@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Target.imageset/Target.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Target.imageset/Target@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Target.imageset/Target@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Target_White.imageset/Target_White.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Target_White.imageset/Target_White@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Target_White.imageset/Target_White@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token1.imageset/Token1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token1.imageset/Token1@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token1.imageset/Token1@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token2.imageset/Token2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token2.imageset/Token2@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token2.imageset/Token2@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token3.imageset/Token3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token3.imageset/Token3@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token3.imageset/Token3@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token4.imageset/Token4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token4.imageset/Token4@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token4.imageset/Token4@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token5.imageset/Token5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token5.imageset/Token5@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token5.imageset/Token5@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Transmute.imageset/Transmute.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Transmute.imageset/Transmute@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Transmute.imageset/Transmute@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Undo.imageset/Undo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Undo.imageset/Undo@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Undo.imageset/Undo@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/VS.imageset/VS.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/VS.imageset/VS@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/VS.imageset/VS@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/affinity_background.imageset/affinity_background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/affinity_background.imageset/affinity_background@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/affinity_background.imageset/affinity_background@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/ok.imageset/ok.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/zombie-1.imageset/zombie@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/zombie.imageset/zombie@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Bracelet.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Chain_Background.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character Names Gradiant.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character_Select_Background.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Character_Select_Cell_Background.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Cleanse.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Continue.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Defense.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Dialogue_Background.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Fast Forward.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Heal.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Health.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Next Screen.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shield.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shield_Purple.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Target.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token1.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token2.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token3.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token4.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Token5.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Transmute.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Undo.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/VS.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/affinity_background.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Midnight/Scenes/Scene_Q1_1.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Angry.imageset/Angry.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Angry.imageset/Angry@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Angry.imageset/Angry@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/BlueSkull.imageset/BlueSkull.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/BlueSkull.imageset/BlueSkull@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/BlueSkull.imageset/BlueSkull@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Cross.imageset/Cross.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Cross.imageset/Cross@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Cross.imageset/Cross@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Encyclopedia.imageset/Encyclopedia.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Encyclopedia.imageset/Encyclopedia@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Encyclopedia.imageset/Encyclopedia@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/GoldSkull.imageset/GoldSkull.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/GoldSkull.imageset/GoldSkull@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/GoldSkull.imageset/GoldSkull@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/GreenSkull.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/GreenSkull.imageset/GreenSkull.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/GreenSkull.imageset/GreenSkull@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/GreenSkull.imageset/GreenSkull@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Happy.imageset/Happy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Happy.imageset/Happy@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Happy.imageset/Happy@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Heart.imageset/Heart.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Heart.imageset/Heart@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Heart.imageset/Heart@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Left Bracket.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Left Bracket.imageset/Left Bracket.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Left Bracket.imageset/Left Bracket@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Left Bracket.imageset/Left Bracket@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Left Dots.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Left Dots.imageset/Left Dots.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Left Dots.imageset/Left Dots@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Left Dots.imageset/Left Dots@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Neutral.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Neutral.imageset/Neutral.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Neutral.imageset/Neutral@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Neutral.imageset/Neutral@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Ok.imageset/Ok.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Ok.imageset/Ok@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Ok.imageset/Ok@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Pause.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Pause.imageset/Pause.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Pause.imageset/Pause@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Pause.imageset/Pause@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/PurpleSkull.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/PurpleSkull.imageset/PurpleSkull.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/PurpleSkull.imageset/PurpleSkull@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/PurpleSkull.imageset/PurpleSkull@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/RedSkull.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/RedSkull.imageset/RedSkull.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/RedSkull.imageset/RedSkull@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/RedSkull.imageset/RedSkull@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Return.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Return.imageset/Return.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Return.imageset/Return@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Return.imageset/Return@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Right Bracket.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Right Bracket.imageset/Right Bracket.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Right Bracket.imageset/Right Bracket@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Right Bracket.imageset/Right Bracket@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Right Dots.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Right Dots.imageset/Right Dots.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Right Dots.imageset/Right Dots@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Right Dots.imageset/Right Dots@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Sad.imageset/Sad.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Sad.imageset/Sad@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Sad.imageset/Sad@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shutdown.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shutdown.imageset/Shutdown.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shutdown.imageset/Shutdown@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Shutdown.imageset/Shutdown@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Skull-1.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Skull-1.imageset/Skull.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Skull-1.imageset/Skull@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Skull-1.imageset/Skull@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Statistics.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Statistics.imageset/Statistics.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Statistics.imageset/Statistics@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Statistics.imageset/Statistics@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Treasure Map.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Treasure Map.imageset/Treasure Map.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Treasure Map.imageset/Treasure Map@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Treasure Map.imageset/Treasure Map@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/debug.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/debug.imageset/debug.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/debug.imageset/debug@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/debug.imageset/debug@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/goal complete.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/goal complete.imageset/goal complete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/goal complete.imageset/goal complete@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/goal complete.imageset/goal complete@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/goal incomplete.imageset/Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/goal incomplete.imageset/goal incomplete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/goal incomplete.imageset/goal incomplete@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/goal incomplete.imageset/goal incomplete@3x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/vs.imageset/vs.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/vs.imageset/vs@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/vs.imageset/vs@3x.png" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Angry.imageset/Contents.json" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Skip.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/BlueSkull.imageset/Contents.json" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Attention.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Cross.imageset/Contents.json" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Fight.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Encyclopedia.imageset/Contents.json" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Target_White.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/GoldSkull.imageset/Contents.json" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Handshake.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Happy.imageset/Contents.json" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Chain.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Heart.imageset/Contents.json" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Goals.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Ok.imageset/Contents.json" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/zombie-1.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Sad.imageset/Contents.json" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/zombie.imageset/Contents.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/vs.imageset/Contents.json" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/ok.imageset/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Critical.imageset/Critical.png" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Critical.imageset/Critical.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Critical.imageset/Critical@2x.png" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Critical.imageset/Critical@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Critical.imageset/Critical@3x.png" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Critical.imageset/Critical@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Retry.imageset/Retry.png" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Retry.imageset/Retry.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Retry.imageset/Retry@2x.png" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Retry.imageset/Retry@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Retry.imageset/Retry@3x.png" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Retry.imageset/Retry@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Strength.imageset/Strength.png" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Strength.imageset/Strength.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Strength.imageset/Strength@2x.png" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Strength.imageset/Strength@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Assets.xcassets/Strength.imageset/Strength@3x.png" afterPath="$PROJECT_DIR$/Midnight/Assets.xcassets/Strength.imageset/Strength@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Midnight.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Affinity.swift" afterPath="$PROJECT_DIR$/Midnight/Affinity.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/Midnight/Base.lproj/Main.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Character.swift" afterPath="$PROJECT_DIR$/Midnight/Character.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/CharacterMode.storyboard" afterPath="$PROJECT_DIR$/Midnight/CharacterMode.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/CharacterProfileViewController.swift" afterPath="$PROJECT_DIR$/Midnight/CharacterProfileViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/CharacterSelectCell.swift" afterPath="$PROJECT_DIR$/Midnight/CharacterSelectCell.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/CharacterSelectViewController.swift" afterPath="$PROJECT_DIR$/Midnight/CharacterSelectViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Characters/Character_Anaya.json" afterPath="$PROJECT_DIR$/Midnight/Characters/Character_Anaya.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Characters/Character_Camila.json" afterPath="$PROJECT_DIR$/Midnight/Characters/Character_Camila.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Characters/Character_Lilly.json" afterPath="$PROJECT_DIR$/Midnight/Characters/Character_Lilly.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Characters/Character_Olivia.json" afterPath="$PROJECT_DIR$/Midnight/Characters/Character_Olivia.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Characters/Character_Yuna.json" afterPath="$PROJECT_DIR$/Midnight/Characters/Character_Yuna.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/DialogueViewController.swift" afterPath="$PROJECT_DIR$/Midnight/DialogueViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Encyclopedia.storyboard" afterPath="$PROJECT_DIR$/Midnight/Encyclopedia.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Encyclopedia/encyclopedia.json" afterPath="$PROJECT_DIR$/Midnight/Encyclopedia/encyclopedia.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/GameSave.swift" afterPath="$PROJECT_DIR$/Midnight/GameSave.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/GameScene.swift" afterPath="$PROJECT_DIR$/Midnight/GameScene.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/GameViewController.swift" afterPath="$PROJECT_DIR$/Midnight/GameViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Level.swift" afterPath="$PROJECT_DIR$/Midnight/Level.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/LevelCompleteViewController.swift" afterPath="$PROJECT_DIR$/Midnight/LevelCompleteViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/LevelUpViewController.swift" afterPath="$PROJECT_DIR$/Midnight/LevelUpViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Levels/Level_1_6.json" afterPath="$PROJECT_DIR$/Midnight/Levels/Level_1_6.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Levels/Progress.json" afterPath="$PROJECT_DIR$/Midnight/Levels/Progress.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/MonsterMode.storyboard" afterPath="$PROJECT_DIR$/Midnight/MonsterMode.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/MonsterStatsViewController.swift" afterPath="$PROJECT_DIR$/Midnight/MonsterStatsViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/PreGameViewController.swift" afterPath="$PROJECT_DIR$/Midnight/PreGameViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Quest.swift" afterPath="$PROJECT_DIR$/Midnight/Quest.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Scenes/Scene_1_6B.json" afterPath="$PROJECT_DIR$/Midnight/Scenes/Scene_1_6B.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/Scenes/Scene_1_9.json" afterPath="$PROJECT_DIR$/Midnight/Scenes/Scene_1_9.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/StoryHubViewController.swift" afterPath="$PROJECT_DIR$/Midnight/StoryHubViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Midnight/StoryMode.storyboard" afterPath="$PROJECT_DIR$/Midnight/StoryMode.storyboard" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="959" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Cidr.FilesView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Midnight" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Midnight" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Midnight" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Midnight" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Midnight" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Game Mode" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Midnight">
+    <configuration default="true" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" MAKE_ACTIVE="TRUE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="Midnight" type="AppleRunConfiguration" factoryName="Application" PROGRAM_PARAMS="-FIRAnalyticsDebugEnabled" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Midnight" TARGET_NAME="Midnight" CONFIG_NAME="Debug" SCHEME_NAME="Midnight" RUN_TARGET_PROJECT_NAME="Midnight" RUN_TARGET_NAME="Midnight" MAKE_ACTIVE="TRUE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.Midnight" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="60ce61db-0e85-41d9-a4dc-fbeae3e7163a" name="Default" comment="" />
+      <created>1491358293177</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1491358293177</updated>
+      <workItem from="1491358296234" duration="43000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="43000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1680" height="959" extended-state="6" />
+    <layout>
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>

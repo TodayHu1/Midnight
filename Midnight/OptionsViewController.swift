@@ -114,8 +114,8 @@ class OptionsViewcontroller: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     func renderMenuButton(currentButton: Int) {
-        let imageArray = ["Book", "Character", "Inventory", "Store", "Settings"]
-        let segueArray = ["showStory", "showCharacter", "showInventory", "showStore", "showSettings"]
+        let imageArray = ["Book", "Character", "Inventory", "Store", "Settings", "Exit"]
+        let segueArray = ["showStory", "showCharacter", "showInventory", "showStore", "showSettings", "showTitle"]
         
         let color = UIColor(red:0.27, green:0.00, blue:0.40, alpha:1.0)
         let selectedColor = UIColor.gray

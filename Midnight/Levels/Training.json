@@ -1,0 +1,56 @@
+{
+    "chapters" : [
+                  {"chapter" : "chapter_T1",
+                  "title" : "The Basics",
+                  "unlockKey" : "unlock_chapter_T1",
+                  "levels" : [
+                              {"level" : "Level_T1_1",
+                              "title" : "Out for a Walk",
+                              "waves" : 1,
+                              "unlockKey" : "unlock_level_T1_1"},
+                              {"level" : "Level_T1_2",
+                              "title": "An Unwelcome Guest",
+                              "waves" : 1,
+                              "unlockKey" : "unlock_level_T1_2"},
+                              {"level" : "Level_T1_3",
+                              "title": "An Unexpected Discovery",
+                              "waves" : 1,
+                              "unlockKey" : "unlock_level_T1_3"},
+                              {"level" : "Level_1_4",
+                              "title": "Watching the Stars",
+                              "waves" : 1,
+                              "unlockKey" : "unlock_level_T1_4"},
+                              {"level" : "Level_T1_5",
+                              "title": "In The Laboratory",
+                              "waves" : 3,
+                              "unlockKey" : "unlock_level_T1_5"}
+                              ]
+                  },
+                  {"chapter" : "chapter_T2",
+                  "title" : "Boss Fights",
+                  "unlockKey" : "unlock_chapter_T2",
+                  "levels" : [
+                              {"level" : "Level_T2_1",
+                              "title": "Orrey",
+                              "waves" : 3,
+                              "unlockKey" : "unlock_level_2_1"},
+                              {"level" : "Level_T2_2",
+                              "title": "Astrolabe",
+                              "waves" : 1,
+                              "unlockKey" : "unlock_level_T2_2"},
+                              {"level" : "Level_T2_3",
+                              "title": "Astrolabe",
+                              "waves" : 1,
+                              "unlockKey" : "unlock_level_T2_3"},
+                              {"level" : "Level_T2_4",
+                              "title": "Astrolabe",
+                              "waves" : 1,
+                              "unlockKey" : "unlock_level_T2_4"},
+                              {"level" : "Level_T2_5",
+                              "title": "Astrolabe",
+                              "waves" : 1,
+                              "unlockKey" : "unlock_level_T2_5"}
+                              ]
+                  }
+                  ]
+}

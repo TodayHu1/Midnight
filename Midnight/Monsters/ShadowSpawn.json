@@ -1,0 +1,16 @@
+{
+    "health" : 2500,
+    "name" : "Shadow Spawn",
+    "image" : "shadowspawn",
+    "minStrength" : 80,
+    "varStrength" : 20,
+    "critChance" : 1,
+    "regeneration" : 0,
+    "specialAttack" : "Darkness",
+    "specialAttackChance" : 50,
+    "specialAttackCountdown" : 2,
+    "description" : "A dark and mysterious member of the Dark Queen's hive.",
+    "unlockKey" : "encyclopedia_shadowspawn",
+    "specialAbilities" : "Darkness: A shadow spawn's special attack causes tiles to be shrouded in darkness, obscuring their true nature.",
+    "gameOver" : "Death? Not such a sweet release after all..."
+}

@@ -8,12 +8,47 @@
 
 import Foundation
 
-enum Difficulty: Double {
+enum Difficulty: Double, CustomStringConvertible {
     case unknown = 0.0
     case easy = 0.5
     case normal = 1.0
     case hard = 2.0
     case epic = 3.0
+    
+    var description: String {
+        var desc: String
+        switch rawValue {
+        case 0.5:
+            desc = "Easy"
+        case 1.0:
+            desc = "Normal"
+        case 2.0:
+            desc = "Hard"
+        case 3.0:
+            desc = "Epic"
+        default:
+            desc = "Normal"
+        }
+        return desc
+    }
+    
+    static func createFromString(_ type: String) -> Difficulty {
+        var raw: Double
+        switch type {
+        case "Easy":
+            raw = 0.5
+        case "Normal":
+            raw = 1.0
+        case "Hard":
+            raw = 2.0
+        case "Epic":
+            raw = 3.0
+        default:
+            raw = 1.0
+        }
+        return Difficulty(rawValue: raw)!
+    }
+
 }
 
 class GameSave: NSObject, NSCoding {
@@ -23,11 +58,13 @@ class GameSave: NSObject, NSCoding {
     lazy var totalDamageTaken: Int = self.getTotalDamageTaken()
     lazy var elapsedtime: TimeInterval = self.getElapsedTime()
     var selectedCharacter: String = ""
-    var selectedChapter: Int = 1
+    var selectedChapter: Int = 0
     var levelResults: [String: LevelResult] = [String: LevelResult]()
     var difficulty: Difficulty = Difficulty.normal
     var questData: [String: AnyObject] = [String: AnyObject]()
     var characters: [String: Character] = [String: Character]()
+    lazy var teamStrength: Int = self.getTeamStrength()
+    var stars: Int = 0
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("GameSave")
@@ -36,7 +73,7 @@ class GameSave: NSObject, NSCoding {
         super.init()
     }
 
-    init?(selectedLevel: String, selectedCharacter: String, levelResults: [String: LevelResult], difficulty: Double, questData: [String: AnyObject], characters: [String: Character], selectedChapter: Int) {
+    init?(selectedLevel: String, selectedCharacter: String, levelResults: [String: LevelResult], difficulty: Double, questData: [String: AnyObject], characters: [String: Character], selectedChapter: Int, stars: Int) {
         self.selectedLevel = selectedLevel
         self.selectedCharacter = selectedCharacter
         self.levelResults = levelResults
@@ -44,6 +81,7 @@ class GameSave: NSObject, NSCoding {
         self.questData = questData
         self.characters = characters
         self.selectedChapter = selectedChapter
+        self.stars = stars
         
         super.init()
     }
@@ -56,6 +94,7 @@ class GameSave: NSObject, NSCoding {
         aCoder.encode(questData, forKey: "questData")
         aCoder.encode(characters, forKey: "characters")
         aCoder.encode(selectedChapter, forKey: "selectedChapter")
+        aCoder.encode(stars, forKey: "stars")
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -93,7 +132,12 @@ class GameSave: NSObject, NSCoding {
             selectedChapter = aDecoder.decodeInteger(forKey: "selectedChapter")
         }
         
-        self.init(selectedLevel: selectedLevel, selectedCharacter: selectedCharacter, levelResults: levelResults, difficulty: difficulty, questData: questData, characters: characters, selectedChapter: selectedChapter)
+        var stars = 0
+        if aDecoder.containsValue(forKey: "stars") {
+            stars = aDecoder.decodeInteger(forKey: "stars")
+        }
+        
+        self.init(selectedLevel: selectedLevel, selectedCharacter: selectedCharacter, levelResults: levelResults, difficulty: difficulty, questData: questData, characters: characters, selectedChapter: selectedChapter, stars: stars)
     }
     
     func save() {
@@ -116,6 +160,7 @@ class GameSave: NSObject, NSCoding {
             self.questData = savedGame.questData
             self.characters = savedGame.characters
             self.selectedChapter = savedGame.selectedChapter
+            self.stars = savedGame.stars
         }
     }
     
@@ -183,6 +228,16 @@ class GameSave: NSObject, NSCoding {
         let character = Character()
         character.create(filename: "Character_\(characterName)")
         self.characters[character.name] = character
+    }
+    
+    func getTeamStrength() -> Int {
+        var strength: Int = 0
+        
+        for (_, value) in characters {
+            strength += value.affinity.average
+        }
+        
+        return strength
     }
     
 }

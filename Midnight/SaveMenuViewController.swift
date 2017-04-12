@@ -150,9 +150,6 @@ class SaveMenuViewcontroller: UIViewController {
         } else if segue.identifier == "presentConfirmation" {
             let vc = segue.destination as! ConfirmDeleteViewController
             vc.saveSlot = self.saveSlot
-        } else if segue.identifier == "showCharacterProfile" {
-            let vc = segue.destination as! CharacterCreationViewController
-            vc.saveSlot = self.saveSlot
         } else if segue.identifier == "showDialogue" {
             let vc = segue.destination as! DialogueViewController
             vc.savedGame = self.savedGame

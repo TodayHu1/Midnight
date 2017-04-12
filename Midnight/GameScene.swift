@@ -377,6 +377,23 @@ class GameScene: SKScene {
         scoreLabel.run(SKAction.sequence([moveAction, SKAction.removeFromParent()]))
     }
     
+    func animatePoisonDamage(token: Token, strength: Int) {
+        let centerPosition = CGPoint(x: token.sprite!.position.x, y: token.sprite!.position.y)
+        
+        let scoreLabel = SKLabelNode(fontNamed: "DigitalStripBB-BoldItalic")
+        scoreLabel.fontSize = 17
+        scoreLabel.text = String(format: "%ld", strength)
+        scoreLabel.fontColor = UIColor.green
+        scoreLabel.position = centerPosition
+        scoreLabel.zPosition = 300
+        
+        tokensLayer.addChild(scoreLabel)
+        
+        let moveAction = SKAction.move(by: CGVector(dx: 0, dy: 3), duration: 0.7)
+        moveAction.timingMode = .easeOut
+        scoreLabel.run(SKAction.sequence([moveAction, SKAction.removeFromParent()]))
+    }
+    
     func animateCharacterDamage(_ criticalHit: Bool, monsterDamage: Int, centerPosition: CGPoint) {
         let scoreLabel = SKLabelNode(fontNamed: "DigialStripBB")
         scoreLabel.fontSize = 17

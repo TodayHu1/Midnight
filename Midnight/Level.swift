@@ -22,6 +22,7 @@ class Level {
     private var tiles = Array2D<Tile>(columns: NumColumns, rows: NumRows)
     private var possibleSwaps = Set<Swap>()
     var comboMultiplier = 0
+    var countdown = 0
     var noSwaps = false
     
     var monsters: [Monster] = [Monster]()
@@ -165,6 +166,68 @@ class Level {
             }
         }
         return tokenCount
+    }
+    
+    func poisonTokens() -> Set<Token> {
+        var set = Set<Token>()
+        
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                if tokens[row, column]?.status == .Poison {
+                    set.insert(tokens[column, row]!)
+                }
+            }
+        }
+        return set
+    }
+    
+    func specialTokens() -> Set<Token> {
+        var set = Set<Token>()
+        
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                if tokens[row, column]?.status != TokenStatus.None {
+                    set.insert(tokens[column, row]!)
+                }
+            }
+        }
+        return set
+    }
+    
+    func cleanse(numberToCleanse: Int) -> Set<Token> {
+        var set = Set<Token>()
+        var counter = 0
+        
+        for _ in 1...NumRows {
+            let column = Int(arc4random_uniform(UInt32(NumColumns)))
+            let row = Int(arc4random_uniform(UInt32(NumRows)))
+            
+            if tokens[column, row]?.status != TokenStatus.None && (counter < numberToCleanse) {
+                tokens[column, row]?.status = .None
+                set.insert(tokens[column, row]!)
+                counter += 1
+            }
+        }
+        return set
+
+    }
+    
+    func transmute(numberToChange: Int, tokenType: TokenType) -> Set<Token> {
+        var set = Set<Token>()
+        var counter = 0
+        
+        for _ in 1...NumRows {
+            let column = Int(arc4random_uniform(UInt32(NumColumns)))
+            let row = Int(arc4random_uniform(UInt32(NumRows)))
+            
+            if tokens[column, row]?.status == TokenStatus.None && (counter < numberToChange) {
+                tokens[column, row]?.tokenType = tokenType
+                set.insert(tokens[column, row]!)
+                counter += 1
+            }
+        }
+        return set
+        
     }
     
     func createInitialTokens() -> Set<Token> {

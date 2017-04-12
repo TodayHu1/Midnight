@@ -5,5 +5,15 @@
     "startingExperience" : 0,
     "startingHealth" : 1500,
     "startingStrength" : 0.8,
-    "startingDefense" : 0
+    "startingDefense" : 0,
+    "token" : "Token5",
+    "className" : "Numerologist",
+    "supportPower" : "Cleanse",
+    "relationships" :
+    [
+     {"name": "Lilly", "score": 0},
+     {"name": "Olivia", "score": 20},
+     {"name": "Anaya", "score": 0},
+     {"name": "Camila", "score": 0}
+     ]
 }

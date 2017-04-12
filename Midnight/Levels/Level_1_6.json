@@ -1,7 +1,7 @@
 {
     "monsters" : ["Zombie"],
     "background" : "Game Sakura 1",
-    "title" : "Edicts",
+    "title" : "Parameters",
     "music" : "Mining by Moonlight",
     "goals" : {
         "totalMoves" : 15,

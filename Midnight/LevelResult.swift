@@ -9,6 +9,7 @@
 import Foundation
 
 class LevelResult: NSObject, NSCoding {
+    var stats: [String: Int] = [String: Int]()
     var totalMoves: Int = 0
     var totalDamageTaken: Int = 0
     var elapsedTime: TimeInterval = 0
@@ -21,7 +22,7 @@ class LevelResult: NSObject, NSCoding {
         super.init()
     }
     
-    init?(totalMoves: Int, totalDamageTaken: Int, elapsedTime: TimeInterval, totalMovesGoal: Bool, totalDamageTakenGoal: Bool, elapsedTimeGoal: Bool, includeInLeaderboard: Bool) {
+    init?(totalMoves: Int, totalDamageTaken: Int, elapsedTime: TimeInterval, totalMovesGoal: Bool, totalDamageTakenGoal: Bool, elapsedTimeGoal: Bool, includeInLeaderboard: Bool, stats: [String: Int]) {
         self.totalMoves = totalMoves
         self.totalDamageTaken = totalDamageTaken
         self.elapsedTime = elapsedTime
@@ -29,6 +30,7 @@ class LevelResult: NSObject, NSCoding {
         self.totalDamageTakenGoal = totalDamageTakenGoal
         self.elapsedTimeGoal = elapsedTimeGoal
         self.includeInLeaderboard = includeInLeaderboard
+        self.stats = stats
         
         super.init()
     }
@@ -41,6 +43,7 @@ class LevelResult: NSObject, NSCoding {
         aCoder.encode(totalDamageTakenGoal, forKey: "totalDamageTakenGoal")
         aCoder.encode(elapsedTimeGoal, forKey: "elapsedTimeGoal")
         aCoder.encode(includeInLeaderboard, forKey: "includeInLeaderboard")
+        aCoder.encode(stats, forKey: "stats")
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -52,6 +55,12 @@ class LevelResult: NSObject, NSCoding {
         let elapsedTimeGoal = aDecoder.decodeBool(forKey: "elapsedTimeGoal")
         let includeInLeaderboard = aDecoder.decodeBool(forKey: "includeInLeaderboard")
         
-        self.init(totalMoves: totalMoves, totalDamageTaken: totalDamageTaken, elapsedTime: elapsedTime, totalMovesGoal: totalMovesGoal, totalDamageTakenGoal: totalDamageTakenGoal, elapsedTimeGoal: elapsedTimeGoal, includeInLeaderboard: includeInLeaderboard)
+        var stats = [String: Int]()
+        if aDecoder.containsValue(forKey: "stats") {
+            stats = aDecoder.decodeObject(forKey: "stats") as! [String : Int]
+        }
+        
+        self.init(totalMoves: totalMoves, totalDamageTaken: totalDamageTaken, elapsedTime: elapsedTime, totalMovesGoal: totalMovesGoal, totalDamageTakenGoal: totalDamageTakenGoal, elapsedTimeGoal: elapsedTimeGoal, includeInLeaderboard: includeInLeaderboard, stats: stats)
     }
+    
 }

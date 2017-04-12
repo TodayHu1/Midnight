@@ -126,9 +126,9 @@
                                "unlockKey" : "encyclopedia_necromancy"
                                },
                                {
-                               "name" : "Oration",
-                               "detailFile" : "oration",
-                               "unlockKey" : "encyclopedia_oration"
+                               "name" : "Numerology",
+                               "detailFile" : "numerology",
+                               "unlockKey" : "encyclopedia_numerology"
                                },
                                {
                                "name" : "Entomology",

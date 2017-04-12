@@ -25,7 +25,7 @@
                              "waves" : 3,
                              "unlockKey" : "unlock_level_1_5"},
                              {"level" : "Level_1_6",
-                             "title": "Edicts",
+                             "title": "Parameters",
                              "waves" : 1,
                              "unlockKey" : "unlock_level_1_6"},
                              {"level" : "Level_1_7",

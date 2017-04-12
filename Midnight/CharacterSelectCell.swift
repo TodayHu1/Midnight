@@ -12,10 +12,15 @@ import UIKit
 class CharacterSelectCell: UICollectionViewCell {
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var tokenImage: UIImageView!
+    @IBOutlet weak var className: UILabel!
+    @IBOutlet weak var healthLabel: UILabel!
+    @IBOutlet weak var strengthLabel: UILabel!
+    @IBOutlet weak var defenseLabel: UILabel!
     
     override var isSelected: Bool {
         didSet {
-            cellImage.layer.borderWidth = isSelected ? 3 : 0
+//            cellImage.layer.borderWidth = isSelected ? 3 : 0
         }
     }
     

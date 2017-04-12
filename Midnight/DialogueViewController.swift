@@ -20,9 +20,15 @@ class DialogueViewController : UIViewController {
 
     @IBOutlet var dialogueTap: UITapGestureRecognizer!
     @IBOutlet weak var dialogueContentView: UIView!
-    @IBOutlet weak var actorNameLabel: UILabel!
     @IBOutlet weak var actorImageLeft: UIImageView!
     @IBOutlet weak var actorImageRight: UIImageView!
+    @IBOutlet weak var actorNameLeft: UILabel!
+    @IBOutlet weak var actorNameRight: UILabel!
+    @IBOutlet weak var skipButton: UIButton!
+    
+    @IBAction func skipButtonTapped(_ sender: Any) {
+        endDialogue()
+    }
     
     @IBAction func dialogueTapped(_ sender: AnyObject) {
         lineNo += 1
@@ -51,6 +57,19 @@ class DialogueViewController : UIViewController {
                 scene!.append(Scene(filename: item))
             }
         }
+        
+        let viewedKey = "viewed_" + savedGame.selectedLevel
+        var viewed = false
+        if let key = savedGame.questData[viewedKey] {
+            if key as! Bool == true {
+                viewed = true
+            }
+        }
+        
+        if viewed == true {
+            skipButton.isHidden = false
+        }
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,36 +103,40 @@ class DialogueViewController : UIViewController {
                 
                 let textView = UILabel(frame: CGRect(x: 0, y: 0, width: dialogueContentView.frame.width, height: dialogueContentView.frame.height))
                 textView.font = UIFont(name: "SilverBulletBB", size: 36.0)
-                textView.textColor = UIColor.white
+                textView.textColor = UIColor.darkGray
                 textView.text = line.text
                 textView.textAlignment = .center
                 
                 actorImageRight.isHidden = true
                 actorImageLeft.isHidden = true
-                actorNameLabel.isHidden = true
+                actorNameLeft.isHidden = true
+                actorNameRight.isHidden = true
                 
-                dialogueContentView.backgroundColor = UIColor.darkGray
-                dialogueContentView.alpha = 0.5
+//                dialogueContentView.backgroundColor = UIColor.darkGray
+//                dialogueContentView.alpha = 0.5
                 dialogueContentView.addSubview(textView)
                 
                 
             case is DialogueLine:
                 let line = scene![currentScene].lines[index] as! DialogueLine
                 if line.actor != "" {
-                    actorNameLabel.text = line.actor
-                    actorNameLabel.isHidden = false
                     switch line.direction {
                     case "left":
-                        actorNameLabel.textAlignment = NSTextAlignment.left
+                        actorNameLeft.text = line.actor
+                        actorNameLeft.isHidden = false
+                        actorNameRight.isHidden = true
                     case "right":
-                        actorNameLabel.textAlignment = NSTextAlignment.right
-                    case "center":
-                        actorNameLabel.textAlignment = NSTextAlignment.center
+                        actorNameRight.text = line.actor
+                        actorNameRight.isHidden = false
+                        actorNameLeft.isHidden = true
                     default:
-                        actorNameLabel.textAlignment = NSTextAlignment.left
+                        actorNameLeft.text = line.actor
+                        actorNameLeft.isHidden = false
+                        actorNameRight.isHidden = true
                     }
                 } else {
-                    actorNameLabel.isHidden = true
+                    actorNameLeft.isHidden = true
+                    actorNameRight.isHidden = true
                 }
                 
                 if line.image != nil {
@@ -135,39 +158,42 @@ class DialogueViewController : UIViewController {
                 textView.font = UIFont(name: "DigitalStripBB", size: 17.0)
                 textView.isEditable = false
                 textView.backgroundColor = UIColor.clear
-                textView.textColor = UIColor.white
+                textView.textColor = UIColor.darkGray
                 textView.text = line.text
                 
-                dialogueContentView.backgroundColor = UIColor.darkGray
-                dialogueContentView.alpha = 0.5
+//                dialogueContentView.backgroundColor = UIColor.darkGray
+//                dialogueContentView.alpha = 0.5
                 dialogueContentView.addSubview(textView)
 
             case is DialogueFX:
                 let line = scene![currentScene].lines[index] as! DialogueFX
                 
                 if line.actor != "" {
-                    actorNameLabel.text = line.actor
-                    actorNameLabel.isHidden = false
                     switch line.direction {
                     case "left":
-                        actorNameLabel.textAlignment = NSTextAlignment.left
+                        actorNameLeft.text = line.actor
+                        actorNameLeft.isHidden = false
+                        actorNameRight.isHidden = true
                     case "right":
-                        actorNameLabel.textAlignment = NSTextAlignment.right
-                    case "center":
-                        actorNameLabel.textAlignment = NSTextAlignment.center
+                        actorNameRight.text = line.actor
+                        actorNameRight.isHidden = false
+                        actorNameLeft.isHidden = true
                     default:
-                        actorNameLabel.textAlignment = NSTextAlignment.left
+                        actorNameLeft.text = line.actor
+                        actorNameLeft.isHidden = false
+                        actorNameRight.isHidden = true
                     }
                 } else {
-                    actorNameLabel.isHidden = true
+                    actorNameLeft.isHidden = true
+                    actorNameRight.isHidden = true
                 }
                 
                 let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: dialogueContentView.frame.width, height: dialogueContentView.frame.height))
                 imageView.contentMode = .scaleAspectFit
                 imageView.image = UIImage(named: line.image!)
 
-                dialogueContentView.backgroundColor = UIColor.clear
-                dialogueContentView.alpha = 1.0
+//                dialogueContentView.backgroundColor = UIColor.clear
+//                dialogueContentView.alpha = 1.0
                 dialogueContentView.addSubview(imageView)
                 
             default:
@@ -179,11 +205,7 @@ class DialogueViewController : UIViewController {
                 currentScene += 1
                 showScene(index: lineNo)
             } else {
-                if skipCharacterSelect {
-                    self.performSegue(withIdentifier: "showPreGame", sender: self)
-                } else {
-                    self.performSegue(withIdentifier: "showCharacterSelect", sender: self)
-                }
+                endDialogue()
             }
         }
     }
@@ -196,7 +218,19 @@ class DialogueViewController : UIViewController {
         lineNo = 0
         actorImageRight.isHidden = true
         actorImageLeft.isHidden = true
-        actorNameLabel.isHidden = true
+        actorNameLeft.isHidden = true
+        actorNameRight.isHidden = true
+    }
+    
+    func endDialogue() {
+        let viewed_key: String = "viewed_" + savedGame.selectedLevel
+        savedGame.questData[viewed_key] = true as AnyObject
+        savedGame.save()
+        if skipCharacterSelect {
+            self.performSegue(withIdentifier: "showPreGame", sender: self)
+        } else {
+            self.performSegue(withIdentifier: "showCharacterSelect", sender: self)
+        }
     }
     
     func addQuestData(questData: [String: AnyObject]) {

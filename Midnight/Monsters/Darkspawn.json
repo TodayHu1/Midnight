@@ -8,6 +8,7 @@
     "regeneration" : 0,
     "specialAttack" : "Chaos",
     "specialAttackChance" : 20,
+    "specialAttackCountdown" : 0,
     "description" : "One of the Dark Queen's drones. Voracious and vicious.",
     "unlockKey" : "encyclopedia_darkspawn",
     "specialAbilities" : "Chaos: A darkspawn's special attack will cause all tiles to be shuffled.",

@@ -16,16 +16,10 @@ class MonsterStatsViewController: UIViewController {
     @IBOutlet weak var monsterHealthLabel: UILabel!
     @IBOutlet weak var monsterStrengthLabel: UILabel!
     @IBOutlet weak var monsterCriticalLabel: UILabel!
-    @IBOutlet weak var monsterRegeneration: UIImageView!
-    @IBOutlet weak var monsterRegenerationLabel: UILabel!
-    @IBOutlet weak var monsterVulnerability: UIImageView!
-    @IBOutlet weak var monsterVulnerabilityLabel: UILabel!
-    @IBOutlet weak var monsterResistance: UIImageView!
-    @IBOutlet weak var monsterResistanceLabel: UILabel!
-    @IBOutlet weak var monsterDescription: UILabel!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var specialAbilityLabel: UILabel!
+    @IBOutlet weak var monsterDescription: UITextView!
     
+    @IBOutlet weak var specialAbilities: UITextView!
     var callingView: String = ""
     var monster: Monster!
     
@@ -47,25 +41,6 @@ class MonsterStatsViewController: UIViewController {
         monsterHealthLabel.text = String(format: "%ld", monster.maxHealth)
         monsterStrengthLabel.text = String(format: "%ld - %ld", Int(monster.minStrength), Int(monster.minStrength + monster.varStrength))
         monsterCriticalLabel.text = String(format: "%ld%%", monster.critChance)
-        if monster.regeneration > 0 {
-            monsterRegenerationLabel.text = String(format: "%ld / turn", monster.regeneration)
-        } else {
-            monsterRegeneration.isHidden = true
-            monsterRegenerationLabel.isHidden = true
-        }
-        
-        if monster.vulnerability != TokenType.unknown {
-            monsterVulnerability.image = UIImage(named: monster.vulnerability.spriteName)
-        } else {
-            monsterVulnerability.isHidden = true
-        }
-        
-        if monster.resistance != TokenType.unknown {
-            monsterResistance.image = UIImage(named: monster.resistance.spriteName)
-        } else {
-            monsterResistance.isHidden = true
-        }
-
-        specialAbilityLabel.text = monster.specialAbilities
+        specialAbilities.text = monster.specialAbilities
     }
 }

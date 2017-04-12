@@ -5,5 +5,15 @@
     "startingExperience" : 0,
     "startingHealth" : 1500,
     "startingStrength" : 0.8,
-    "startingDefense" : 0
+    "startingDefense" : 0,
+    "token" : "Token2",
+    "className" : "Necromancer",
+    "supportPower" : "Heal",
+    "relationships" :
+    [
+     {"name": "Olivia", "score": 20},
+     {"name": "Anaya", "score": 0},
+     {"name": "Camila", "score": 10},
+     {"name": "Yuna", "score": 0}
+     ]
 }

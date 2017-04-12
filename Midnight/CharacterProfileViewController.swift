@@ -17,9 +17,16 @@ class CharacterProfileViewController: UIViewController {
     @IBOutlet weak var characterStrengthLabel: UILabel!
     @IBOutlet weak var characterDefenseLabel: UILabel!
     @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var experienceLabel: UILabel!
-    @IBOutlet weak var nextLevelLabel: UILabel!
+    @IBOutlet weak var friend1Image: UIImageView!
+    @IBOutlet weak var friend2Image: UIImageView!
+    @IBOutlet weak var friend3Image: UIImageView!
+    @IBOutlet weak var friend4Image: UIImageView!
+    @IBOutlet weak var friend1Affinity: UILabel!
+    @IBOutlet weak var friend2Affinity: UILabel!
+    @IBOutlet weak var friend3Affinity: UILabel!
+    @IBOutlet weak var friend4Affinity: UILabel!
+    @IBOutlet weak var characterClassName: UILabel!
+    @IBOutlet weak var characterTokenImage: UIImageView!
     
     var callingView: String = ""
     var character: Character!
@@ -42,9 +49,22 @@ class CharacterProfileViewController: UIViewController {
         characterHealthLabel.text = String(format: "%ld", character.maxHealth)
         characterStrengthLabel.text = String(format: "%ld", Int(character.strength * 100))
         characterDefenseLabel.text = String(format: "%ld", character.defense)
-        levelLabel.text = String(format: "%ld", character.level)
-        experienceLabel.text = String(format: "%ld", character.experience)
-        nextLevelLabel.text = String(format: "%ld", character.nextLevelGoal)
-
+        characterTokenImage.image = UIImage(named: String(character.token + ".png"))
+        characterClassName.text = character.className
+        
+        displayAffinity()
+    }
+    
+    func displayAffinity () {
+        var friendImages = [friend1Image, friend2Image, friend3Image, friend4Image]
+        var friendLabels = [friend1Affinity, friend2Affinity, friend3Affinity, friend4Affinity]
+        
+        var friendKeys = character.affinity.relationships.keys.sorted()
+        
+        for index in 0..<friendKeys.count {
+            let characterName = friendKeys[index]
+            friendImages[index]!.image = UIImage(named: characterName)
+            friendLabels[index]!.text = String(character.affinity.relationships[characterName]!.score)
+        }
     }
 }

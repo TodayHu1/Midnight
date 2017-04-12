@@ -14,9 +14,12 @@ class PreGameViewController: UIViewController {
     var savedGame: GameSave!
     var character: Character!
     var level: Level!
+    var monsterIndex: Int = 0
     
     @IBOutlet weak var monsterImagePanel: UIImageView!
+    @IBOutlet weak var monsterImagePanel2: UIImageView!
     @IBOutlet weak var characterImagePanel: UIImageView!
+    @IBOutlet weak var monsterImagePanel3: UIImageView!
     @IBOutlet weak var levelTitleLabel: UILabel!
     @IBOutlet weak var totalMovesLabel: UILabel!
     @IBOutlet weak var totalDamageTakenLable: UILabel!
@@ -26,6 +29,39 @@ class PreGameViewController: UIViewController {
     @IBOutlet weak var goal1: UIImageView!
     @IBOutlet weak var goal2: UIImageView!
     @IBOutlet weak var goal3: UIImageView!
+    @IBOutlet weak var characterName: UILabel!
+    @IBOutlet weak var monsterName: UILabel!
+    @IBOutlet var swipeMonsterRight: UISwipeGestureRecognizer!
+    @IBOutlet var tapMonster: UITapGestureRecognizer!
+//    @IBOutlet var panMonster: UIPanGestureRecognizer!
+    
+    @IBOutlet var swipeMonsterLeft: UISwipeGestureRecognizer!
+    @IBAction func swipeMonsterSwiped(_ sender: UISwipeGestureRecognizer) {
+        if sender.direction == UISwipeGestureRecognizerDirection.left {
+            monsterIndex -= 1
+            if monsterIndex < 0 {
+                monsterIndex = level.monsters.count - 1
+            }
+            showMonsters() }
+        else if sender.direction == UISwipeGestureRecognizerDirection.right {
+            monsterIndex += 1
+            if monsterIndex > level.monsters.count - 1 {
+                monsterIndex = 0
+            }
+            showMonsters()
+        }
+    }
+    
+//    @IBAction func panMonsterPanned(_ sender: UIPanGestureRecognizer) {
+//        let point = sender.translation(in: self.view)
+//        
+//        monsterImagePanel.center = point
+//    }
+    
+    
+    @IBAction func tapMonsterTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "presentMonsterStats", sender: self)
+    }
     
     override var prefersStatusBarHidden : Bool {
         return true
@@ -38,7 +74,10 @@ class PreGameViewController: UIViewController {
         character = savedGame.characters[savedGame.selectedCharacter]
         
         characterImagePanel.image = UIImage(named: character.image)
-        monsterImagePanel.image = UIImage(named: level.monsters[0].image)
+        characterName.text = character.name
+//        monsterImagePanel.image = UIImage(named: level.monsters[0].image)
+//        monsterName.text = level.monsters[0].name
+        showMonsters()
         levelTitleLabel.text = level.title
         totalMovesLabel.text = String(format: "%ld", level.goals.totalMoves)
         totalDamageTakenLable.text = String(format: "%ld", level.goals.totalDamageTaken)
@@ -49,6 +88,41 @@ class PreGameViewController: UIViewController {
             if levelResults.totalDamageTakenGoal {goal2.image = UIImage(named: "Complete_Star")}
             if levelResults.elapsedTimeGoal {goal3.image = UIImage(named: "Complete_Star")}
         }
+    }
+    
+    func showMonsters() {
+        let maxMonster = level.monsters.count
+        
+        monsterImagePanel.image = UIImage(named: level.monsters[monsterIndex].image)
+        monsterName.text = level.monsters[monsterIndex].name
+        
+        var nextMonster = monsterIndex + 1
+        
+        if maxMonster > 1 {
+            if nextMonster > level.monsters.count - 1 {
+                nextMonster = 0
+            }
+            
+            monsterImagePanel2.image = UIImage(named: level.monsters[nextMonster].image)
+            monsterImagePanel2.isHidden = false
+        }
+        
+        nextMonster += 1
+        
+        if maxMonster > 2 {
+            if nextMonster > level.monsters.count - 1 {
+                nextMonster = 0
+            }
+            monsterImagePanel3.image = UIImage(named: level.monsters[nextMonster].image)
+            monsterImagePanel3.isHidden = false
+        }
+
+    }
+    
+    func moveMonster(translation: CGPoint) {
+        let oldPoint = monsterImagePanel.center
+        let newPoint = CGPoint(x: oldPoint.x + translation.x, y: oldPoint.y)
+        monsterImagePanel.center = newPoint
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,7 +138,7 @@ class PreGameViewController: UIViewController {
         if segue.identifier == "presentMonsterStats" {
             let vc = segue.destination as! MonsterStatsViewController
             vc.callingView = "preGame"
-            vc.monster = self.level.monsters[0]
+            vc.monster = self.level.monsters[monsterIndex]
         }
         if segue.identifier == "showStoryMode" {
             let vc = segue.destination as! StoryModeViewController

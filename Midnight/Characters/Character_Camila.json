@@ -5,5 +5,15 @@
     "startingExperience" : 0,
     "startingHealth" : 1500,
     "startingStrength" : 0.8,
-    "startingDefense" : 0
+    "startingDefense" : 0,
+    "token" : "Token1",
+    "className" : "Astrologer",
+    "supportPower" : "Shield",
+    "relationships" :
+    [
+     {"name": "Lilly", "score": 10},
+     {"name": "Olivia", "score": 10},
+     {"name": "Anaya", "score": 20},
+     {"name": "Yuna", "score": 0}
+     ]
 }

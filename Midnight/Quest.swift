@@ -19,6 +19,7 @@ class QuestHierarchyNode {
     var totalDamageTakenGoal: Bool = false
     var elapsedTimeGoal: Bool = false
     var waves: Int = 1
+    var image: String = ""
 }
 
 class Quest {

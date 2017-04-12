@@ -39,6 +39,7 @@ class Monster {
     var resistance: TokenType = TokenType.unknown
     var specialAttack: SpecialAttack = SpecialAttack.none
     var specialAttackChance: Int = 0
+    var specialAttackCountdown: Int = 1
     var specialAbilities: String?
     var description: String = ""
     var unlockKey: String = ""
@@ -67,6 +68,7 @@ class Monster {
         if let s = dictionary["specialAttack"] as? String {
             specialAttack = SpecialAttack.init(rawValue: s)!
             specialAttackChance = dictionary["specialAttackChance"] as! Int
+            specialAttackCountdown = dictionary["specialAttackCountdown"] as! Int
         }
         description = dictionary["description"] as! String
         unlockKey = dictionary["unlockKey"] as! String

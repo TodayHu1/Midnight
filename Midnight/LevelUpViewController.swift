@@ -33,20 +33,20 @@ class LevelUpViewController : UIViewController {
         
         characterProfile.image = UIImage(named: character.image)
         
-        let filename = "Character_Progression"
-        guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {return}
+//        let filename = "Character_Progression"
+//        guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {return}
         
-        let levels = dictionary["levels"] as! [[String: AnyObject]]
+//        let levels = dictionary["levels"] as! [[String: AnyObject]]
         
-        nextLevelGoal.text = String(format: "%ld", character.nextLevelGoal)
-        let rewards = levels[character.level-1]["rewards"] as! [String: AnyObject]
-        defenseReward.text = String(format: "+%ld", rewards["defense"] as! Int)
-        strengthReward.text = String(format: "+%ld", Int(rewards["strength"] as! Double * 100))
-        healthReward.text = String(format: "+%ld", rewards["health"] as! Int)
-        
-        healthNew.text = String(format: "%ld", character.maxHealth)
-        strengthNew.text = String(format: "%ld", Int(character.strength * 100))
-        defenseNew.text = String(format: "%ld", character.defense)
+//        nextLevelGoal.text = String(format: "%ld", character.nextLevelGoal)
+//        let rewards = levels[character.level-1]["rewards"] as! [String: AnyObject]
+//        defenseReward.text = String(format: "+%ld", rewards["defense"] as! Int)
+//        strengthReward.text = String(format: "+%ld", Int(rewards["strength"] as! Double * 100))
+//        healthReward.text = String(format: "+%ld", rewards["health"] as! Int)
+//        
+//        healthNew.text = String(format: "%ld", character.maxHealth)
+//        strengthNew.text = String(format: "%ld", Int(character.strength * 100))
+//        defenseNew.text = String(format: "%ld", character.defense)
     }
     
     override var prefersStatusBarHidden : Bool {

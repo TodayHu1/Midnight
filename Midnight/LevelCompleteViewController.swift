@@ -18,23 +18,33 @@ class LevelCompleteViewController: UIViewController {
     @IBOutlet weak var totalMovesResult: UILabel!
     @IBOutlet weak var damageTakenResult: UILabel!
     @IBOutlet weak var elapsedTimeResult: UILabel!
-    @IBOutlet weak var currentLevel: UILabel!
-    @IBOutlet weak var nextLevel: UILabel!
-
     @IBOutlet weak var goal1: UIImageView!
     @IBOutlet weak var goal2: UIImageView!
     @IBOutlet weak var goal3: UIImageView!
     
-    @IBOutlet weak var experienceView: UIView!
-    @IBOutlet weak var experienceProgress: UIProgressView!
+    @IBOutlet weak var totalStars: UILabel!
+    @IBOutlet weak var awardedStarsLabel: UILabel!
+    @IBOutlet weak var awardedStarsView: UIStackView!
+    
+    @IBOutlet weak var supportView1: UIStackView!
+    @IBOutlet weak var supportView2: UIStackView!
+    @IBOutlet weak var supportView3: UIStackView!
+    @IBOutlet weak var supportView4: UIStackView!
+    @IBOutlet weak var supportImage1: UIImageView!
+    @IBOutlet weak var supportImage2: UIImageView!
+    @IBOutlet weak var supportImage3: UIImageView!
+    @IBOutlet weak var supportImage4: UIImageView!
+    @IBOutlet weak var supportLabel1: UILabel!
+    @IBOutlet weak var supportLabel2: UILabel!
+    @IBOutlet weak var supportLabel3: UILabel!
+    @IBOutlet weak var supportLabel4: UILabel!
+    
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var retryButton: UIButton!
     
     @IBAction func continueButtonPressed() {
         if gameOver {
             performSegue(withIdentifier: "showMainMenu", sender: self)
-//        } else if levelUp {
-//            performSegue(withIdentifier: "showLevelUp", sender: self)
         } else {
             performSegue(withIdentifier: "showStoryMode", sender: self)
         }
@@ -44,7 +54,8 @@ class LevelCompleteViewController: UIViewController {
     private var character: Character!
     var level: Level!
     var gameOver: Bool = false
-    var awardedExperience: Int = 0
+    var awardedStars: Int = 0
+    var affinity: [SupportCharacter]?
     var levelUp: Bool = false
 
     override var prefersStatusBarHidden : Bool {
@@ -54,6 +65,8 @@ class LevelCompleteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         character = savedGame.characters[savedGame.selectedCharacter]
+        
+        totalStars.text = String(savedGame.stars)
         
         totalMovesGoal.text = String(format: "%ld", level.goals.totalMoves)
         damageTakenGoal.text = String(format: "%ld", level.goals.totalDamageTaken)
@@ -67,33 +80,56 @@ class LevelCompleteViewController: UIViewController {
         if level.result.totalDamageTaken <= level.goals.totalDamageTaken {goal2.image = UIImage(named: "Complete_Star")}
         if level.result.elapsedTime <= level.goals.elapsedTime {goal3.image = UIImage(named: "Complete_Star")}
         
-        if awardedExperience > 0 {
-            currentLevel.text = String(format: "Level %ld", character.level)
-            nextLevel.text = String(format: "Level %ld", character.level + 1)
-            
-            //set base experience on progress bar for animation purposes
-            let previousExperience = character.experience - awardedExperience
-            let basePercentage = Float(previousExperience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
-            experienceProgress.setProgress(basePercentage, animated: false)
-            
-        } else {
-            experienceProgress.isHidden = true
-            currentLevel.isHidden = true
-            nextLevel.isHidden = true
+        if awardedStars > 0 {
+            awardedStarsView.isHidden = false
+            awardedStarsLabel.text = String(format: "+%ld", awardedStars)
         }
+        
+        let supportViews = [supportView1, supportView2, supportView3, supportView4]
+        let supportImages = [supportImage1, supportImage2, supportImage3, supportImage4]
+        let supportLabels = [supportLabel1, supportLabel2, supportLabel3, supportLabel4]
+        
+        for index in 0..<affinity!.count {
+            supportViews[index]!.isHidden = false
+            supportImages[index]!.image = UIImage(named: affinity![index].name)
+            supportLabels[index]!.text = String(affinity![index].uses)
+        }
+        
+//        if awardedExperience > 0 {
+//            currentLevel.text = String(format: "Level %ld", character.level)
+//            nextLevel.text = String(format: "Level %ld", character.level + 1)
+//            
+//            //set base experience on progress bar for animation purposes
+//            let previousExperience = character.experience - awardedExperience
+//            let basePercentage = Float(previousExperience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
+//            experienceProgress.setProgress(basePercentage, animated: false)
+//            
+//        } else {
+//            experienceProgress.isHidden = true
+//            currentLevel.isHidden = true
+//            nextLevel.isHidden = true
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-         //animate experience progress
-        let progressPercentage = Float(character.experience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
-        experienceProgress.setProgress(progressPercentage, animated: true)
+//        //animate stars
+//        let baseNumber = savedGame.stars - awardedStars
+//        totalStars.text = String(baseNumber)
+//        
+//        for index in 0...awardedStars {
+//            totalStars.text = String(baseNumber + index)
+//        }
         
-        if levelUp {
-            levelUp = false
-            self.performSegue(withIdentifier: "presentLevelUp", sender: self)
-        }
+         //animate experience progress
+//        let progressPercentage = Float(character.experience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
+//        experienceProgress.setProgress(progressPercentage, animated: true)
+//        
+//        if levelUp {
+//            levelUp = false
+//            self.performSegue(withIdentifier: "presentLevelUp", sender: self)
+//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

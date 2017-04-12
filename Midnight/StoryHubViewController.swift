@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import KCFloatingActionButton
 
 class StoryHubViewController: UIViewController   {
     @IBOutlet weak var characterButton: UIButton!
@@ -19,6 +20,9 @@ class StoryHubViewController: UIViewController   {
     @IBOutlet var mainStoryTap: UITapGestureRecognizer!
     @IBOutlet var sideQuestTap: UITapGestureRecognizer!
     @IBOutlet var trainingTap: UITapGestureRecognizer!
+    @IBOutlet weak var totalStars: UILabel!
+    @IBOutlet weak var menuButton: KCFloatingActionButton!
+
 
     var selectedLevel: String = ""
     var questHierarchy : Quest!
@@ -38,13 +42,36 @@ class StoryHubViewController: UIViewController   {
         } else {
             encyclopediaButton.isHidden = true
         }
+        
+        totalStars.text = String(savedGame.stars)
+        
+        renderMenuButton(currentButton: 0)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "presentCharacter" {
-            let vc = segue.destination as! CharacterProfilePageController
+        //menu button items
+        if segue.identifier == "showStory" {
+            let vc = segue.destination as! StoryHubViewController
             vc.savedGame = savedGame
         }
+        if segue.identifier == "showCharacter" {
+            let vc = segue.destination as! CharacterCollectionViewController
+            vc.savedGame = savedGame
+        }
+        if segue.identifier == "showSettings" {
+            let vc = segue.destination as! OptionsViewcontroller
+            vc.savedGame = savedGame
+        }
+        if segue.identifier == "showInventory" {
+            let vc = segue.destination as! InventoryViewController
+            vc.savedGame = savedGame
+        }
+        if segue.identifier == "showStore" {
+            let vc = segue.destination as! StoreViewController
+            vc.savedGame = savedGame
+        }
+        
+        //additional display items
         if segue.identifier == "presentEncyclopedia" {
             let vc = segue.destination as! IndexViewController
             vc.savedGame = savedGame
@@ -53,9 +80,34 @@ class StoryHubViewController: UIViewController   {
             let vc = segue.destination as! StatisticsViewController
             vc.savedGame = savedGame
         }
+        
+        //story functionality
         if segue.identifier == "showChapterSelect" {
             let vc = segue.destination as! ChapterSelectViewController
             vc.savedGame = savedGame
+        }
+    }
+    
+    func renderMenuButton(currentButton: Int) {
+        let imageArray = ["Book", "Character", "Inventory", "Store", "Settings"]
+        let segueArray = ["showStory", "showCharacter", "showInventory", "showStore", "showSettings"]
+        
+        let color = UIColor(red:0.27, green:0.00, blue:0.40, alpha:1.0)
+        let selectedColor = UIColor.gray
+        menuButton.openAnimationType = .pop
+        menuButton.buttonImage = UIImage(named: "T")
+        
+        for index in 0..<imageArray.count {
+            let item = KCFloatingActionButtonItem()
+            item.icon = UIImage(named: imageArray[index])
+            if index == currentButton {
+                item.buttonColor = selectedColor
+            } else {
+                item.buttonColor = color
+                item.handler = {item in self.performSegue(withIdentifier: segueArray[index], sender: self)}
+            }
+            
+            menuButton.addItem(item: item)
         }
     }
 

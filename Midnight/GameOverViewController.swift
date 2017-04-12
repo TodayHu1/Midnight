@@ -35,6 +35,9 @@ class GameOverViewController: UIViewController {
         if segue.identifier == "showPreGame" {
             let vc = segue.destination as! PreGameViewController
             vc.savedGame = savedGame
+        } else if segue.identifier == "showStoryMode" {
+            let vc = segue.destination as! StoryModeViewController
+            vc.savedGame = savedGame
         }
     }
 }

@@ -12,20 +12,8 @@ import UIKit
 class CharacterSelectViewController : UIViewController {
     var savedGame: GameSave!
     var party: [Character] = [Character]()
-    var selectedCharacter: String?
     
-    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
-    fileprivate let itemsPerRow: CGFloat = 2
-    
-    @IBOutlet weak var buttonOK: UIButton!
     @IBOutlet weak var characterCollection: UICollectionView!
-    
-    @IBAction func pressOK(_ sender: AnyObject) {
-        if selectedCharacter != nil {
-            savedGame.selectedCharacter = selectedCharacter!
-            self.performSegue(withIdentifier: "showPreGame", sender: self)
-        }
-    }
     
     override var prefersStatusBarHidden : Bool {
         return true
@@ -73,11 +61,15 @@ extension CharacterSelectViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "characterCell", for: indexPath) as! CharacterSelectCell
         
-        let characterImageName = party[indexPath.row].image
-        let characterImage = UIImage(named: characterImageName)
+        let character = party[indexPath.row]
         
-        cell.cellImage.image = characterImage
-        cell.cellLabel.text = party[indexPath.row].name
+        cell.cellImage.image = UIImage(named: character.image)
+        cell.cellLabel.text = character.name
+        cell.healthLabel.text = String(character.maxHealth)
+        cell.strengthLabel.text = String(format: "%ld", Int(character.strength * 100))
+        cell.defenseLabel.text = String(character.defense)
+        cell.tokenImage.image = UIImage(named: String(character.token + ".png"))
+        cell.className.text = character.className
         
         return cell
     }
@@ -85,25 +77,7 @@ extension CharacterSelectViewController : UICollectionViewDataSource {
 
 extension CharacterSelectViewController : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCharacter = party[indexPath.row].name
-    }
-}
-
-extension CharacterSelectViewController : UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = view.frame.width - paddingSpace
-        let widthPerItem = availableWidth / itemsPerRow
-        
-        return CGSize(width: widthPerItem, height: widthPerItem)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return sectionInsets
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return sectionInsets.left
+        savedGame.selectedCharacter = party[indexPath.row].name
+        self.performSegue(withIdentifier: "showPreGame", sender: self)
     }
 }

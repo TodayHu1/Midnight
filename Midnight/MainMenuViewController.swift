@@ -29,10 +29,7 @@ class MainMenuViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "presentOptionsMenu" {
-            let vc = segue.destination as! OptionsViewcontroller
-            vc.callingView = "mainMenu"
-        }
+
     }
     
     func printFonts() {

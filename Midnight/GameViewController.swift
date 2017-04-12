@@ -20,9 +20,14 @@ class GameViewController: UIViewController {
     var options: GameOptions = GameOptions()
     var gameOver: Bool = false
     lazy var backgroundMusic: AVAudioPlayer? = self.loadBackgroundMusic()
-    var awardedExperience: Int = 0
-    var levelUp: Bool = false
+    var awardedStars: Int = 0
+//    var levelUp: Bool = false
     var wave: Int = 0
+    var shieldCount: Int = 0
+    var teamStrength: Int = 0
+    var supportCharacters: [SupportCharacter] = [SupportCharacter]()
+    var supportTokens: [TokenType: Int] = [TokenType: Int]()
+    var targetMultiplier: Double = 1
     
     @IBOutlet weak var movesLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -30,16 +35,61 @@ class GameViewController: UIViewController {
     @IBOutlet weak var characterImagePanel: UIImageView!
     @IBOutlet weak var comboLabel: UILabel!
     @IBOutlet weak var comboView: UIStackView!
+    @IBOutlet weak var comboBackground: UIImageView!
+    @IBOutlet weak var countdownLabel: UILabel!
+    @IBOutlet weak var countdownView: UIStackView!
+    @IBOutlet weak var countdownBackground: UIImageView!
+    @IBOutlet weak var characterName: UILabel!
+    @IBOutlet weak var monsterName: UILabel!
     @IBOutlet weak var support1: UIButton!
     @IBOutlet weak var support2: UIButton!
     @IBOutlet weak var support3: UIButton!
     @IBOutlet weak var support4: UIButton!
-    @IBOutlet weak var characterName: UILabel!
-    @IBOutlet weak var monsterName: UILabel!
-
+    @IBOutlet weak var support1Progress: UIProgressView!
+    @IBOutlet weak var support2Progress: UIProgressView!
+    @IBOutlet weak var support3Progress: UIProgressView!
+    @IBOutlet weak var support4Progress: UIProgressView!
+    @IBOutlet weak var support1View: UIView!
+    @IBOutlet weak var support2View: UIView!
+    @IBOutlet weak var support3View: UIView!
+    @IBOutlet weak var support4View: UIView!
+    @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var targetView: UIView!
+    @IBOutlet weak var shieldLabel: UILabel!
+    @IBOutlet weak var shieldView: UIView!
+    @IBOutlet weak var supportImage1: UIImageView!
+    @IBOutlet weak var supportImage2: UIImageView!
+    @IBOutlet weak var supportImage3: UIImageView!
+    @IBOutlet weak var supportImage4: UIImageView!
     
     @IBAction func myUnwindAction(_ unwindSegue: UIStoryboardSegue) {
 
+    }
+    
+    @IBAction func supportButtonPressed(_ sender: UIButton) {
+        var index: Int
+        var supportProgress = [support1Progress, support2Progress, support3Progress, support4Progress]
+        var supportImages = [supportImage1, supportImage2, supportImage3, supportImage4]
+        
+        switch sender {
+        case support2:
+            index = 1
+        case support3:
+            index = 2
+        case support4:
+            index = 3
+        default:
+            index = 0
+        }
+        
+        supportCharacters[index].uses += 1
+        supportProgress[index]!.progress = 0
+        supportCharacters[index].currentMana = 0
+        supportImages[index]!.alpha = 0.5
+        sender.isEnabled = false
+        
+        executeCharacterPower(character: supportCharacters[index].name)
+        
     }
     
     var tapGestureRecognizer: UITapGestureRecognizer!
@@ -111,13 +161,13 @@ class GameViewController: UIViewController {
     }
     
     func configureAudio() {
-        if options.playMusic {
-            try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategorySoloAmbient)
-            backgroundMusic?.play()
-        } else {
-            try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-            backgroundMusic?.stop()
-        }
+//        if options.playMusic {
+//            try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategorySoloAmbient)
+//            backgroundMusic?.play()
+//        } else {
+//            try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+//            backgroundMusic?.stop()
+//        }
     }
     
     func setupLevel(selectedLevel: String) {
@@ -144,33 +194,47 @@ class GameViewController: UIViewController {
     }
     
     func configureSupportButtons() {
+        var supportView = [support1View, support2View, support3View, support4View]
+        var supportProgress = [support1Progress, support2Progress, support3Progress, support4Progress]
         var supportButtons = [support1, support2, support3, support4]
+        var supportImages = [supportImage1, supportImage2, supportImage3, supportImage4]
         
-        var supportCharacterFilter = [String]()
         if level.supportCharacters != nil {
             for item in level.supportCharacters! {
                 if item != character.name {
-                    supportCharacterFilter.append(item)
+                    let newCharacter = SupportCharacter()
+                    newCharacter.name = item
+                    
+                    supportCharacters.append(newCharacter)
                 }
             }
         } else {
             for item in savedGame.characters {
                 if item.key != character.name {
-                    supportCharacterFilter.append(item.key)
+                    let newCharacter = SupportCharacter()
+                    newCharacter.name = item.key
+                    
+                    supportCharacters.append(newCharacter)
                 }
             }
         }
         
-        for index in 0..<supportCharacterFilter.count {
-            let characterName = supportCharacterFilter[index]
+        for index in 0..<supportCharacters.count {
+            let characterName = supportCharacters[index].name
             supportButtons[index]!.setImage(UIImage(named: savedGame.characters[characterName]!.image), for: UIControlState.normal)
-            supportButtons[index]!.isHidden = false
+            supportButtons[index]!.isEnabled = false
+            supportProgress[index]!.progress = 0
+            supportView[index]!.isHidden = false
+            supportImages[index]!.image = UIImage(named: savedGame.characters[characterName]!.supportPower.image)
+            let tokenType = TokenType.createFromString(savedGame.characters[characterName]!.token)
+            supportTokens[tokenType] = index
         }
     }
     
     func beginGame() {
         
         character.currentHealth = character.maxHealth
+        teamStrength = savedGame.teamStrength
         
         updateLabels()
         monsterImagePanel.image = UIImage(named: level.monsters[wave].image)
@@ -216,14 +280,19 @@ class GameViewController: UIViewController {
     }
     
     func handleMatches() {
-        let matchResults = level.removeMatches(strength: character.strength, wave: wave)
+        let attackStrength = (character.strength + (Double(teamStrength) / 100)) * targetMultiplier
+        let matchResults = level.removeMatches(strength: attackStrength, wave: wave)
         if matchResults.count == 0 {
             beginNextTurn()
             return
+        } else {
+            targetMultiplier = 1
+            targetView.isHidden = true
         }
 
         scene.animateMatchedTokens(matchResults, monster: level.monsters[wave]) {
             for chain in matchResults {
+                self.updateMana(chain: chain)
                 self.level.monsters[self.wave].currentHealth -= chain.score
             }
             self.updateLabels()
@@ -247,6 +316,36 @@ class GameViewController: UIViewController {
         self.view.isUserInteractionEnabled = true
     }
     
+    func updateMana(chain: Chain) {
+        let supportProgress: [UIProgressView] = [support1Progress, support2Progress, support3Progress, support4Progress]
+        let supportButtons: [UIButton] = [support1, support2, support3, support4]
+        let supportImages: [UIImageView] = [supportImage1, supportImage2, supportImage3, supportImage4]
+        if let index: Int = supportTokens[chain.firstToken().tokenType] {
+            
+            supportCharacters[index].currentMana += chain.score
+            
+            var progress: Float = Float(supportCharacters[index].currentMana) / Float(supportCharacters[index].targetMana)
+            if progress > 1 { progress = 1 }
+            
+            supportProgress[index].setProgress(progress, animated: true)
+            
+            if progress >= 1 {
+                supportButtons[index].isEnabled = true
+                supportImages[index].alpha = 1.0
+            }
+            
+        }
+    }
+    
+    func decrementShield() {
+        shieldCount -= 1
+        if shieldCount > 0 {
+            shieldLabel.text = String(shieldCount)
+        } else {
+            shieldView.isHidden = true
+        }
+    }
+    
     func updateLabels() {
         if level.monsters[wave].currentHealth >= 0 {
             scoreLabel.text = String(format: "%ld", level.monsters[wave].currentHealth)
@@ -265,9 +364,20 @@ class GameViewController: UIViewController {
         
         if level.comboMultiplier > 1 {
             comboView.isHidden = false
+            comboBackground.isHidden = false
             comboLabel.text = String(format: "%ld", level.comboMultiplier)
         } else {
             comboView.isHidden = true
+            comboBackground.isHidden = true
+        }
+        
+        if level.countdown > 0 {
+            countdownView.isHidden = false
+            countdownBackground.isHidden = false
+            countdownLabel.text = String(format: "%ld", level.countdown)
+        } else {
+            countdownView.isHidden = true
+            countdownBackground.isHidden = true
         }
     }
     
@@ -276,10 +386,17 @@ class GameViewController: UIViewController {
             // Calculate miss chance
  
             // Calculate poison damage
-            let poisonDamage: Int = level.countPoisonTokens() * Int(level.monsters[wave].varStrength)
-            if character.invincible == false {
-                character.currentHealth -= poisonDamage
+            let poisonTokens = level.poisonTokens()
+            let poisonStrength = Int(level.monsters[wave].varStrength)
+            var poisonDamage: Int = 0
+            
+            for token in poisonTokens {
+                scene.animatePoisonDamage(token: token, strength: poisonStrength)
+                poisonDamage += poisonStrength
             }
+
+            character.currentHealth -= poisonDamage
+            level.result.totalDamageTaken += poisonDamage
             
             // Calculate monster damage
             var monsterDamage: Double
@@ -297,13 +414,12 @@ class GameViewController: UIViewController {
             let totalDamage = (Int(round(monsterDamage)) - character.defense) > 0 ? (Int(round(monsterDamage)) - character.defense) : 0
             
             // Apply total damage to character and level totals
-            if character.invincible == false {
-//                let centerPosition = characterImagePanel.center
-//                self.scene.animateCharacterDamage(criticalHit, monsterDamage: monsterDamage, centerPosition: centerPosition)
+            if shieldCount > 0 {
+                decrementShield()
+            } else {
                 character.currentHealth -= totalDamage
+                level.result.totalDamageTaken += totalDamage
             }
-            
-            level.result.totalDamageTaken += totalDamage
             
             // Apply monster regeneration
             level.monsters[wave].currentHealth += level.monsters[wave].regeneration
@@ -312,10 +428,21 @@ class GameViewController: UIViewController {
             }
             
             // Monster special attack
-            if level.monsters[wave].specialAttackChance > 0 {
+            if level.countdown == 1 {
+                level.countdown -= 1
+                executeSpecialAttack()
+            } else if level.countdown > 1 {
+                level.countdown -= 1
+            }
+            
+            if level.monsters[wave].specialAttackChance > 0 && level.countdown == 0 {
                 let specialAttackSuccess: Bool = Int(arc4random_uniform(100)) <= level.monsters[wave].specialAttackChance ? true : false
                 if specialAttackSuccess {
+                    if level.monsters[wave].specialAttackCountdown == 0 {
                     executeSpecialAttack()
+                    } else {
+                        level.countdown = level.monsters[wave].specialAttackCountdown
+                    }
                 }
             }
         }
@@ -364,27 +491,30 @@ class GameViewController: UIViewController {
         if gameOver == false {
             
             addQuestData()
+            addAffinity()
             
             if level.result.totalMoves <= level.goals.totalMoves {
                 checkResult.totalMovesGoal = true
-                awardedExperience += level.rewards.totalMoves
+                awardedStars += level.rewards.totalMoves
             }
             
             if level.result.totalDamageTaken <= level.goals.totalDamageTaken {
                 checkResult.totalDamageTakenGoal = true
-                awardedExperience += level.rewards.totalDamageTaken
+                awardedStars += level.rewards.totalDamageTaken
             }
             
             if level.result.elapsedTime <= level.goals.elapsedTime {
                 checkResult.elapsedTimeGoal = true
-                awardedExperience += level.rewards.elapsedTime
+                awardedStars += level.rewards.elapsedTime
             }
             
-            character.experience += awardedExperience
-            if character.experience >= character.nextLevelGoal {
-                levelUp = true
-                character.levelUp()
-            }
+//            character.experience += awardedExperience
+//            if character.experience >= character.nextLevelGoal {
+//                levelUp = true
+//                character.levelUp()
+//            }
+            
+            savedGame.stars += awardedStars
         }
         
         // Take the best results of the saved data or the current level
@@ -407,6 +537,13 @@ class GameViewController: UIViewController {
     func addQuestData() {
         for item in level.questData {
             savedGame.questData[item.key] = item.value
+        }
+    }
+    
+    func addAffinity() {
+        for item in self.supportCharacters {
+            savedGame.characters[character.name]!.affinity.relationships[item.name]!.modify(by: item.uses)
+            savedGame.characters[item.name]!.affinity.relationships[character.name]!.modify(by: item.uses)
         }
     }
     
@@ -444,8 +581,9 @@ class GameViewController: UIViewController {
             vc.level = self.level
             vc.gameOver = self.gameOver
             vc.savedGame = self.savedGame
-            vc.awardedExperience = self.awardedExperience
-            vc.levelUp = self.levelUp
+            vc.awardedStars = self.awardedStars
+            vc.affinity = self.supportCharacters
+//            vc.levelUp = self.levelUp
         }
         if segue.identifier == "presentCharacterProfile" {
             let vc = segue.destination as! CharacterProfileViewController

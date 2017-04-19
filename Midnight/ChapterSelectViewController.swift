@@ -13,6 +13,31 @@ import UIKit
 class ChapterSelectViewController: UIViewController   {
     
     @IBOutlet weak var chapterCollection: UICollectionView!
+    @IBOutlet weak var difficultyLabel: UILabel!
+    @IBOutlet weak var difficultyImage: UIImageView!
+    @IBOutlet var difficultyTap: UITapGestureRecognizer!
+    
+    @IBAction func difficultyTapTapped(_ sender: Any) {
+        switch savedGame.difficulty {
+        case .easy:
+            savedGame.difficulty = .normal
+        case .normal:
+            savedGame.difficulty = .hard
+        case .hard:
+            savedGame.difficulty = .epic
+        case.epic:
+            savedGame.difficulty = .easy
+        default:
+            savedGame.difficulty = .hard
+        }
+        
+        questHierarchy = Quest(savedGame: savedGame, file: "Progress")
+        chapters = questHierarchy.nodes.reversed()
+
+        setDifficulty()
+        chapterCollection.reloadData()
+        
+    }
     
     var selectedChapter: Int = 1
     var questHierarchy : Quest!
@@ -26,11 +51,13 @@ class ChapterSelectViewController: UIViewController   {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        questHierarchy = Quest(savedGame: savedGame)
+        questHierarchy = Quest(savedGame: savedGame, file: "Progress")
         chapters = questHierarchy.nodes.reversed()
         
         chapterCollection.dataSource = self
         chapterCollection.delegate = self
+        
+        setDifficulty()
         
     }
     
@@ -46,6 +73,11 @@ class ChapterSelectViewController: UIViewController   {
             vc.savedGame = savedGame
         }
     }
+    
+    func setDifficulty() {
+        difficultyLabel.text = "Difficulty: " + savedGame.difficulty.description
+        difficultyImage.image = UIImage(named: "difficulty_" + savedGame.difficulty.description)
+    }
 }
 
 extension ChapterSelectViewController : UICollectionViewDataSource {
@@ -60,6 +92,7 @@ extension ChapterSelectViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "chapterCell", for: indexPath) as! ChapterSelectCell
         
+        cell.cellDifficulty.image = UIImage(named: "select_background_" + savedGame.difficulty.description)
         cell.cellLabel.text = chapters[indexPath.row].title
         cell.cellPercent.text = String(format: "%d%%", chapters[indexPath.row].percentComplete)
         

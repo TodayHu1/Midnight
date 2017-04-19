@@ -26,6 +26,7 @@ class LevelCompleteViewController: UIViewController {
     @IBOutlet weak var awardedStarsLabel: UILabel!
     @IBOutlet weak var awardedStarsView: UIStackView!
     
+    @IBOutlet weak var affinityView: UIView!
     @IBOutlet weak var supportView1: UIStackView!
     @IBOutlet weak var supportView2: UIStackView!
     @IBOutlet weak var supportView3: UIStackView!
@@ -85,30 +86,24 @@ class LevelCompleteViewController: UIViewController {
             awardedStarsLabel.text = String(format: "+%ld", awardedStars)
         }
         
-        let supportViews = [supportView1, supportView2, supportView3, supportView4]
-        let supportImages = [supportImage1, supportImage2, supportImage3, supportImage4]
-        let supportLabels = [supportLabel1, supportLabel2, supportLabel3, supportLabel4]
-        
-        for index in 0..<affinity!.count {
-            supportViews[index]!.isHidden = false
-            supportImages[index]!.image = UIImage(named: affinity![index].name)
-            supportLabels[index]!.text = String(affinity![index].uses)
+        if affinity!.count > 0 {
+            let supportViews = [supportView1, supportView2, supportView3, supportView4]
+            let supportImages = [supportImage1, supportImage2, supportImage3, supportImage4]
+            let supportLabels = [supportLabel1, supportLabel2, supportLabel3, supportLabel4]
+            
+            for index in 0..<affinity!.count {
+                supportViews[index]!.isHidden = false
+                supportImages[index]!.image = UIImage(named: affinity![index].name)
+                var supportText = "0"
+                if affinity![index].uses > 0 {
+                    supportText = "+" + String(affinity![index].uses)
+                }
+                supportLabels[index]!.text = supportText
+            }
+        } else {
+            affinityView.isHidden = true
         }
         
-//        if awardedExperience > 0 {
-//            currentLevel.text = String(format: "Level %ld", character.level)
-//            nextLevel.text = String(format: "Level %ld", character.level + 1)
-//            
-//            //set base experience on progress bar for animation purposes
-//            let previousExperience = character.experience - awardedExperience
-//            let basePercentage = Float(previousExperience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
-//            experienceProgress.setProgress(basePercentage, animated: false)
-//            
-//        } else {
-//            experienceProgress.isHidden = true
-//            currentLevel.isHidden = true
-//            nextLevel.isHidden = true
-//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -122,14 +117,6 @@ class LevelCompleteViewController: UIViewController {
 //            totalStars.text = String(baseNumber + index)
 //        }
         
-         //animate experience progress
-//        let progressPercentage = Float(character.experience - character.previousLevelGoal) / Float(character.nextLevelGoal - character.previousLevelGoal)
-//        experienceProgress.setProgress(progressPercentage, animated: true)
-//        
-//        if levelUp {
-//            levelUp = false
-//            self.performSegue(withIdentifier: "presentLevelUp", sender: self)
-//        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

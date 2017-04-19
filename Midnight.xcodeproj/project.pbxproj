@@ -86,7 +86,6 @@
 		47E2827E1D9DE526000BD625 /* ResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E2827D1D9DE526000BD625 /* ResponseViewController.swift */; };
 		47E3008D1DBA567E00A3439D /* CharacterSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E3008C1DBA567E00A3439D /* CharacterSelectViewController.swift */; };
 		47F117911DE348FF003F0F4F /* Affinity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F117901DE348FF003F0F4F /* Affinity.swift */; };
-		47F96A041D938395007ADC9A /* Encyclopedia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F96A031D938395007ADC9A /* Encyclopedia.storyboard */; };
 		47F96A061D938803007ADC9A /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96A051D938803007ADC9A /* IndexViewController.swift */; };
 		47F96A081D940D0F007ADC9A /* Encyclopedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96A071D940D0E007ADC9A /* Encyclopedia.swift */; };
 		47F96A0A1D942EA3007ADC9A /* IndexTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F96A091D942EA3007ADC9A /* IndexTableCell.swift */; };
@@ -215,7 +214,6 @@
 		47E2827D1D9DE526000BD625 /* ResponseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseViewController.swift; sourceTree = "<group>"; };
 		47E3008C1DBA567E00A3439D /* CharacterSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectViewController.swift; sourceTree = "<group>"; };
 		47F117901DE348FF003F0F4F /* Affinity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Affinity.swift; sourceTree = "<group>"; };
-		47F96A031D938395007ADC9A /* Encyclopedia.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Encyclopedia.storyboard; sourceTree = "<group>"; };
 		47F96A051D938803007ADC9A /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		47F96A071D940D0E007ADC9A /* Encyclopedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encyclopedia.swift; sourceTree = "<group>"; };
 		47F96A091D942EA3007ADC9A /* IndexTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexTableCell.swift; sourceTree = "<group>"; };
@@ -312,7 +310,6 @@
 				4749BD021D902698007BCD74 /* Level.swift */,
 				4749BD031D902698007BCD74 /* LevelCompleteViewController.swift */,
 				4749BD041D902698007BCD74 /* LevelResult.swift */,
-				4749BD3B1D9026A1007BCD74 /* Main.storyboard */,
 				4749BD061D902698007BCD74 /* MainMenuViewController.swift */,
 				4749BD071D902698007BCD74 /* Monster.swift */,
 				475730C21D92F406002CE409 /* MonsterStatsViewController.swift */,
@@ -333,7 +330,6 @@
 			children = (
 				4749BD0C1D902698007BCD74 /* ProgressViewController.swift */,
 				4749BD111D902698007BCD74 /* StoryModeViewController.swift */,
-				47F96A031D938395007ADC9A /* Encyclopedia.storyboard */,
 				47F96A051D938803007ADC9A /* IndexViewController.swift */,
 				47F96A071D940D0E007ADC9A /* Encyclopedia.swift */,
 				47F96A091D942EA3007ADC9A /* IndexTableCell.swift */,
@@ -396,6 +392,7 @@
 				476E6EF01D902483008A2022 /* Info.plist */,
 				476E6EED1D902483008A2022 /* LaunchScreen.storyboard */,
 				4749BD051D902698007BCD74 /* Levels */,
+				4749BD3B1D9026A1007BCD74 /* Main.storyboard */,
 				4749BD081D902698007BCD74 /* Monsters */,
 				47FF610D1DC79D4D00BB50BE /* Monsters.xcassets */,
 				47C3D71C1DB6A9A1009476CE /* Scenes */,
@@ -620,7 +617,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				47D405D91D946D820071C78C /* vampire.txt in Resources */,
-				47F96A041D938395007ADC9A /* Encyclopedia.storyboard in Resources */,
 				B31EC3471E09B33D0097F20F /* GoogleService-Info.plist in Resources */,
 				47D405E31D956C8F0071C78C /* troll.txt in Resources */,
 				4749BD2A1D902698007BCD74 /* Levels in Resources */,

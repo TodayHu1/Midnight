@@ -24,47 +24,63 @@ class QuestHierarchyNode {
 
 class Quest {
     var nodes: [QuestHierarchyNode] = [QuestHierarchyNode]()
+    var percentComplete: Int = 0
     
-    init (savedGame: GameSave) {
-        let filename = "Levels/Progress"
+    init (savedGame: GameSave, file: String) {
+        let filename = "Levels/" + file
         guard let dictionary = [String: AnyObject].loadJSONFromBundle(filename) else {return}
         
         let chaptersArray = dictionary["chapters"] as! [[String: AnyObject]]
+        var totalStars: Int = 0
+        var totalLevels: Int = 0
+        
         for chapterItem in chaptersArray {
             let chapter = QuestHierarchyNode()
             chapter.id = chapterItem["chapter"] as! String
             chapter.title = chapterItem["title"] as! String
             chapter.unlockKey = chapterItem["unlockKey"] as! String
             
-            if unlockNode(savedGame: savedGame, unlockKey: chapter.unlockKey) {
+            
+            let levelArray = chapterItem["levels"] as! [[String: AnyObject]]
+            var starCount: Int = 0
+            
+            for levelItem in levelArray {
+                let level = QuestHierarchyNode()
+                level.id = levelItem["level"] as! String
+                level.title = levelItem["title"] as! String
+                level.unlockKey = levelItem["unlockKey"] as! String
+                level.waves = levelItem["waves"] as! Int
                 
-                let levelArray = chapterItem["levels"] as! [[String: AnyObject]]
-                var starCount: Int = 0
-                
-                for levelItem in levelArray {
-                    let level = QuestHierarchyNode()
-                    level.id = levelItem["level"] as! String
-                    level.title = levelItem["title"] as! String
-                    level.unlockKey = levelItem["unlockKey"] as! String
-                    level.waves = levelItem["waves"] as! Int
-                    
-                    if unlockNode(savedGame: savedGame, unlockKey: level.unlockKey) {
-                        if let levelResults = savedGame.levelResults[level.id] {
-                            level.totalMovesGoal = levelResults.totalMovesGoal
-                            level.totalDamageTakenGoal = levelResults.totalDamageTakenGoal
-                            level.elapsedTimeGoal = levelResults.elapsedTimeGoal
-                            
-                            if level.totalDamageTakenGoal { starCount += 1 }
-                            if level.totalMovesGoal { starCount += 1 }
-                            if level.elapsedTimeGoal { starCount += 1 }
-                        }
-                        chapter.nodes.append(level)
+                if let levelResults = savedGame.levelResults[savedGame.difficulty.description]![level.id] {
+                    if levelResults.totalMovesCompleteCount > 0 {
+                        level.totalMovesGoal = true
                     }
+                    if levelResults.totalDamageTakenCompleteCount > 0 {
+                        level.totalDamageTakenGoal = true
+                    }
+                    if levelResults.elapsedTimeCompleteCount > 0 {
+                        level.elapsedTimeGoal = true
+                    }
+                    
+                    if level.totalDamageTakenGoal { starCount += 1 }
+                    if level.totalMovesGoal { starCount += 1 }
+                    if level.elapsedTimeGoal { starCount += 1 }
                 }
                 
-                chapter.percentComplete = Int(Double(starCount) / Double(levelArray.count * 3) * 100)
+                if unlockNode(savedGame: savedGame, unlockKey: level.unlockKey) {
+                    chapter.nodes.append(level)
+                }
+            }
+            
+            chapter.percentComplete = Int(Double(starCount) / Double(levelArray.count * 3) * 100)
+            totalStars += starCount
+            totalLevels += levelArray.count
+
+            if unlockNode(savedGame: savedGame, unlockKey: chapter.unlockKey) {
                 self.nodes.append(chapter)
             }
+            
+            self.percentComplete = Int(Double(totalStars) / Double(totalLevels * 3) * 100)
         }
     }
     
@@ -77,5 +93,4 @@ class Quest {
         }
         return unlocked
     }
-    
 }

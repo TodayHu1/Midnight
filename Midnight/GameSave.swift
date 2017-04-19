@@ -59,7 +59,7 @@ class GameSave: NSObject, NSCoding {
     lazy var elapsedtime: TimeInterval = self.getElapsedTime()
     var selectedCharacter: String = ""
     var selectedChapter: Int = 0
-    var levelResults: [String: LevelResult] = [String: LevelResult]()
+    var levelResults: [String: [String: LevelResult]] = ["Easy": [String: LevelResult](), "Normal": [String: LevelResult](), "Hard": [String: LevelResult](), "Epic": [String: LevelResult]()]
     var difficulty: Difficulty = Difficulty.normal
     var questData: [String: AnyObject] = [String: AnyObject]()
     var characters: [String: Character] = [String: Character]()
@@ -73,7 +73,7 @@ class GameSave: NSObject, NSCoding {
         super.init()
     }
 
-    init?(selectedLevel: String, selectedCharacter: String, levelResults: [String: LevelResult], difficulty: Double, questData: [String: AnyObject], characters: [String: Character], selectedChapter: Int, stars: Int) {
+    init?(selectedLevel: String, selectedCharacter: String, levelResults: [String: [String: LevelResult]], difficulty: Double, questData: [String: AnyObject], characters: [String: Character], selectedChapter: Int, stars: Int) {
         self.selectedLevel = selectedLevel
         self.selectedCharacter = selectedCharacter
         self.levelResults = levelResults
@@ -108,11 +108,11 @@ class GameSave: NSObject, NSCoding {
             selectedCharacter = aDecoder.decodeObject(forKey: "selectedCharacter") as! String
         }
         
-        var levelResults: [String: LevelResult] = [String: LevelResult]()
+        var levelResults: [String: [String: LevelResult]] = ["Easy": [String: LevelResult](), "Normal": [String: LevelResult](), "Hard": [String: LevelResult](), "Epic": [String: LevelResult]()]
         if aDecoder.containsValue(forKey: "levelResults") {
             let object = aDecoder.decodeObject(forKey: "levelResults")
-            if object is [String: LevelResult] {
-                levelResults = object as! [String: LevelResult]
+            if object is [String: [String: LevelResult]] {
+                levelResults = object as! [String: [String: LevelResult]]
             }
         }
         let difficulty = aDecoder.decodeDouble(forKey: "difficulty")
@@ -181,7 +181,7 @@ class GameSave: NSObject, NSCoding {
     
     fileprivate func getTotalMoves() -> Int {
         var totalMoves = 0
-        for (_, result) in levelResults {
+        for (_, result) in levelResults[difficulty.description]! {
             if result.includeInLeaderboard {
                 totalMoves += result.totalMoves
             }
@@ -191,7 +191,7 @@ class GameSave: NSObject, NSCoding {
     
     fileprivate func getTotalDamageTaken() -> Int {
         var totalDamageTaken = 0
-        for (_, result) in levelResults {
+        for (_, result) in levelResults[difficulty.description]! {
             if result.includeInLeaderboard {
                 totalDamageTaken += result.totalDamageTaken
             }
@@ -201,7 +201,7 @@ class GameSave: NSObject, NSCoding {
     
     fileprivate func getElapsedTime() -> TimeInterval {
         var elapsedTime: TimeInterval = 0
-        for (_, result) in levelResults {
+        for (_, result) in levelResults[difficulty.description]! {
             if result.includeInLeaderboard {
                 elapsedTime += result.elapsedTime
             }

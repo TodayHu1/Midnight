@@ -75,18 +75,22 @@ class PreGameViewController: UIViewController {
         
         characterImagePanel.image = UIImage(named: character.image)
         characterName.text = character.name
-//        monsterImagePanel.image = UIImage(named: level.monsters[0].image)
-//        monsterName.text = level.monsters[0].name
         showMonsters()
         levelTitleLabel.text = level.title
         totalMovesLabel.text = String(format: "%ld", level.goals.totalMoves)
         totalDamageTakenLable.text = String(format: "%ld", level.goals.totalDamageTaken)
         elapsedTimeLabel.text = DateComponentsFormatter().string(from: level.goals.elapsedTime)
         
-        if let levelResults = savedGame.levelResults[savedGame.selectedLevel] {
-            if levelResults.totalMovesGoal {goal1.image = UIImage(named: "Complete_Star")}
-            if levelResults.totalDamageTakenGoal {goal2.image = UIImage(named: "Complete_Star")}
-            if levelResults.elapsedTimeGoal {goal3.image = UIImage(named: "Complete_Star")}
+        if let levelResults = savedGame.levelResults[savedGame.difficulty.description]![savedGame.selectedLevel] {
+            if levelResults.totalMovesCompleteCount > 0 {
+                goal1.image = UIImage(named: "Complete_Star")
+            }
+            if levelResults.totalDamageTakenCompleteCount > 0 {
+                goal2.image = UIImage(named: "Complete_Star")
+            }
+            if levelResults.elapsedTimeCompleteCount > 0 {
+                goal3.image = UIImage(named: "Complete_Star")
+            }
         }
     }
     
@@ -140,7 +144,7 @@ class PreGameViewController: UIViewController {
             vc.callingView = "preGame"
             vc.monster = self.level.monsters[monsterIndex]
         }
-        if segue.identifier == "showStoryMode" {
+        if segue.identifier == "showStory" {
             let vc = segue.destination as! StoryModeViewController
             vc.savedGame = savedGame
         }

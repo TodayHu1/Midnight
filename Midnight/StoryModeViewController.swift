@@ -12,7 +12,32 @@ import UIKit
 class StoryModeViewController: UIViewController   {
 
     @IBOutlet weak var levelCollection: UICollectionView!
+    @IBOutlet weak var difficultyLabel: UILabel!
+    @IBOutlet weak var difficultyImage: UIImageView!
+    @IBOutlet var difficultyTap: UITapGestureRecognizer!
 
+    @IBAction func difficultyTapTapped(_ sender: Any) {
+        switch savedGame.difficulty {
+        case .easy:
+            savedGame.difficulty = .normal
+        case .normal:
+            savedGame.difficulty = .hard
+        case .hard:
+            savedGame.difficulty = .epic
+        case.epic:
+            savedGame.difficulty = .easy
+        default:
+            savedGame.difficulty = .hard
+        }
+        
+        questHierarchy = Quest(savedGame: savedGame, file: "Progress")
+        chapters = questHierarchy.nodes.reversed()
+        levels = chapters[savedGame.selectedChapter].nodes.reversed()
+
+        setDifficulty()
+        levelCollection.reloadData()
+
+    }
 //    fileprivate let sectionInsets = UIEdgeInsets(top: 10.0, left: 0, bottom: 10.0, right: 0)
 //    fileprivate let itemsPerRow: CGFloat = 1
     
@@ -29,16 +54,17 @@ class StoryModeViewController: UIViewController   {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        questHierarchy = Quest(savedGame: savedGame)
+        questHierarchy = Quest(savedGame: savedGame, file: "Progress")
         chapters = questHierarchy.nodes.reversed()
         levels = chapters[savedGame.selectedChapter].nodes.reversed()
         
         levelCollection.dataSource = self
         levelCollection.delegate = self
         
+        setDifficulty()
+        
     }
-    
-   
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDialogue" {
             let vc = segue.destination as! DialogueViewController
@@ -54,6 +80,12 @@ class StoryModeViewController: UIViewController   {
             vc.savedGame = savedGame
         }
     }
+    
+    func setDifficulty() {
+        difficultyLabel.text = "Difficulty: " + savedGame.difficulty.description
+        difficultyImage.image = UIImage(named: "difficulty_" + savedGame.difficulty.description)
+    }
+
 }
 
 extension StoryModeViewController : UICollectionViewDataSource {
@@ -70,17 +102,24 @@ extension StoryModeViewController : UICollectionViewDataSource {
         
         cell.cellLabel.text = levels[indexPath.row].title
         cell.wavesLabel.text = String(levels[indexPath.row].waves)
+        cell.cellDifficulty.image = UIImage(named: "select_background_" + savedGame.difficulty.description)
         
         if levels[indexPath.row].totalMovesGoal {
             cell.totalMovesImage.image = UIImage(named: "Complete_Star")
+        } else {
+            cell.totalMovesImage.image = UIImage(named: "Incomplete_Star")
         }
         
         if levels[indexPath.row].totalDamageTakenGoal {
             cell.totalDamageImage.image = UIImage(named: "Complete_Star")
+        } else {
+            cell.totalDamageImage.image = UIImage(named: "Incomplete_Star")
         }
         
         if levels[indexPath.row].elapsedTimeGoal {
             cell.elapsedTimeImage.image = UIImage(named: "Complete_Star")
+        } else {
+            cell.elapsedTimeImage.image = UIImage(named: "Incomplete_Star")
         }
         
         return cell
@@ -93,23 +132,3 @@ extension StoryModeViewController : UICollectionViewDelegate {
         self.performSegue(withIdentifier: "showDialogue", sender: self)
     }
 }
-
-//extension StoryModeViewController : UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-//        let availableWidth = view.frame.width - paddingSpace
-//        let widthPerItem = availableWidth / itemsPerRow
-//        let heightPerItem = widthPerItem / 2
-//        
-//        return CGSize(width: widthPerItem, height: heightPerItem)
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return sectionInsets
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return sectionInsets.left
-//    }
-//}

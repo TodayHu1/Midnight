@@ -11,17 +11,16 @@ import UIKit
 import KCFloatingActionButton
 
 class StoryHubViewController: UIViewController   {
-    @IBOutlet weak var characterButton: UIButton!
     @IBOutlet weak var encyclopediaButton: UIButton!
     @IBOutlet weak var storeButton: UIButton!
     @IBOutlet weak var statsButton: UIButton!
-    @IBOutlet weak var messagesButton: UIButton!
-    @IBOutlet weak var inventoryButton: UIButton!
     @IBOutlet var mainStoryTap: UITapGestureRecognizer!
     @IBOutlet var sideQuestTap: UITapGestureRecognizer!
     @IBOutlet var trainingTap: UITapGestureRecognizer!
     @IBOutlet weak var totalStars: UILabel!
     @IBOutlet weak var menuButton: KCFloatingActionButton!
+    @IBOutlet weak var teamStrengthLabel: UILabel!
+    @IBOutlet weak var mainCompleteLabel: UILabel!
 
 
     var selectedLevel: String = ""
@@ -35,7 +34,7 @@ class StoryHubViewController: UIViewController   {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        questHierarchy = Quest(savedGame: savedGame)
+        questHierarchy = Quest(savedGame: savedGame, file: "Progress")
         
         if savedGame.getQuestData(key: "encyclopedia_unlocked") as? Bool == true {
             encyclopediaButton.isHidden = false
@@ -44,6 +43,8 @@ class StoryHubViewController: UIViewController   {
         }
         
         totalStars.text = String(savedGame.stars)
+        mainCompleteLabel.text = String(format: "%d%%", questHierarchy.percentComplete)
+        teamStrengthLabel.text = String(format: "%ld/500", savedGame.teamStrength)
         
         renderMenuButton(currentButton: 0)
     }

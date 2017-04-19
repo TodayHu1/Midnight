@@ -13,6 +13,7 @@ class ChapterSelectCell: UICollectionViewCell {
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var cellPercent: UILabel!
+    @IBOutlet weak var cellDifficulty: UIImageView!
     
     override var isSelected: Bool {
         didSet {

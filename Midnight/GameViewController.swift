@@ -484,8 +484,8 @@ class GameViewController: UIViewController {
         // Check to see if level goals have been reached and award experience, but only if level is successfully completed
         var checkResult: LevelResult = LevelResult()
         
-        if savedGame.levelResults[savedGame.selectedLevel] != nil {
-            checkResult = savedGame.levelResults[savedGame.selectedLevel]!
+        if savedGame.levelResults[savedGame.difficulty.description]![savedGame.selectedLevel] != nil {
+            checkResult = savedGame.levelResults[savedGame.difficulty.description]![savedGame.selectedLevel]!
         }
 
         if gameOver == false {
@@ -494,25 +494,19 @@ class GameViewController: UIViewController {
             addAffinity()
             
             if level.result.totalMoves <= level.goals.totalMoves {
-                checkResult.totalMovesGoal = true
-                awardedStars += level.rewards.totalMoves
+                checkResult.totalMovesCompleteCount += 1
+                awardedStars += Int(Double(level.rewards.totalMoves) * savedGame.difficulty.rawValue / Double(checkResult.totalMovesCompleteCount))
             }
             
             if level.result.totalDamageTaken <= level.goals.totalDamageTaken {
-                checkResult.totalDamageTakenGoal = true
-                awardedStars += level.rewards.totalDamageTaken
+                checkResult.totalDamageTakenCompleteCount += 1
+                awardedStars += Int(Double(level.rewards.totalDamageTaken) * savedGame.difficulty.rawValue / Double(checkResult.totalDamageTakenCompleteCount))
             }
             
             if level.result.elapsedTime <= level.goals.elapsedTime {
-                checkResult.elapsedTimeGoal = true
-                awardedStars += level.rewards.elapsedTime
+                checkResult.elapsedTimeCompleteCount += 1
+                awardedStars += Int(Double(level.rewards.elapsedTime) * savedGame.difficulty.rawValue / Double(checkResult.elapsedTimeCompleteCount))
             }
-            
-//            character.experience += awardedExperience
-//            if character.experience >= character.nextLevelGoal {
-//                levelUp = true
-//                character.levelUp()
-//            }
             
             savedGame.stars += awardedStars
         }
@@ -530,7 +524,7 @@ class GameViewController: UIViewController {
             checkResult.elapsedTime = level.result.elapsedTime
         }
         
-        savedGame.levelResults[savedGame.selectedLevel] = checkResult
+        savedGame.levelResults[savedGame.difficulty.description]![savedGame.selectedLevel] = checkResult
         FIRAnalytics.logEvent(withName: "level_complete", parameters: ["name": level.title as NSObject, "total_moves": level.result.totalMoves as NSObject, "total_damage_taken": level.result.totalDamageTaken as NSObject, "elapsed_time": level.result.elapsedTime as NSObject])
     }
     

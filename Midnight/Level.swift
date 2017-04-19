@@ -160,7 +160,7 @@ class Level {
         
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
-                if tokens[row, column]?.status == .Poison {
+                if tokens[column, row]?.status == .Poison {
                     tokenCount += 1
                 }
             }
@@ -173,7 +173,7 @@ class Level {
         
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
-                if tokens[row, column]?.status == .Poison {
+                if tokens[column, row]?.status == .Poison {
                     set.insert(tokens[column, row]!)
                 }
             }
@@ -186,7 +186,7 @@ class Level {
         
         for row in 0..<NumRows {
             for column in 0..<NumColumns {
-                if tokens[row, column]?.status != TokenStatus.None {
+                if tokens[column, row]?.status != TokenStatus.None {
                     set.insert(tokens[column, row]!)
                 }
             }
@@ -197,17 +197,17 @@ class Level {
     func cleanse(numberToCleanse: Int) -> Set<Token> {
         var set = Set<Token>()
         var counter = 0
-        
-        for _ in 1...NumRows {
-            let column = Int(arc4random_uniform(UInt32(NumColumns)))
-            let row = Int(arc4random_uniform(UInt32(NumRows)))
-            
-            if tokens[column, row]?.status != TokenStatus.None && (counter < numberToCleanse) {
-                tokens[column, row]?.status = .None
-                set.insert(tokens[column, row]!)
-                counter += 1
+
+        for row in 0..<NumRows {
+            for column in 0..<NumColumns {
+                if tokens[column, row]?.status != TokenStatus.None && (counter < numberToCleanse) {
+                    tokens[column, row]?.status = .None
+                    set.insert(tokens[column, row]!)
+                    counter += 1
+                }
             }
         }
+        
         return set
 
     }
@@ -544,7 +544,21 @@ class Level {
     
     fileprivate func calculateScores(_ chains: Set<Chain>, strength: Double, wave: Int) {
         for chain in chains {
-            chain.score = Int(round(Double(60 * (chain.length - 2) * comboMultiplier * chain.chainType.typeMultiplier) * strength / 10)) * 10
+            let damageBase = 30
+            var normalCount = 0
+            var hiddenCount = 0
+            
+            for token in chain.tokens {
+                if token.status == .Hidden {
+                    hiddenCount += 1
+                } else {
+                    normalCount += 1
+                }
+            }
+            
+            chain.score = Int(round(Double(damageBase * normalCount * comboMultiplier * chain.chainType.typeMultiplier) * strength / 10)) * 10
+            chain.score += Int(round(Double(damageBase * hiddenCount * comboMultiplier * chain.chainType.typeMultiplier) * strength / 10)) * 5
+            
             if chain.firstToken().tokenType == monsters[wave].vulnerability {
                 chain.score *= 2
             } else if chain.firstToken().tokenType == monsters[wave].resistance {

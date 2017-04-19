@@ -16,7 +16,8 @@ class LevelSelectCell: UICollectionViewCell {
     @IBOutlet weak var elapsedTimeImage: UIImageView!
     @IBOutlet weak var totalMovesImage: UIImageView!
     @IBOutlet weak var wavesLabel: UILabel!
-
+    @IBOutlet weak var cellDifficulty: UIImageView!
+    
     override var isSelected: Bool {
         didSet {
             cellImage.layer.borderWidth = isSelected ? 3 : 0

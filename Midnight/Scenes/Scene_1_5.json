@@ -21,7 +21,7 @@
                "actor" : "Camila",
                "image" : "Camila",
                "direction" : "right",
-               "text" : "We'll help clean up."},
+               "text" : "Anaya, we'll help you clean up."},
                {"sceneType" : "line",
                "actor" : "Zombie",
                "image" : "zombie",
